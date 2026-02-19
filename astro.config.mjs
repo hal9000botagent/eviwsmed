@@ -1,0 +1,94 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+
+export default defineConfig({
+	site: 'https://evidenzbasierte-wirbelsaeulenmedizin.de',
+	integrations: [
+		starlight({
+			title: 'EviWsMed',
+			description: 'Evidenzbasierte Wirbelsäulenmedizin – Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule',
+			defaultLocale: 'de',
+			locales: {
+				de: {
+					label: 'Deutsch',
+					lang: 'de',
+				},
+			},
+			logo: {
+				src: './src/assets/logo.svg',
+				replacesTitle: false,
+			},
+			customCss: [
+				'./src/styles/custom.css',
+			],
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'robots',
+						content: 'index, follow',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:type',
+						content: 'website',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:site_name',
+						content: 'Evidenzbasierte Wirbelsäulenmedizin',
+					},
+				},
+				{
+					tag: 'script',
+					attrs: {
+						type: 'application/ld+json',
+					},
+					content: JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'MedicalWebPage',
+						name: 'Evidenzbasierte Wirbelsäulenmedizin',
+						url: 'https://evidenzbasierte-wirbelsaeulenmedizin.de',
+						description: 'Evidenzbasierte Fachartikel und Patienteninformationen zur Wirbelsäulenmedizin',
+						inLanguage: 'de',
+						medicalAudience: {
+							'@type': 'MedicalAudience',
+							audienceType: 'Patient',
+						},
+						publisher: {
+							'@type': 'Organization',
+							name: 'EviWsMed',
+						},
+					}),
+				},
+			],
+			sidebar: [
+				{
+					label: 'Startseite',
+					link: '/',
+				},
+				{
+					label: 'Fachartikel',
+					autogenerate: { directory: 'artikel' },
+				},
+				{
+					label: 'Enzyklopädie',
+					autogenerate: { directory: 'enzyklopaedie' },
+				},
+				{
+					label: 'Häufige Fragen',
+					autogenerate: { directory: 'faq' },
+				},
+				{
+					label: 'Videos',
+					autogenerate: { directory: 'videos' },
+				},
+			],
+		}),
+	],
+});
