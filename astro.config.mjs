@@ -9,12 +9,6 @@ export default defineConfig({
 			title: 'EviWsMed',
 			description: 'Evidenzbasierte Wirbelsäulenmedizin – Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule',
 			defaultLocale: 'de',
-			locales: {
-				de: {
-					label: 'Deutsch',
-					lang: 'de',
-				},
-			},
 			logo: {
 				src: './src/assets/logo.svg',
 				replacesTitle: false,
@@ -87,6 +81,14 @@ export default defineConfig({
 				{
 					label: 'Videos',
 					autogenerate: { directory: 'videos' },
+				},
+				{
+					label: 'Rechtliches',
+					items: [
+						{ label: 'Impressum', link: '/impressum' },
+						{ label: 'Datenschutz', link: '/datenschutz' },
+						{ label: 'Hinweis', link: '/hinweis-medizinische-information' },
+					],
 				},
 			],
 		}),

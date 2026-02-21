@@ -1,40 +1,69 @@
 ---
 title: Evidenzbasierte Wirbelsäulenmedizin
-description: Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule
+description: Wissenschaftlich fundierte Patienteninformation zu Erkrankungen und Therapien der Wirbelsäule
 template: splash
 hero:
-  tagline: Wissenschaftlich fundierte Informationen zu Erkrankungen und Therapien der Wirbelsäule
+  tagline: Verständliche, wissenschaftlich fundierte Informationen zu Erkrankungen, Diagnostik und Therapie der Wirbelsäule — für Patienten und Fachpersonal.
   actions:
     - text: Fachartikel lesen
-      link: /artikel/bandscheibenvorfall/
+      link: /artikel/
       icon: right-arrow
       variant: primary
     - text: Enzyklopädie
-      link: /enzyklopaedie/wirbelsaeule/
+      link: /enzyklopaedie/
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Willkommen bei EviWsMed
+<div class="landing-section">
 
-Evidenzbasierte Wirbelsäulenmedizin bietet Ihnen wissenschaftlich fundierte Informationen zu Erkrankungen, Diagnostik und Therapie der Wirbelsäule — verständlich aufbereitet für Patienten und Fachpersonal.
+## Für Patienten & Fachpersonal
+
+Alle Inhalte werden regelmäßig aktualisiert und basieren auf aktuellen Leitlinien und wissenschaftlichen Publikationen.
+
+</div>
 
 <CardGrid>
-  <Card title="Fachartikel" icon="document">
-    Ausführliche Artikel zu Bandscheibenvorfall, Rückenschmerzen, Spinalkanalstenose und weiteren Themen.
-    [Zu den Artikeln →](/artikel/bandscheibenvorfall/)
+  <Card title="📄 Fachartikel" icon="document">
+    Ausführliche Artikel zu den häufigsten Erkrankungen der Wirbelsäule — von Bandscheibenvorfall bis Wirbelkörperfraktur.
+
+    [Alle Fachartikel →](/artikel/)
   </Card>
-  <Card title="Enzyklopädie" icon="open-book">
-    Von A bis Z: Fachbegriffe der Wirbelsäulenmedizin verständlich erklärt.
-    [Zur Enzyklopädie →](/enzyklopaedie/wirbelsaeule/)
+  <Card title="📖 Enzyklopädie" icon="open-book">
+    Anatomische Grundlagen und Fachbegriffe der Wirbelsäulenmedizin — kurz und verständlich erklärt.
+
+    [Zur Enzyklopädie →](/enzyklopaedie/)
   </Card>
-  <Card title="Häufige Fragen" icon="comment">
-    Antworten auf die wichtigsten Patientenfragen rund um Rücken und Wirbelsäule.
+  <Card title="❓ Häufige Fragen" icon="comment">
+    Antworten auf die wichtigsten Patientenfragen rund um Rücken, Operation und Nachbehandlung.
+
     [Zu den FAQs →](/faq/haeufige-fragen/)
   </Card>
-  <Card title="Videos" icon="youtube">
-    Erklärvideos zu Untersuchungen, Operationen und Übungen.
+  <Card title="🎬 Videos" icon="youtube">
+    Erklärvideos zu Untersuchungen, Operationstechniken und Übungen für zu Hause.
+
     [Zu den Videos →](/videos/uebersicht/)
   </Card>
 </CardGrid>
+
+<div class="landing-section popular-articles">
+
+## Meistgelesene Artikel
+
+<CardGrid>
+  <LinkCard title="Bandscheibenvorfall" description="Ursachen, Symptome und Behandlung — wann ist eine OP nötig?" href="/artikel/bandscheibenvorfall/" />
+  <LinkCard title="Spinalkanalstenose" description="Verengung des Wirbelkanals: Diagnostik und Therapieoptionen" href="/artikel/spinalkanalstenose/" />
+  <LinkCard title="Rückenschmerzen" description="Klassifikation, Diagnostik und evidenzbasierte Therapie" href="/artikel/rueckenschmerzen/" />
+  <LinkCard title="Skoliose" description="Wirbelsäulenverkrümmung bei Kindern und Erwachsenen" href="/artikel/skoliose/" />
+</CardGrid>
+
+</div>
+
+<div class="landing-section trust-banner">
+
+:::note[Medizinischer Hinweis]
+Diese Website dient der allgemeinen Information und ersetzt keine ärztliche Beratung. Bei Beschwerden wenden Sie sich bitte an Ihre Ärztin oder Ihren Arzt. [Mehr erfahren →](/hinweis-medizinische-information/)
+:::
+
+</div>
