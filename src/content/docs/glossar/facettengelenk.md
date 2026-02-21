@@ -8,7 +8,7 @@ sidebar:
 
 ## Definition
 
-Die Facettengelenke (Articulationes zygapophysiales, kleine Wirbelgelenke) sind paarig angelegte synoviale Gelenke, die die Gelenkfortsätze (Processus articulares) benachbarter Wirbel miteinander verbinden. Sie bilden zusammen mit den Bandscheiben die bewegliche Verbindung zwischen zwei Wirbeln und sind wesentlich an der Stabilisierung und Bewegungsführung der Wirbelsäule beteiligt.
+Die Facettengelenke (Articulationes zygapophysiales, kleine Wirbelgelenke) sind paarig angelegte synoviale Gelenke, die die Gelenkfortsätze (Processus articulares) benachbarter Wirbel miteinander verbinden. Sie bilden zusammen mit den [Bandscheiben](/glossar/bandscheibe/) die bewegliche Verbindung zwischen zwei Wirbeln und sind wesentlich an der Stabilisierung und Bewegungsführung der [Wirbelsäule](/glossar/wirbelsaeule/) beteiligt.
 
 ## Anatomie
 
@@ -27,8 +27,8 @@ Die Facettengelenke sind durch den Ramus medialis des Ramus dorsalis des Spinaln
 Die Facettengelenke sind an zahlreichen Wirbelsäulenpathologien beteiligt:
 
 - **Facettensyndrom:** Degenerative Veränderungen der Facettengelenke (Spondylarthrose) sind eine der häufigsten Ursachen für chronische Rückenschmerzen. Die Degeneration wird durch Bandscheibenhöhenverlust und vermehrte dorsale Lastübertragung begünstigt.
-- **Spinalkanalstenose:** Hypertrophierte Facettengelenke mit Osteophytenbildung engen den Spinalkanal von dorsolateral ein.
-- **Facettengelenkzysten:** Synovialzysten können aus degenerierten Facettengelenken entstehen und Nervenwurzeln komprimieren.
+- **Spinalkanalstenose:** Hypertrophierte Facettengelenke mit Osteophytenbildung engen den [Spinalkanal](/glossar/spinalkanal/) von dorsolateral ein.
+- **Facettengelenkzysten:** Synovialzysten können aus degenerierten Facettengelenken entstehen und [Nervenwurzeln](/glossar/nervenwurzel/) komprimieren.
 - **Diagnostik und Therapie:** Die gezielte Blockade des Ramus medialis oder intraartikuläre Injektionen dienen sowohl der Diagnostik als auch der Therapie facettengelenkbedingter Schmerzen.
 
-> Siehe auch: [Facettensyndrom](/artikel/facettensyndrom/) · [Spinalkanalstenose](/artikel/spinalkanalstenose/) · [Wirbelsäule](/enzyklopaedie/wirbelsaeule/)
+> Siehe auch: [Spinalkanalstenose](/fachbereich/degenerativ/spinalkanalstenose/) · [Wirbelsäule](/glossar/wirbelsaeule/)

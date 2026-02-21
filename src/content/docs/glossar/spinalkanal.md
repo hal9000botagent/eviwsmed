@@ -8,13 +8,13 @@ sidebar:
 
 ## Definition
 
-Der Spinalkanal (Canalis vertebralis, Wirbelkanal) ist der knöcherne Kanal, der sich durch die übereinanderliegenden Wirbel der gesamten Wirbelsäule erstreckt. Er beherbergt und schützt das Rückenmark, die Cauda equina sowie die abgehenden Nervenwurzeln und ist damit die zentrale Schutzstruktur des zentralen Nervensystems im Rumpfbereich.
+Der Spinalkanal (Canalis vertebralis, Wirbelkanal) ist der knöcherne Kanal, der sich durch die übereinanderliegenden Wirbel der gesamten [Wirbelsäule](/glossar/wirbelsaeule/) erstreckt. Er beherbergt und schützt das [Rückenmark](/glossar/rueckenmark/), die Cauda equina sowie die abgehenden [Nervenwurzeln](/glossar/nervenwurzel/) und ist damit die zentrale Schutzstruktur des zentralen Nervensystems im Rumpfbereich.
 
 ## Anatomie
 
 Der Spinalkanal wird von folgenden Strukturen begrenzt:
 
-- **Ventral (vorne):** Wirbelkörper und Bandscheiben, überdeckt vom hinteren Längsband (Ligamentum longitudinale posterius).
+- **Ventral (vorne):** Wirbelkörper und [Bandscheiben](/glossar/bandscheibe/), überdeckt vom hinteren Längsband (Ligamentum longitudinale posterius).
 - **Lateral (seitlich):** Pedikel der Wirbelbögen und Foramina intervertebralia, durch die die Nervenwurzeln den Kanal verlassen.
 - **Dorsal (hinten):** Wirbelbögen (Laminae) und Ligamentum flavum (gelbes Band).
 
@@ -26,9 +26,9 @@ Das Rückenmark reicht beim Erwachsenen bis etwa zum ersten oder zweiten Lendenw
 
 Der Spinalkanal ist von zentraler klinischer Relevanz, da Einengungen (Stenosen) zu Kompressionen der neuralen Strukturen führen:
 
-- **Spinalkanalstenose:** Verengung durch degenerative Veränderungen (Facettengelenkshypertrophie, Ligamentum-flavum-Verdickung, Bandscheibenprotrusion). Häufigste Ursache für Wirbelsäulenoperationen im höheren Alter.
+- **Spinalkanalstenose:** Verengung durch degenerative Veränderungen ([Facettengelenks](/glossar/facettengelenk/)hypertrophie, Ligamentum-flavum-Verdickung, Bandscheibenprotrusion). Häufigste Ursache für Wirbelsäulenoperationen im höheren Alter.
 - **Bandscheibenvorfall:** Prolabiertes Bandscheibengewebe kann den Spinalkanal einengen und Nervenwurzeln oder das Rückenmark komprimieren.
 - **Tumoren:** Intra- und extradurale Raumforderungen können den Spinalkanal einengen.
-- **Epidurale Injektionen:** Der Epiduralraum im Spinalkanal dient als Zugangsweg für therapeutische Injektionen (z. B. bei Spinalkanalstenose oder Bandscheibenvorfall).
+- **Epidurale Injektionen:** Der Epiduralraum im Spinalkanal dient als Zugangsweg für therapeutische Injektionen.
 
-> Siehe auch: [Spinalkanalstenose](/artikel/spinalkanalstenose/) · [Rückenmark](/enzyklopaedie/rueckenmark/) · [Nervenwurzel](/enzyklopaedie/nervenwurzel/)
+> Siehe auch: [Spinalkanalstenose](/fachbereich/degenerativ/spinalkanalstenose/) · [Rückenmark](/glossar/rueckenmark/) · [Nervenwurzel](/glossar/nervenwurzel/)

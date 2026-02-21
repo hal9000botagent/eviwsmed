@@ -8,7 +8,7 @@ sidebar:
 
 ## Definition
 
-Die Nervenwurzeln (Radices nervorum spinalium) sind die aus dem Rückenmark austretenden Nervenfaserbündel, die sich zu den Spinalnerven vereinigen. Jeder Spinalnerv entsteht aus einer vorderen (motorischen) und einer hinteren (sensiblen) Wurzel. Die Nervenwurzeln verlassen den Spinalkanal durch die Zwischenwirbellöcher (Foramina intervertebralia) und versorgen jeweils ein definiertes Körpersegment (Dermatom, Myotom).
+Die Nervenwurzeln (Radices nervorum spinalium) sind die aus dem [Rückenmark](/glossar/rueckenmark/) austretenden Nervenfaserbündel, die sich zu den Spinalnerven vereinigen. Jeder Spinalnerv entsteht aus einer vorderen (motorischen) und einer hinteren (sensiblen) Wurzel. Die Nervenwurzeln verlassen den [Spinalkanal](/glossar/spinalkanal/) durch die Zwischenwirbellöcher (Foramina intervertebralia) und versorgen jeweils ein definiertes Körpersegment (Dermatom, Myotom).
 
 ## Anatomie
 
@@ -29,11 +29,11 @@ Im Bereich der Lendenwirbelsäule verlaufen die lumbalen und sakralen Nervenwurz
 
 ## Klinische Bedeutung
 
-Die Nervenwurzeln sind häufig Zielstrukturen pathologischer Prozesse an der Wirbelsäule:
+Die Nervenwurzeln sind häufig Zielstrukturen pathologischer Prozesse an der [Wirbelsäule](/glossar/wirbelsaeule/):
 
-- **Radikulopathie:** Kompression einer Nervenwurzel (z. B. durch Bandscheibenvorfall oder Spinalkanalstenose) führt zu segmenttypischen Schmerzen (Radikulärsyndrom), Sensibilitätsstörungen und ggf. Paresen im Versorgungsgebiet.
+- **Radikulopathie:** Kompression einer Nervenwurzel (z. B. durch [Bandscheibenvorfall](/fachbereich/degenerativ/bandscheibenvorfall/) oder Spinalkanalstenose) führt zu segmenttypischen Schmerzen (Radikulärsyndrom), Sensibilitätsstörungen und ggf. Paresen im Versorgungsgebiet.
 - **Dermatome:** Das segmentale Verteilungsmuster der Sensibilitätsstörungen erlaubt eine klinische Zuordnung der betroffenen Nervenwurzel.
 - **Periradikuläre Therapie (PRT):** Gezielte Injektionen an die betroffene Nervenwurzel unter Bildwandlerkontrolle zur Schmerzlinderung bei Radikulopathien.
 - **Kaudasyndrom:** Kompression der Cauda equina mit Blasen-/Mastdarmstörung, Reithosenanästhesie und Paresen — ein neurochirurgischer Notfall.
 
-> Siehe auch: [Rückenmark](/enzyklopaedie/rueckenmark/) · [Spinalkanal](/enzyklopaedie/spinalkanal/) · [Bandscheibenvorfall](/artikel/bandscheibenvorfall/)
+> Siehe auch: [Rückenmark](/glossar/rueckenmark/) · [Spinalkanal](/glossar/spinalkanal/) · [Bandscheibenvorfall](/fachbereich/degenerativ/bandscheibenvorfall/)

@@ -13,7 +13,7 @@ Die Bandscheibe (Discus intervertebralis) besteht aus zwei Komponenten:
 ## Funktion
 
 - Stoßdämpfung zwischen den Wirbelkörpern
-- Ermöglicht Beweglichkeit der Wirbelsäule
+- Ermöglicht Beweglichkeit der [Wirbelsäule](/glossar/wirbelsaeule/)
 - Gleichmäßige Druckverteilung
 
 ## Ernährung
@@ -30,4 +30,4 @@ Mit zunehmendem Alter verliert der Nucleus pulposus Wasser und Proteoglykane. Di
 
 ## Klinische Relevanz
 
-→ Siehe auch: [Bandscheibenvorfall](/artikel/bandscheibenvorfall/)
+→ Siehe auch: [Bandscheibenvorfall (Fachartikel)](/fachbereich/degenerativ/bandscheibenvorfall/)

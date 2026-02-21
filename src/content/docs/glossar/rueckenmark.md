@@ -8,7 +8,7 @@ sidebar:
 
 ## Definition
 
-Das Rückenmark (Medulla spinalis) ist der im Spinalkanal verlaufende Teil des zentralen Nervensystems. Es erstreckt sich vom Foramen magnum der Schädelbasis bis etwa zum ersten oder zweiten Lendenwirbelkörper (L1/L2), wo es als Conus medullaris endet. Das Rückenmark stellt die zentrale Verbindung zwischen Gehirn und peripherem Nervensystem dar und ist an der Steuerung motorischer, sensibler und vegetativer Funktionen beteiligt.
+Das Rückenmark (Medulla spinalis) ist der im [Spinalkanal](/glossar/spinalkanal/) verlaufende Teil des zentralen Nervensystems. Es erstreckt sich vom Foramen magnum der Schädelbasis bis etwa zum ersten oder zweiten Lendenwirbelkörper (L1/L2), wo es als Conus medullaris endet. Das Rückenmark stellt die zentrale Verbindung zwischen Gehirn und peripherem Nervensystem dar und ist an der Steuerung motorischer, sensibler und vegetativer Funktionen beteiligt.
 
 ## Anatomie
 
@@ -26,11 +26,11 @@ Das Rückenmark ist von drei Hirnhäuten umgeben (Dura mater, Arachnoidea, Pia m
 
 ## Klinische Bedeutung
 
-Das Rückenmark ist bei zahlreichen Wirbelsäulenerkrankungen gefährdet:
+Das Rückenmark ist bei zahlreichen [Wirbelsäulen](/glossar/wirbelsaeule/)erkrankungen gefährdet:
 
 - **Querschnittlähmung:** Traumatische oder pathologische Schädigung des Rückenmarks mit vollständigem oder teilweisem Ausfall motorischer, sensibler und vegetativer Funktionen unterhalb der Läsionshöhe.
 - **Zervikale Myelopathie:** Chronische Kompression des Rückenmarks in der Halswirbelsäule (z. B. durch Spinalkanalstenose oder Bandscheibenvorfall) mit Gangstörung, Feinmotorikstörung und pathologischen Reflexen.
 - **Spinale Tumoren:** Intra- oder extramedulläre Raumforderungen können das Rückenmark komprimieren.
 - **Conus-medullaris-Syndrom:** Schädigung des Rückenmarkendes mit Blasen-/Mastdarmstörung und Reithosenanästhesie.
 
-> Siehe auch: [Spinalkanal](/enzyklopaedie/spinalkanal/) · [Nervenwurzel](/enzyklopaedie/nervenwurzel/) · [Wirbelsäule](/enzyklopaedie/wirbelsaeule/)
+> Siehe auch: [Spinalkanal](/glossar/spinalkanal/) · [Nervenwurzel](/glossar/nervenwurzel/) · [Wirbelsäule](/glossar/wirbelsaeule/)

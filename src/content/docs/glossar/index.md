@@ -1,5 +1,5 @@
 ---
-title: Enzyklopädie
+title: Glossar
 description: Fachbegriffe der Wirbelsäulenmedizin von A bis Z
 sidebar:
   label: Übersicht
@@ -12,6 +12,5 @@ Wählen Sie einen Begriff aus der Seitenleiste oder nutzen Sie die Übersicht:
 
 | Kategorie | Begriffe |
 |-----------|----------|
-| **Grundbegriffe** | Wirbelsäule · Bandscheibe |
-| **Anatomie** | Spinalkanal · Facettengelenk · Nervenwurzel · Rückenmark |
-| **Erkrankungen** | Bandscheibenvorfall |
+| **Grundbegriffe** | [Wirbelsäule](/glossar/wirbelsaeule/) · [Bandscheibe](/glossar/bandscheibe/) |
+| **Anatomie** | [Spinalkanal](/glossar/spinalkanal/) · [Facettengelenk](/glossar/facettengelenk/) · [Nervenwurzel](/glossar/nervenwurzel/) · [Rückenmark](/glossar/rueckenmark/) |

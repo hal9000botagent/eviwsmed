@@ -5,12 +5,12 @@ template: splash
 hero:
   tagline: Verständliche, wissenschaftlich fundierte Informationen zu Erkrankungen, Diagnostik und Therapie der Wirbelsäule — für Patienten und Fachpersonal.
   actions:
-    - text: Fachartikel lesen
-      link: /artikel/
+    - text: Für Patienten
+      link: /fuer-patienten/
       icon: right-arrow
       variant: primary
-    - text: Enzyklopädie
-      link: /enzyklopaedie/
+    - text: Fachbereich
+      link: /fachbereich/
       variant: minimal
 ---
 
@@ -18,44 +18,44 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 <div class="landing-section">
 
-## Für Patienten & Fachpersonal
+## Zwei Perspektiven — ein Thema
 
-Alle Inhalte werden regelmäßig aktualisiert und basieren auf aktuellen Leitlinien und wissenschaftlichen Publikationen.
+Jedes Thema wird aus zwei Blickwinkeln aufbereitet: verständlich für Patienten und fachlich fundiert für medizinisches Personal.
 
 </div>
 
 <CardGrid>
-  <Card title="📄 Fachartikel" icon="document">
-    Ausführliche Artikel zu den häufigsten Erkrankungen der Wirbelsäule — von Bandscheibenvorfall bis Wirbelkörperfraktur.
+  <Card title="🩺 Für Patienten" icon="heart">
+    Verständliche Erklärungen ohne Fachjargon — was bedeutet die Diagnose für Sie? Was können Sie tun?
 
-    [Alle Fachartikel →](/artikel/)
+    [Patientenbereich →](/fuer-patienten/)
   </Card>
-  <Card title="📖 Enzyklopädie" icon="open-book">
+  <Card title="🔬 Fachbereich" icon="document">
+    Evidenzbasierte Fachartikel geordnet nach Pathologie: degenerativ, traumatisch, entzündlich, tumorös, Fehlbildungen.
+
+    [Zum Fachbereich →](/fachbereich/)
+  </Card>
+  <Card title="📖 Glossar" icon="open-book">
     Anatomische Grundlagen und Fachbegriffe der Wirbelsäulenmedizin — kurz und verständlich erklärt.
 
-    [Zur Enzyklopädie →](/enzyklopaedie/)
+    [Zum Glossar →](/glossar/)
   </Card>
   <Card title="❓ Häufige Fragen" icon="comment">
     Antworten auf die wichtigsten Patientenfragen rund um Rücken, Operation und Nachbehandlung.
 
     [Zu den FAQs →](/faq/haeufige-fragen/)
   </Card>
-  <Card title="🎬 Videos" icon="youtube">
-    Erklärvideos zu Untersuchungen, Operationstechniken und Übungen für zu Hause.
-
-    [Zu den Videos →](/videos/uebersicht/)
-  </Card>
 </CardGrid>
 
 <div class="landing-section popular-articles">
 
-## Meistgelesene Artikel
+## Meistgelesene Themen
 
 <CardGrid>
-  <LinkCard title="Bandscheibenvorfall" description="Ursachen, Symptome und Behandlung — wann ist eine OP nötig?" href="/artikel/bandscheibenvorfall/" />
-  <LinkCard title="Spinalkanalstenose" description="Verengung des Wirbelkanals: Diagnostik und Therapieoptionen" href="/artikel/spinalkanalstenose/" />
-  <LinkCard title="Rückenschmerzen" description="Klassifikation, Diagnostik und evidenzbasierte Therapie" href="/artikel/rueckenschmerzen/" />
-  <LinkCard title="Skoliose" description="Wirbelsäulenverkrümmung bei Kindern und Erwachsenen" href="/artikel/skoliose/" />
+  <LinkCard title="Bandscheibenvorfall" description="Ursachen, Symptome und Behandlung — für Patienten verständlich erklärt" href="/fuer-patienten/bandscheibenvorfall/" />
+  <LinkCard title="Spinalkanalstenose" description="Verengung des Wirbelkanals: Was Sie wissen sollten" href="/fuer-patienten/spinalkanalstenose/" />
+  <LinkCard title="Rückenschmerzen" description="Wann sind sie harmlos, wann sollten Sie zum Arzt?" href="/fuer-patienten/rueckenschmerzen/" />
+  <LinkCard title="Bandscheibenvorfall LWS — Fachartikel" description="Vollständiger Fachartikel mit Diagnostik und Therapieoptionen" href="/fachbereich/degenerativ/bandscheibenvorfall/lws/" />
 </CardGrid>
 
 </div>

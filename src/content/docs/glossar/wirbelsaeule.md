@@ -16,9 +16,9 @@ Die menschliche Wirbelsäule besteht aus **33–34 Wirbeln** in fünf Abschnitte
 ## Funktion
 
 1. **Stütze:** Trägt das Körpergewicht und ermöglicht den aufrechten Gang
-2. **Schutz:** Umhüllt das Rückenmark im Spinalkanal
+2. **Schutz:** Umhüllt das [Rückenmark](/glossar/rueckenmark/) im [Spinalkanal](/glossar/spinalkanal/)
 3. **Beweglichkeit:** Ermöglicht Beugung, Streckung, Seitneigung und Rotation
-4. **Stoßdämpfung:** Bandscheiben und physiologische Krümmungen (Lordose/Kyphose) absorbieren Belastungen
+4. **Stoßdämpfung:** [Bandscheiben](/glossar/bandscheibe/) und physiologische Krümmungen (Lordose/Kyphose) absorbieren Belastungen
 
 ## Physiologische Krümmungen
 
