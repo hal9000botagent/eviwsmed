@@ -67,20 +67,12 @@ export default defineConfig({
 					link: '/',
 				},
 				{
-					label: 'Für Patienten',
-					autogenerate: { directory: 'fuer-patienten' },
-				},
-				{
-					label: 'Fachbereich',
-					autogenerate: { directory: 'fachbereich' },
+					label: 'Erkrankungen',
+					autogenerate: { directory: 'erkrankungen' },
 				},
 				{
 					label: 'Glossar',
 					autogenerate: { directory: 'glossar' },
-				},
-				{
-					label: 'Aktuelle Forschung',
-					autogenerate: { directory: 'forschung' },
 				},
 				{
 					label: 'Häufige Fragen',

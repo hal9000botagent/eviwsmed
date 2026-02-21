@@ -1,16 +1,16 @@
 ---
 title: Evidenzbasierte Wirbelsäulenmedizin
-description: Wissenschaftlich fundierte Patienteninformation zu Erkrankungen und Therapien der Wirbelsäule
+description: Wissenschaftlich fundierte Informationen zu Erkrankungen und Therapien der Wirbelsäule
 template: splash
 hero:
   tagline: Verständliche, wissenschaftlich fundierte Informationen zu Erkrankungen, Diagnostik und Therapie der Wirbelsäule — für Patienten und Fachpersonal.
   actions:
-    - text: Für Patienten
-      link: /fuer-patienten/
+    - text: Erkrankungen
+      link: /erkrankungen/
       icon: right-arrow
       variant: primary
-    - text: Fachbereich
-      link: /fachbereich/
+    - text: Glossar
+      link: /glossar/
       variant: minimal
 ---
 
@@ -18,44 +18,44 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 <div class="landing-section">
 
-## Zwei Perspektiven — ein Thema
+## Für Patienten und Fachpersonal
 
-Jedes Thema wird aus zwei Blickwinkeln aufbereitet: verständlich für Patienten und fachlich fundiert für medizinisches Personal.
+Jeder Artikel ist so geschrieben, dass Patienten ihn verstehen. Vertiefte Fachinformationen sind in aufklappbaren Abschnitten (🔬) enthalten — so profitieren beide Zielgruppen.
 
 </div>
 
 <CardGrid>
-  <Card title="🩺 Für Patienten" icon="heart">
-    Verständliche Erklärungen ohne Fachjargon — was bedeutet die Diagnose für Sie? Was können Sie tun?
+  <Card title="🩺 Erkrankungen" icon="document">
+    Fachartikel geordnet nach Pathologie — von degenerativen Erkrankungen bis Fehlbildungen.
 
-    [Patientenbereich →](/fuer-patienten/)
-  </Card>
-  <Card title="🔬 Fachbereich" icon="document">
-    Evidenzbasierte Fachartikel geordnet nach Pathologie: degenerativ, traumatisch, entzündlich, tumorös, Fehlbildungen.
-
-    [Zum Fachbereich →](/fachbereich/)
+    [Alle Erkrankungen →](/erkrankungen/)
   </Card>
   <Card title="📖 Glossar" icon="open-book">
-    Anatomische Grundlagen und Fachbegriffe der Wirbelsäulenmedizin — kurz und verständlich erklärt.
+    Anatomische Grundlagen und Fachbegriffe verständlich erklärt.
 
     [Zum Glossar →](/glossar/)
   </Card>
   <Card title="❓ Häufige Fragen" icon="comment">
-    Antworten auf die wichtigsten Patientenfragen rund um Rücken, Operation und Nachbehandlung.
+    Antworten auf die wichtigsten Patientenfragen.
 
     [Zu den FAQs →](/faq/haeufige-fragen/)
+  </Card>
+  <Card title="🎬 Videos" icon="youtube">
+    Erklärvideos zu Untersuchungen, Operationen und Übungen.
+
+    [Zu den Videos →](/videos/uebersicht/)
   </Card>
 </CardGrid>
 
 <div class="landing-section popular-articles">
 
-## Meistgelesene Themen
+## Häufige Themen
 
 <CardGrid>
-  <LinkCard title="Bandscheibenvorfall" description="Ursachen, Symptome und Behandlung — für Patienten verständlich erklärt" href="/fuer-patienten/bandscheibenvorfall/" />
-  <LinkCard title="Spinalkanalstenose" description="Verengung des Wirbelkanals: Was Sie wissen sollten" href="/fuer-patienten/spinalkanalstenose/" />
-  <LinkCard title="Rückenschmerzen" description="Wann sind sie harmlos, wann sollten Sie zum Arzt?" href="/fuer-patienten/rueckenschmerzen/" />
-  <LinkCard title="Bandscheibenvorfall LWS — Fachartikel" description="Vollständiger Fachartikel mit Diagnostik und Therapieoptionen" href="/fachbereich/degenerativ/bandscheibenvorfall/lws/" />
+  <LinkCard title="Bandscheibenvorfall" description="Ursachen, Symptome und Behandlung" href="/erkrankungen/degenerativ/bandscheibenvorfall/" />
+  <LinkCard title="Spinalkanalstenose" description="Verengung des Wirbelkanals" href="/erkrankungen/degenerativ/spinalkanalstenose/" />
+  <LinkCard title="Rückenschmerzen" description="Wann harmlos, wann zum Arzt?" href="/erkrankungen/degenerativ/rueckenschmerzen/" />
+  <LinkCard title="Ischialgien" description="Schmerzen entlang des Ischiasnervs" href="/erkrankungen/degenerativ/ischialgien/" />
 </CardGrid>
 
 </div>

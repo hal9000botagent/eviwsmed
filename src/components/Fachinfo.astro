@@ -1,0 +1,76 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = 'Detailwissen für Fachpersonal' } = Astro.props;
+---
+
+<details class="fachinfo">
+  <summary>
+    <span class="fachinfo-icon">🔬</span>
+    <span class="fachinfo-title">{title}</span>
+    <span class="fachinfo-chevron">▶</span>
+  </summary>
+  <div class="fachinfo-content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .fachinfo {
+    margin: 1.5rem 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-left: 4px solid #16a34a;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .fachinfo summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: color-mix(in srgb, #16a34a 8%, transparent);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    list-style: none;
+    user-select: none;
+  }
+
+  .fachinfo summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .fachinfo-icon {
+    font-size: 1.1rem;
+  }
+
+  .fachinfo-title {
+    flex: 1;
+  }
+
+  .fachinfo-chevron {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+    color: var(--sl-color-gray-3);
+  }
+
+  .fachinfo[open] .fachinfo-chevron {
+    transform: rotate(90deg);
+  }
+
+  .fachinfo-content {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+    font-size: 0.95rem;
+  }
+
+  .fachinfo-content :global(h3) {
+    margin-top: 1rem;
+  }
+
+  .fachinfo-content :global(h3:first-child) {
+    margin-top: 0;
+  }
+</style>
