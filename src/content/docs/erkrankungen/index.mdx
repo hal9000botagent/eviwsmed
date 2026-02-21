@@ -6,16 +6,41 @@ sidebar:
   order: 0
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
 Erkrankungen der Wirbelsäule lassen sich in fünf große Kategorien einteilen:
 
 <CardGrid>
-  <LinkCard title="Degenerative Erkrankungen" description="Bandscheibenvorfall, Spinalkanalstenose, Facettensyndrom und mehr" href="/erkrankungen/degenerativ/" />
-  <LinkCard title="Verletzungen" description="Wirbelkörperfrakturen und traumatische Schäden" href="/erkrankungen/verletzungen/" />
-  <LinkCard title="Entzündliche Erkrankungen" description="Spondylodiszitis, Morbus Bechterew und andere" href="/erkrankungen/entzuendlich/" />
-  <LinkCard title="Tumoren" description="Gut- und bösartige Tumoren der Wirbelsäule" href="/erkrankungen/tumoren/" />
-  <LinkCard title="Fehlbildungen" description="Skoliose, Spina bifida und angeborene Anomalien" href="/erkrankungen/fehlbildungen/" />
+  <Card title="Degenerative Erkrankungen">
+    <img src="/images/icons/degenerativ.png" alt="Degenerativ" width="64" style="float:left; margin-right:12px;" />
+    Bandscheibenvorfall, Spinalkanalstenose, Facettensyndrom und mehr.
+
+    [Zur Kategorie →](/erkrankungen/degenerativ/)
+  </Card>
+  <Card title="Verletzungen">
+    <img src="/images/icons/verletzungen.png" alt="Verletzungen" width="64" style="float:left; margin-right:12px;" />
+    Wirbelkörperfrakturen und traumatische Schäden.
+
+    [Zur Kategorie →](/erkrankungen/verletzungen/)
+  </Card>
+  <Card title="Entzündliche Erkrankungen">
+    <img src="/images/icons/entzuendung.png" alt="Entzündung" width="64" style="float:left; margin-right:12px;" />
+    Spondylodiszitis, Morbus Bechterew und andere.
+
+    [Zur Kategorie →](/erkrankungen/entzuendlich/)
+  </Card>
+  <Card title="Tumoren">
+    <img src="/images/icons/tumoren.png" alt="Tumoren" width="64" style="float:left; margin-right:12px;" />
+    Gut- und bösartige Tumoren der Wirbelsäule.
+
+    [Zur Kategorie →](/erkrankungen/tumoren/)
+  </Card>
+  <Card title="Fehlbildungen">
+    <img src="/images/icons/wirbel.png" alt="Fehlbildungen" width="64" style="float:left; margin-right:12px;" />
+    Skoliose, Spina bifida und angeborene Anomalien.
+
+    [Zur Kategorie →](/erkrankungen/fehlbildungen/)
+  </Card>
 </CardGrid>
 
 :::tip[Für alle verständlich]

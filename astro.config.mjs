@@ -10,9 +10,10 @@ export default defineConfig({
 			description: 'Evidenzbasierte Wirbelsäulenmedizin – Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule',
 			defaultLocale: 'de',
 			logo: {
-				src: './src/assets/logo.svg',
-				replacesTitle: false,
+				src: './src/assets/logo.png',
+				replacesTitle: true,
 			},
+			favicon: '/favicon.png',
 			customCss: [
 				'./src/styles/custom.css',
 			],
