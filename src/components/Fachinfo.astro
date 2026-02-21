@@ -20,7 +20,7 @@ const { title = 'Detailwissen für Fachpersonal' } = Astro.props;
   .fachinfo {
     margin: 1.5rem 0;
     border: 1px solid var(--sl-color-gray-5);
-    border-left: 4px solid #16a34a;
+    border-left: 4px solid var(--eviwsmed-green, #2D4A3E);
     border-radius: 0.5rem;
     overflow: hidden;
   }
@@ -30,7 +30,7 @@ const { title = 'Detailwissen für Fachpersonal' } = Astro.props;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: color-mix(in srgb, #16a34a 8%, transparent);
+    background: color-mix(in srgb, var(--eviwsmed-green, #2D4A3E) 8%, transparent);
     cursor: pointer;
     font-weight: 600;
     font-size: 0.95rem;

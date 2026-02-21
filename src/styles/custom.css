@@ -1,68 +1,144 @@
-/* EviWsMed — Professionelles medizinisches Design */
+/* EviWsMed — Klassisch-Medizinische Ästhetik */
 
-/* Light Mode */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&display=swap');
+
+/* ─── LIGHT MODE ─── */
 :root[data-theme='light'] {
-  --sl-color-accent-low: #dbeafe;
-  --sl-color-accent: #2563eb;
-  --sl-color-accent-high: #1a3a5c;
-  --sl-color-white: #1e293b;
-  --sl-color-gray-1: #475569;
-  --sl-color-gray-2: #334155;
-  --sl-color-gray-3: #64748b;
-  --sl-color-gray-4: #94a3b8;
-  --sl-color-gray-5: #e2e8f0;
-  --sl-color-gray-6: #f8fafc;
-  --sl-color-black: #ffffff;
-  --sl-color-text: #1e293b;
-  --sl-color-text-accent: #1e40af;
+  --sl-color-accent-low: #f3e8eb;
+  --sl-color-accent: #6B1D2A;
+  --sl-color-accent-high: #4a1019;
+  --sl-color-white: #2C2C2C;
+  --sl-color-gray-1: #6B6155;
+  --sl-color-gray-2: #2C2C2C;
+  --sl-color-gray-3: #6B6155;
+  --sl-color-gray-4: #D4CBBA;
+  --sl-color-gray-5: #D4CBBA;
+  --sl-color-gray-6: #F5F0E8;
+  --sl-color-black: #FFFDF7;
+  --sl-color-bg-nav: #EDE7DA;
+  --sl-color-bg-sidebar: #EDE7DA;
+  --sl-color-text-accent: #6B1D2A;
+  --eviwsmed-gold: #A8884A;
+  --eviwsmed-green: #2D4A3E;
 }
 
-/* Dark Mode */
+/* ─── DARK MODE ─── */
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #1e3a5f;
-  --sl-color-accent: #3b82f6;
-  --sl-color-accent-high: #dbeafe;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #f8fafc;
-  --sl-color-gray-2: #e2e8f0;
-  --sl-color-gray-3: #94a3b8;
-  --sl-color-gray-4: #475569;
-  --sl-color-gray-5: #1e293b;
-  --sl-color-gray-6: #0f172a;
+  --sl-color-accent-low: #3a1a22;
+  --sl-color-accent: #C4586A;
+  --sl-color-accent-high: #f3d0d6;
+  --sl-color-white: #E2DCD2;
+  --sl-color-gray-1: #E2DCD2;
+  --sl-color-gray-2: #9C9487;
+  --sl-color-gray-3: #9C9487;
+  --sl-color-gray-4: #3A3A42;
+  --sl-color-gray-5: #3A3A42;
+  --sl-color-gray-6: #1A1A1F;
+  --sl-color-black: #242429;
+  --sl-color-bg-nav: #2A2A30;
+  --sl-color-bg-sidebar: #2A2A30;
+  --sl-color-text-accent: #C4586A;
+  --eviwsmed-gold: #C4A96A;
+  --eviwsmed-green: #5A9E82;
 }
 
+/* ─── TYPOGRAFIE ─── */
 :root {
-  --sl-font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --sl-font: 'EB Garamond', Georgia, serif;
+  --sl-font-system: 'EB Garamond', Georgia, serif;
 }
 
-/* Seriöse Typografie */
-html {
-  font-family: var(--sl-font-system);
+/* Überschriften: Playfair Display */
+h1, h2, h3,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-family: 'Playfair Display', Georgia, serif !important;
 }
 
-/* Hero-Bereich */
+h1 { font-weight: 700; }
+h2 { font-weight: 700; font-size: 1.6rem; }
+h3 { font-weight: 400; font-style: italic; }
+
+/* Fließtext: EB Garamond */
+body, p, li, td, th, blockquote,
+.sl-markdown-content {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Navigation & Sidebar: Cormorant SC */
+nav, 
+starlight-menu-button,
+.sidebar-content a,
+[data-pagefind-ignore] a,
+.sl-sidebar a,
+.sl-sidebar summary,
+.sl-sidebar span {
+  font-family: 'Cormorant SC', serif !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* Site Title */
+.site-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+}
+
+/* ─── HINTERGRÜNDE ─── */
+:root[data-theme='light'] {
+  --sl-color-bg: #F5F0E8;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-bg: #1A1A1F;
+}
+
+/* ─── HERO ─── */
 .hero {
-  border-bottom: 3px solid var(--sl-color-accent);
+  border-bottom: 2px solid var(--eviwsmed-gold, #A8884A);
 }
 
-/* Medizinischer Hinweis-Stil */
-article em:last-child {
-  display: block;
-  margin-top: 2rem;
-  padding: 0.75rem 1rem;
-  background: var(--sl-color-gray-1);
-  border-left: 3px solid var(--sl-color-accent);
-  border-radius: 0.25rem;
-  font-size: 0.85em;
-  color: var(--sl-color-gray-4);
+.hero .tagline {
+  font-family: 'EB Garamond', Georgia, serif !important;
+  font-size: 1.15rem !important;
 }
 
-:root[data-theme='dark'] article em:last-child {
-  background: var(--sl-color-gray-6);
-  color: var(--sl-color-gray-3);
+/* Hero title */
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700;
 }
 
-/* Landing Page */
+/* Hero action buttons */
+.hero .action a[data-type='primary'] {
+  background: var(--sl-color-accent) !important;
+  border-color: var(--sl-color-accent) !important;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.12em;
+}
+
+.hero .action a[data-type='minimal'] {
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.12em;
+}
+
+/* ─── CARDS ─── */
+.card {
+  border-color: var(--sl-color-gray-4);
+}
+
+.sl-link-card {
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.sl-link-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--sl-color-accent);
+}
+
+/* ─── LANDING PAGE ─── */
 .landing-section {
   margin: 2.5rem 0;
 }
@@ -70,42 +146,71 @@ article em:last-child {
 .landing-section h2 {
   text-align: center;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--sl-color-white);
 }
 
 .landing-section.popular-articles {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--sl-color-gray-5);
+  border-top: 1px solid var(--sl-color-gray-4);
 }
 
 .trust-banner {
   margin-top: 3rem;
 }
 
-/* Card Grid Spacing */
-.sl-link-card {
-  transition: transform 0.15s ease;
-}
-
-.sl-link-card:hover {
-  transform: translateY(-2px);
-}
-
-/* Tabellen */
+/* ─── TABELLEN ─── */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
 th {
+  font-family: 'Cormorant SC', serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   background: var(--sl-color-accent);
-  color: white;
-  padding: 0.5rem 0.75rem;
+  color: #FFFDF7;
+  padding: 0.6rem 0.75rem;
   text-align: left;
 }
 
+:root[data-theme='dark'] th {
+  color: #E2DCD2;
+}
+
 td {
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--sl-color-gray-2);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--sl-color-gray-4);
+}
+
+/* ─── STARLIGHT ADMONITIONS ─── */
+.starlight-aside {
+  border-radius: 4px;
+}
+
+.starlight-aside--tip {
+  border-color: var(--eviwsmed-green);
+}
+
+/* ─── SEARCH ─── */
+site-search button {
+  font-family: 'Cormorant SC', serif !important;
+}
+
+/* ─── ORNAMENTAL DIVIDERS ─── */
+hr {
+  border: none;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+hr::before {
+  content: '❧';
+  color: var(--eviwsmed-gold);
+  font-size: 1.2rem;
+  opacity: 0.5;
 }
