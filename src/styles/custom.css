@@ -669,25 +669,27 @@ summary {
    LAYOUT: Hide right TOC, widen content area
    ═══════════════════════════════════════════════════════════════ */
 
-/* Hide the Starlight right sidebar TOC on doc pages — 
-   content is long-form medical text that needs width */
-starlight-toc {
+/* Hide the entire right sidebar container (TOC) — 
+   medical articles need the full width for readability */
+.right-sidebar-container {
   display: none !important;
 }
 
-.right-sidebar-container,
-[data-pagefind-ignore] .right-sidebar {
+/* Also hide TOC on smaller screens */
+starlight-toc,
+.right-sidebar-panel {
   display: none !important;
 }
 
-/* Give the main content more room */
+/* Give the main content significantly more room */
 :root {
-  --sl-content-width: 55rem;
+  --sl-content-width: 65rem;
+  --sl-content-pad-x: 2rem;
 }
 
-/* On wide screens, let the content breathe */
+/* On wide screens: 2-column layout (sidebar + content only, no TOC) */
 @media (min-width: 72rem) {
-  .main-pane {
+  .main-frame {
     grid-template-columns: var(--sl-sidebar-width) 1fr !important;
   }
 }
