@@ -1,0 +1,287 @@
+---
+// EviWsMed V2 — Kategorie: Lendenwirbelsäule (Stitch Design Demo)
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono&amp;family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#785c23",
+              "on-primary-fixed": "#40000f",
+              "secondary": "#765a21",
+              "outline-variant": "#dac0c1",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#adcebe",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#8baa9b",
+              "surface-container-highest": "#e7e2da",
+              "tertiary-fixed": "#c9ead9",
+              "outline": "#877273",
+              "primary-fixed": "#ffdadb",
+              "inverse-surface": "#32302b",
+              "inverse-primary": "#ffb2b8",
+              "on-primary-container": "#ef848f",
+              "on-primary-fixed-variant": "#7c2a36",
+              "secondary-fixed": "#ffdea4",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#261900",
+              "background": "#fef9f1",
+              "on-surface-variant": "#554243",
+              "surface-container-low": "#f8f3eb",
+              "primary": "#4d0516",
+              "secondary-fixed-dim": "#e6c17e",
+              "surface-container-high": "#ece8e0",
+              "surface-tint": "#9a414d",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#304d40",
+              "surface-variant": "#e7e2da",
+              "surface-bright": "#fef9f1",
+              "on-secondary-fixed-variant": "#5b4309",
+              "on-surface": "#1d1c17",
+              "on-background": "#1d1c17",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed": "#022016",
+              "surface": "#fef9f1",
+              "inverse-on-surface": "#f5f0e8",
+              "on-error-container": "#93000a",
+              "secondary-container": "#fed892",
+              "tertiary": "#0b291f",
+              "surface-container": "#f2ede5",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-dim": "#ded9d2",
+              "primary-container": "#6b1d2a",
+              "error": "#ba1a1a",
+              "tertiary-container": "#223f33"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { background-color: #F5F0E8; }
+      .glass-card {
+        background: rgba(255, 249, 241, 0.4); /* Warm ivory / White at 40% */
+        backdrop-filter: blur(30px);
+        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08); /* Soft expansive shadow */
+        transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+      }
+      .glass-card:hover {
+        background: rgba(255, 249, 241, 0.6);
+        backdrop-filter: blur(40px);
+        transform: translateY(-4px);
+        box-shadow: 0 40px 80px -20px rgba(77, 5, 22, 0.12); /* Stronger high-depth shadow on hover */
+      }
+      .radial-glow-forest {
+        background: radial-gradient(circle at center, rgba(45, 74, 62, 0.06) 0%, transparent 70%);
+      }
+      .radial-glow-gold {
+        background: radial-gradient(circle at center, rgba(168, 136, 74, 0.06) 0%, transparent 70%);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-none border-b border-black/5">
+<div class="text-xl font-serif italic text-primary">Evidenzbasierte Wirbelsäulenmedizin</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Patienten</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-xs uppercase tracking-widest transition-all duration-400 ease-in-out" href="#">Fachkreise</a>
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Bibliothek</a>
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Über Uns</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">account_circle</span>
+</div>
+</header>
+<div class="flex pt-20 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col p-6 gap-4 h-[calc(100vh-5rem)] w-72 rounded-r-3xl sticky top-20 bg-[#fff9f1]/40 backdrop-blur-[30px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border-r border-t border-b border-white/20">
+<div class="mb-8">
+<div class="font-serif text-lg text-primary mb-1">Wissensdatenbank</div>
+<div class="text-on-surface/60 text-sm leading-relaxed">Evidenzbasierte Medizin</div>
+</div>
+<nav class="flex-grow">
+<a class="bg-white/60 text-primary font-semibold rounded-xl px-4 py-3 mb-2 flex items-center gap-3 transition-transform duration-400 active:scale-102 shadow-sm" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-sm">Anatomie</span>
+</a>
+<a class="text-on-surface/60 px-4 py-3 mb-2 flex items-center gap-3 hover:bg-white/40 transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined">biotech</span>
+<span class="text-sm">Diagnostik</span>
+</a>
+<a class="text-on-surface/60 px-4 py-3 mb-2 flex items-center gap-3 hover:bg-white/40 transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined">healing</span>
+<span class="text-sm">Therapieformen</span>
+</a>
+<a class="text-on-surface/60 px-4 py-3 mb-2 flex items-center gap-3 hover:bg-white/40 transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-sm">Prävention</span>
+</a>
+<a class="text-on-surface/60 px-4 py-3 mb-2 flex items-center gap-3 hover:bg-white/40 transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined">science</span>
+<span class="text-sm">Studien</span>
+</a>
+</nav>
+<button class="mt-auto w-full py-3 bg-primary text-on-primary rounded-full text-xs uppercase tracking-widest font-medium hover:opacity-90 transition-opacity">
+                Fachbereich Wechseln
+            </button>
+</aside>
+<!-- Main Content -->
+<main class="flex-grow px-8 md:px-16 lg:px-24 py-12 relative overflow-hidden">
+<!-- Background Radial Glows -->
+<div class="absolute top-1/4 right-0 w-[600px] h-[600px] radial-glow-forest -z-10 opacity-50"></div>
+<div class="absolute bottom-1/4 left-0 w-[500px] h-[500px] radial-glow-gold -z-10 opacity-50"></div>
+<!-- Page Header Section -->
+<section class="mb-20">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="font-mono text-secondary text-sm tracking-tighter uppercase">Kategorie // 04</span>
+<div class="h-px flex-grow bg-on-surface/10"></div>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl text-primary leading-none tracking-tighter mb-8">Lendenwirbelsäule</h1>
+<p class="max-w-2xl text-lg md:text-xl text-on-surface/70 leading-relaxed font-light">
+                    Der LWS-Bereich trägt die Hauptlast des menschlichen Körpers. Erfahren Sie alles über die biomechanischen Grundlagen, evidenzbasierte Diagnostik und moderne minimalinvasive Behandlungsstrategien für degenerative Erkrankungen.
+                </p>
+</section>
+<!-- Filters & Sorting -->
+<section class="flex flex-wrap gap-4 mb-12 items-center">
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface/40 mr-2">Filtern nach:</span>
+<button class="px-6 py-2 glass-card rounded-full text-sm font-medium text-primary hover:text-on-primary hover:bg-primary/80 transition-all">Bandscheibenvorfall</button>
+<button class="px-6 py-2 glass-card rounded-full text-sm font-medium text-on-surface/60 hover:bg-white/60 transition-all">Stenose</button>
+<button class="px-6 py-2 glass-card rounded-full text-sm font-medium text-on-surface/60 hover:bg-white/60 transition-all">Spondylolisthesis</button>
+<button class="px-6 py-2 glass-card rounded-full text-sm font-medium text-on-surface/60 hover:bg-white/60 transition-all">Prävention</button>
+<div class="ml-auto flex items-center gap-2 text-on-surface/40">
+<span class="text-xs uppercase tracking-widest font-bold">Sortierung:</span>
+<button class="flex items-center gap-1 text-sm font-medium text-on-surface group">
+                        Neueste zuerst
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-y-0.5">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Grid of Article Previews -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 1 (Large / Featured) -->
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group cursor-pointer border-none shadow-sm">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 overflow-hidden h-64 md:h-auto">
+<img alt="Medizinische Bildgebung Wirbelsäule" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High detail medical scan of lumbar spine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjLP8hhDpajV9__zS3mbAvLrOOrlS4gTGH8F6kGxjGcNiXoDk1-cO1fMHSIDmwkAeb32AMRpGmMjl0dpo5Fzc0eA4ZjtjmZVZXs6NAA-g6R8noQCeVLco6KSwSXQA9KAY-wg1lamlJ_2qw_CnJamVBuVLIy542iRcZf8zs1btTRdY1EKi8_Ib5uwnU063-CilFOJrE3hE4ddU1AZSL_oPrgZ-JU5p69WadjYY8p94pVyUYI9TM5P3v9LKA3AZ-HsmrPvU3wA937aA"/>
+</div>
+<div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+<div class="font-mono text-secondary text-xs mb-4 uppercase tracking-widest">Leitartikel // Diagnostik</div>
+<h2 class="font-headline text-3xl md:text-4xl text-primary mb-6 leading-tight">Die Evolution der MRT-Diagnostik bei degenerativer Instabilität</h2>
+<p class="text-on-surface/70 mb-8 leading-relaxed">Aktuelle Studien zeigen, dass Funktionsaufnahmen unter Belastung eine bis zu 30% höhere Sensitivität bei der Detektion von Spondylolisthesen aufweisen.</p>
+<div class="flex items-center gap-4 mt-auto">
+<span class="text-xs font-mono text-on-surface/40">12 Min Lesezeit</span>
+<div class="w-1 h-1 rounded-full bg-secondary/30"></div>
+<span class="text-xs font-mono text-on-surface/40">Dr. M. Weber</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-3xl p-8 flex flex-col border-none shadow-sm h-full group cursor-pointer">
+<div class="mb-6 overflow-hidden rounded-2xl h-48">
+<img alt="Physiotherapeutische Übung" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Patient performing guided lumbar physical therapy exercise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVyRFLRbhEO9gEZzGJD2OQf9r-9L9lmUPwblAg1QiWewr0lMxjBJOvlTmo2BqNlgB-qutJea9EWW6jspPeY01eMnJckus8ZVnIImRNw9o198vqFk0ocdfsevJQAn5GX92Bs1DhlfqI_G9o4ihKMLwiN_YZHZ2FH2YnNpve5TSLijhH_5XOV48mI_PtVHZw_FXv2-VZfoCC9mV480mBefTk72x9GP0KJBY5ClZesEC2c9KcYpWT45UD7c28L_15Q52d_CR3yG4G65U"/>
+</div>
+<div class="font-mono text-secondary text-xs mb-3 uppercase tracking-widest">Therapie</div>
+<h3 class="font-headline text-2xl text-primary mb-4">Konservative Therapie vs. Operation: Der evidenzbasierte Pfad</h3>
+<p class="text-on-surface/70 text-sm mb-8 leading-relaxed line-clamp-3">Wann ist der Zeitpunkt für einen chirurgischen Eingriff erreicht? Eine Analyse der aktuellen S2k-Leitlinien für die Lendenwirbelsäule.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-xs font-mono text-on-surface/40 uppercase">Video-Kurs</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-3xl p-8 flex flex-col border-none shadow-sm h-full group cursor-pointer">
+<div class="mb-6 overflow-hidden rounded-2xl h-48">
+<img alt="Mikroskopische Chirurgie" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of microscopic surgical tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU4NtM0dikYexKAx_vZKxZthq23tPCZ1lBQ00jHkyvl_N9frIvaV9ijfdsUBxHMsFhf6LBSm0dFJ0iHTBCPmGpxKZVngCDmxXjTh8ANL0FMKFT8JmaDucnK8NoUYUYUATf_e7BmRj_TsCcDD_L6vqtJRF4X2k07E-Ng27Fz9EDh3ANIl_AJVk8KF0jMkU9MY9MYGVkzNMxbPk-JAdMMf_ZfA5D25PC5tiDjsA1DpUHiNMj-d2ktM0K4cxxkYt1g5lMGj8f9mQ1qlM"/>
+</div>
+<div class="font-mono text-secondary text-xs mb-3 uppercase tracking-widest">Chirurgie</div>
+<h3 class="font-headline text-2xl text-primary mb-4">Minimalinvasive Dekompression bei Spinalkanalstenose</h3>
+<p class="text-on-surface/70 text-sm mb-8 leading-relaxed line-clamp-3">Vergleich der Outcomes zwischen tubulärer Technik und offenem Zugang. Eine Langzeitbetrachtung über 5 Jahre.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-xs font-mono text-on-surface/40 uppercase">Fallstudie</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-3xl p-8 flex flex-col border-none shadow-sm h-full group cursor-pointer">
+<div class="mb-6 overflow-hidden rounded-2xl h-48">
+<img alt="Anatomisches Modell LWS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Anatomical model of the lumbar vertebrae" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiowm7bq_4a3Ht12--ZqjDzNVhjMISAZA4l80kS9iiaxl7b1q69kHvgEtprJQ_hIkgjkZw3FIpq9mvemJ3YgIM82M4wwDuaUY9N8KCxHp10wXctssqvRNuQiAcLcPfTUtH5ycdtJGP5p0Bkxzc9cjkMIFLW2DvOMkC34Dzp8Crg5qN_hPtwqgeptzUUpP8YQE1aqErXrWop9i7Ars2u9RZSqGvtB7jrmq0BTZ5tODYPQEGcFGdiSM0WQRQP-Wy80icnNdHWZZyicI"/>
+</div>
+<div class="font-mono text-secondary text-xs mb-3 uppercase tracking-widest">Anatomie</div>
+<h3 class="font-headline text-2xl text-primary mb-4">Biomechanik der lumbalen Bewegungssegmente</h3>
+<p class="text-on-surface/70 text-sm mb-8 leading-relaxed line-clamp-3">Grundlagen der Kraftübertragung und die Rolle der kleinen Wirbelgelenke bei Rotationsbewegungen der LWS.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-xs font-mono text-on-surface/40 uppercase">Grundlagen</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 5 (Data Focused) -->
+<div class="glass-card rounded-3xl p-8 flex flex-col border-none shadow-sm h-full group cursor-pointer justify-center items-center text-center bg-primary-container text-on-primary !backdrop-blur-none">
+<span class="material-symbols-outlined text-5xl mb-6 opacity-40">science</span>
+<h3 class="font-headline text-3xl mb-4">Studien-Ticker</h3>
+<p class="text-on-primary/70 mb-8">Erhalten Sie wöchentlich die neuesten Ergebnisse aus der Wirbelsäulenforschung direkt in Ihr Postfach.</p>
+<button class="px-8 py-3 bg-secondary text-white rounded-full text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform">
+                        Jetzt Abonnieren
+                    </button>
+</div>
+<!-- Card 6 -->
+<div class="glass-card rounded-3xl p-8 flex flex-col border-none shadow-sm h-full group cursor-pointer">
+<div class="mb-6 overflow-hidden rounded-2xl h-48">
+<img alt="Patientenberatung" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Doctor consulting with patient in clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvC1QNeSGK2P3YDuOLh7QcYDOP7L1PeefJpNhcfZzgZEuIzlTmiCS2-X_tuZM1NjeCKK1AYiLdqxX6HmHJRvCZzolAUs1Uxb2VbkJ0wKetBeApwwc2-64oXq7yeOMWjegxvoOm6wd67CuPj5wIb-CyPqPvgTcwhVru9i_PPZXzbLGaY09UVAlYAus6TePTbKmsU7HfJ080ssa1NQEJEvrtvfFmaRoLonJahQ_zoCvkyaGWoVVlyssmvZDv9N8vgSK3VA15JuhI8Xw"/>
+</div>
+<div class="font-mono text-secondary text-xs mb-3 uppercase tracking-widest">Prävention</div>
+<h3 class="font-headline text-2xl text-primary mb-4">Ergonomie am Arbeitsplatz: Mythos vs. Realität</h3>
+<p class="text-on-surface/70 text-sm mb-8 leading-relaxed line-clamp-3">Was hilft wirklich gegen chronische LWS-Beschwerden im Büroalltag? Die Rolle der aktiven Pause.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="text-xs font-mono text-on-surface/40 uppercase">Patienten-Guide</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Pagination/Load More -->
+<section class="mt-20 flex justify-center">
+<button class="flex flex-col items-center gap-2 text-on-surface/40 hover:text-primary transition-colors group">
+<span class="text-xs uppercase tracking-widest font-bold">Mehr Inhalte laden</span>
+<span class="material-symbols-outlined text-3xl group-hover:translate-y-2 transition-transform">keyboard_double_arrow_down</span>
+</button>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-20 flex flex-col md:flex-row justify-between items-center border-t border-black/5 bg-surface-container-low">
+<div class="mb-8 md:mb-0">
+<div class="text-2xl font-serif text-on-surface mb-2">Evidenzbasierte Wirbelsäulenmedizin</div>
+<div class="text-on-surface/50 text-xs uppercase tracking-wider font-medium">© 2024 Evidenzbasierte Wirbelsäulenmedizin. Alle Rechte vorbehalten.</div>
+</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Impressum</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Datenschutz</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Kontakt</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Quellenverzeichnis</a>
+</nav>
+</footer>
+</body></html>

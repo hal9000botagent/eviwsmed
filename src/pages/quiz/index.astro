@@ -1,0 +1,231 @@
+---
+// EviWsMed V2 — Symptom-Check Quiz (Stitch Design Demo)
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google Fonts: DM Serif Display, Inter, DM Mono -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=DM+Mono&amp;family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#c9ead9",
+              "outline": "#877273",
+              "primary-fixed": "#ffdadb",
+              "inverse-surface": "#32302b",
+              "inverse-primary": "#ffb2b8",
+              "on-primary-container": "#ef848f",
+              "on-primary-fixed-variant": "#7c2a36",
+              "secondary-fixed": "#ffdea4",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#261900",
+              "background": "#fef9f1",
+              "on-surface-variant": "#554243",
+              "on-secondary-container": "#785c23",
+              "on-primary-fixed": "#40000f",
+              "secondary": "#765a21",
+              "outline-variant": "#dac0c1",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#adcebe",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#8baa9b",
+              "surface-container-highest": "#e7e2da",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed": "#022016",
+              "surface": "#fef9f1",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f5f0e8",
+              "secondary-container": "#fed892",
+              "tertiary": "#0b291f",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f2ede5",
+              "on-tertiary": "#ffffff",
+              "surface-dim": "#ded9d2",
+              "primary-container": "#6b1d2a",
+              "error": "#ba1a1a",
+              "tertiary-container": "#223f33",
+              "surface-container-low": "#f8f3eb",
+              "primary": "#4d0516",
+              "secondary-fixed-dim": "#e6c17e",
+              "surface-container-high": "#ece8e0",
+              "surface-tint": "#9a414d",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#304d40",
+              "surface-variant": "#e7e2da",
+              "surface-bright": "#fef9f1",
+              "on-secondary-fixed-variant": "#5b4309",
+              "on-surface": "#1d1c17",
+              "on-background": "#1d1c17"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(32px);
+        -webkit-backdrop-filter: blur(32px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .radial-soul {
+        background: radial-gradient(circle at center, rgba(107, 29, 42, 0.08) 0%, rgba(168, 136, 74, 0.08) 50%, transparent 100%);
+      }
+      .body-text { line-height: 1.8; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#F5F0E8]/70 backdrop-blur-3xl flex justify-between items-center px-12 py-6 shadow-[0_40px_60px_rgba(44,44,44,0.03)]">
+<div class="text-2xl font-serif italic tracking-tight text-[#6B1D2A]">
+            The Clinical Curator
+        </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Clinics</a>
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Research</a>
+<a class="text-[#6B1D2A] font-bold border-b border-[#6B1D2A]/20 pb-1" href="#">Diagnostic</a>
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Journal</a>
+</div>
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-102 transition-transform duration-400">
+            Patient Portal
+        </button>
+</nav>
+<main class="relative flex flex-col items-center justify-center pt-16 pb-32 px-6 overflow-hidden">
+<!-- Radial soul background effect -->
+<div class="absolute inset-0 radial-soul pointer-events-none -z-10 scale-150"></div>
+<div class="max-w-4xl w-full">
+<!-- Progress Section -->
+<div class="mb-12 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-mono text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Schritt 3 von 8</span>
+<span class="font-label text-sm font-medium text-secondary">Schmerzlokalisation</span>
+</div>
+<div class="w-full h-[2px] bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container w-[37.5%] transition-all duration-700"></div>
+</div>
+</div>
+<!-- Quiz Content Area -->
+<div class="space-y-16">
+<!-- Question Section -->
+<header class="max-w-2xl">
+<h1 class="font-headline text-5xl md:text-6xl text-primary leading-tight mb-8">
+                        Wo genau verspüren Sie die stärksten Beschwerden?
+                    </h1>
+<p class="text-on-surface-variant body-text text-lg">
+                        Bitte wählen Sie den Bereich aus, der am stärksten betroffen ist. Dies hilft uns, die anatomischen Zusammenhänge Ihrer Wirbelsäule besser zu verstehen.
+                    </p>
+</header>
+<!-- Interactive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Option 1 -->
+<button class="glass-panel group p-8 rounded-xl text-left transition-all duration-400 hover:scale-[1.03] hover:bg-white/70 shadow-[0_20px_40px_rgba(0,0,0,0.03)] flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl" data-icon="settings_accessibility">settings_accessibility</span>
+</div>
+<div>
+<h3 class="font-label font-semibold text-lg text-on-surface mb-1">Lendenwirbelsäule</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Unterer Rückenbereich, oft mit Steifheit beim Aufstehen.</p>
+</div>
+</button>
+<!-- Option 2 -->
+<button class="glass-panel group p-8 rounded-xl text-left transition-all duration-400 hover:scale-[1.03] hover:bg-white/70 shadow-[0_20px_40px_rgba(0,0,0,0.03)] flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl" data-icon="electric_bolt">electric_bolt</span>
+</div>
+<div>
+<h3 class="font-label font-semibold text-lg text-on-surface mb-1">Ausstrahlung in das Bein</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Schmerzen, die bis in den Gesäßbereich oder die Wade ziehen.</p>
+</div>
+</button>
+<!-- Option 3 -->
+<button class="glass-panel group p-8 rounded-xl text-left transition-all duration-400 hover:scale-[1.03] hover:bg-white/70 shadow-[0_20px_40px_rgba(0,0,0,0.03)] flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl" data-icon="stress_management">stress_management</span>
+</div>
+<div>
+<h3 class="font-label font-semibold text-lg text-on-surface mb-1">Nacken &amp; Schulterbereich</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Verspannungen der oberen Wirbelsäule, teils bis in die Arme.</p>
+</div>
+</button>
+<!-- Option 4 -->
+<button class="glass-panel group p-8 rounded-xl text-left transition-all duration-400 hover:scale-[1.03] hover:bg-white/70 shadow-[0_20px_40px_rgba(0,0,0,0.03)] flex items-start gap-6">
+<div class="w-12 h-12 flex items-center justify-center text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl" data-icon="accessibility">accessibility</span>
+</div>
+<div>
+<h3 class="font-label font-semibold text-lg text-on-surface mb-1">Brustwirbelsäule</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Mittlerer Rückenbereich, oft atemabhängige Beschwerden.</p>
+</div>
+</button>
+</div>
+<!-- Footer Navigation within Quiz -->
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 gap-8">
+<a class="text-on-surface-variant font-label text-sm tracking-widest uppercase hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+                        Zurück
+                    </a>
+<div class="flex items-center gap-8">
+<button class="flex items-center gap-2 text-secondary font-label text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+                            Hinter den Kulissen
+                        </button>
+<button class="bg-primary-container text-on-primary px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-[0_20px_50px_rgba(107,29,42,0.15)] hover:scale-105 transition-all duration-400 flex items-center gap-4">
+                            Weiter
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Professional Context Drawer (Semantic explanation) -->
+<aside class="mt-24 max-w-2xl w-full glass-panel p-10 rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="clinical_notes">clinical_notes</span>
+<h4 class="font-label font-semibold text-on-surface uppercase tracking-widest text-xs">Klinischer Kontext für Fachpersonal</h4>
+</div>
+<p class="text-sm text-on-surface-variant body-text">
+                Die Differenzierung zwischen radikulären Ausstrahlungen und lokalem Schmerzsyndrom ermöglicht eine erste Validierung der Dermatome (L4-S1). Wir nutzen diese Eingaben, um die klinische Wahrscheinlichkeit einer Bandscheibenpathologie gegen myofasziale Dysbalancen abzuwägen.
+            </p>
+</aside>
+</main>
+<!-- Footer Component -->
+<footer class="bg-[#1A1A1F] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
+<div class="font-serif text-[#E2DCD2] mb-8 md:mb-0">
+            Evidenzbasierte Wirbelsäulenmedizin
+        </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-sans text-sm tracking-wide uppercase text-[#E2DCD2]/40 hover:text-[#E2DCD2] transition-colors duration-400" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#E2DCD2]/40 hover:text-[#E2DCD2] transition-colors duration-400" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#E2DCD2]/40 hover:text-[#E2DCD2] transition-colors duration-400" href="#">Ethical Standards</a>
+<a class="font-sans text-sm tracking-wide uppercase text-[#E2DCD2]/40 hover:text-[#E2DCD2] transition-colors duration-400" href="#">Contact</a>
+</div>
+<div class="font-sans text-sm tracking-wide uppercase text-[#E2DCD2]/40 text-center md:text-right">
+            © 2024 Clinical Curator Editorial Medicine. All rights reserved.
+        </div>
+</footer>
+<!-- Decorative Image Reference (Hidden) -->
+<div class="hidden">
+<img data-alt="Minimalist abstract anatomical illustration of a spine in golden lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3NOwp_bspnDORpC17V0tZ4iRcBNnKurYaTGWSeb4ufEAqQpEPOIE6l_mGRuRLh6RycQT0riVRVRWt0gZvN2uhygz13i4isjRyDhBn23CHTTgfK74ZECUWjcT5c-7fumo3Qv2ak2anUe8AXXn1l3jd_vtqkGpJ7IMEIBG21cB3YhDZg6QCaXYBFL2HK4yzbKVspCVWZBcdEzEdYQNugvCrbxdzIAi4ymK7y0IxMhft19JbXCofj1gglIcD-GLb2-N78EJ2Jt9HoWk"/>
+<img data-alt="High-end private medical clinic interior with soft ivory lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhOqskzgBqlJyITuwrc4t5MwYR1wIGq6mz5alrupxRTbdtNLyVIb6wTAoIwywiYN7UUzMV-lKxWilATgQhNS5v0H-Oa5ndzwad-yYMsTFw47_ZVU9JGfPHA176khtGJniTJH9r-OAKjZr9LZWP9v3ojv28UjWNNRr9IZv4emwIs18LeYWKgHJuter7falQZCsg6e2PuehUyOij6K0nn5bY6-1xctilrskRdsUKvwp537Am1ZfdiwFdchsuwfG9eRXcI5gepssFVys"/>
+</div>
+</body></html>

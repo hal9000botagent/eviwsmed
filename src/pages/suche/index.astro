@@ -1,0 +1,281 @@
+---
+// EviWsMed V2 — suche (Stitch Design)
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        .header-glass {
+            background: rgba(245, 240, 232, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        body {
+            background-color: #F5F0E8;
+            color: #2C2C2C;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'DM Serif Display', serif;
+        }
+        .font-mono {
+            font-family: 'DM Mono', monospace;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e7e2da",
+              "on-background": "#1d1c17",
+              "tertiary-fixed": "#c9ead9",
+              "surface-variant": "#e7e2da",
+              "on-tertiary-container": "#8baa9b",
+              "on-primary-fixed": "#40000f",
+              "outline": "#877273",
+              "on-surface-variant": "#554243",
+              "on-secondary-fixed-variant": "#5b4309",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#022016",
+              "tertiary-fixed-dim": "#adcebe",
+              "primary": "#4d0516",
+              "tertiary-container": "#223f33",
+              "on-primary-fixed-variant": "#7c2a36",
+              "inverse-primary": "#ffb2b8",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed-variant": "#304d40",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#e6c17e",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#261900",
+              "outline-variant": "#dac0c1",
+              "secondary": "#765a21",
+              "primary-container": "#6b1d2a",
+              "tertiary": "#0b291f",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#9a414d",
+              "secondary-fixed": "#ffdea4",
+              "inverse-surface": "#32302b",
+              "on-primary-container": "#ef848f",
+              "surface-container": "#f2ede5",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1d1c17",
+              "on-secondary-container": "#785c23",
+              "surface-dim": "#ded9d2",
+              "background": "#fef9f1",
+              "surface-container-low": "#f8f3eb",
+              "secondary-container": "#fed892",
+              "primary-fixed": "#ffdadb",
+              "surface-bright": "#fef9f1",
+              "surface-container-high": "#ece8e0",
+              "surface": "#fef9f1",
+              "inverse-on-surface": "#f5f0e8",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/40 dark:bg-zinc-900/40 backdrop-blur-[30px] shadow-[0_20px_50px_rgba(44,44,44,0.04)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<div class="font-serif text-xl tracking-tight text-red-900 dark:text-red-100 italic">
+                Evidenzbasierte Wirbelsäulenmedizin
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-500 dark:text-stone-400 hover:text-red-900 transition-colors" href="#">Fachbereiche</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-red-900 transition-colors" href="#">Wissenschaft</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-red-900 transition-colors" href="#">Mediathek</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-red-900 transition-colors" href="#">Über Uns</a>
+<div class="relative flex items-center bg-stone-200/30 rounded-full px-4 py-1.5 ml-4">
+<span class="material-symbols-outlined text-stone-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body text-stone-900 w-48" type="text" value="Bandscheibenvorfall LWS"/>
+</div>
+<button class="text-red-900 dark:text-red-200 hover:scale-[0.99] transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<!-- Search Header -->
+<header class="mb-16">
+<p class="font-mono text-xs uppercase tracking-widest text-primary mb-4">Suchergebnisse</p>
+<h1 class="text-5xl md:text-7xl font-headline italic text-on-surface leading-tight max-w-4xl">
+                Suchergebnisse für 'Bandscheibenvorfall LWS'
+            </h1>
+</header>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-[84px] z-40 mb-16">
+<div class="glass-card rounded-full px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar shadow-[0_20px_50px_rgba(44,44,44,0.04)]">
+<button class="px-6 py-2 rounded-full bg-primary-container text-white text-xs font-label uppercase tracking-widest transition-all">Alle</button>
+<button class="px-6 py-2 rounded-full text-stone-600 hover:bg-stone-200/50 text-xs font-label uppercase tracking-widest transition-all">Patienten</button>
+<button class="px-6 py-2 rounded-full text-stone-600 hover:bg-stone-200/50 text-xs font-label uppercase tracking-widest transition-all">Fachkreise</button>
+<button class="px-6 py-2 rounded-full text-stone-600 hover:bg-stone-200/50 text-xs font-label uppercase tracking-widest transition-all">Studien</button>
+<button class="px-6 py-2 rounded-full text-stone-600 hover:bg-stone-200/50 text-xs font-label uppercase tracking-widest transition-all">Videos</button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-20">
+<!-- Results List -->
+<div class="flex-1 space-y-20">
+<!-- Result 1: Article -->
+<article class="group cursor-pointer">
+<div class="flex flex-col md:flex-row gap-10 items-start">
+<div class="w-full md:w-80 aspect-[4/3] rounded-xl overflow-hidden glass-card transition-all duration-500 group-hover:scale-[1.02]">
+<img alt="Medical visualization" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Anatomical 3D rendering of the human lumbar spine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0x3EkjBXuiRWuHhJz29X1fOMEFKEJIlUUQ3106LtFq55wVk9mHGwfuXc_CtVrRIbtcjKn4bfAfyEPG2HRwOm0_hpxz_zRem6PWA4vI0be9LZdhrgOCcFOAHb6c0llnIiGuHz1rP2Tz9V62eN3mXI8Kqeu2tlzZkJjKgHtQdwxkZwKaRYme9LlwUvRxYwZP48urlsMDecnApNfFmjE0pLSQMstxqRLeo1fIHxLW0hELicFWjKcBYLrLRNdS4TzXe8BxqKe4dQP5ms"/>
+</div>
+<div class="flex-1 space-y-4">
+<span class="inline-block font-mono text-[10px] uppercase tracking-widest bg-stone-200/50 px-3 py-1 rounded">Patienten-Information</span>
+<h2 class="text-3xl font-headline italic text-on-surface group-hover:text-primary transition-colors">Bandscheibenvorfall der Lendenwirbelsäule</h2>
+<p class="text-stone-700 leading-relaxed font-body max-w-2xl">
+                                Ein umfassender Leitfaden zu Symptomen, Diagnoseverfahren und modernen Therapieansätzen. Verstehen Sie die Mechanismen hinter dem LWS-Schmerz und entdecken Sie konservative Behandlungswege.
+                            </p>
+<div class="pt-2 flex items-center text-primary font-label text-xs uppercase tracking-widest">
+                                Weiterlesen <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Result 2: Study -->
+<article class="group cursor-pointer p-8 md:p-12 glass-card rounded-2xl transition-all duration-500 hover:bg-stone-50/60 shadow-[0_20px_50px_rgba(44,44,44,0.04)]">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<span class="inline-block font-mono text-[10px] uppercase tracking-widest bg-primary-container text-white px-3 py-1 rounded">Fachkreis</span>
+<span class="font-mono text-[10px] text-stone-400">PUBLIZIERT: OKT 2023</span>
+</div>
+<h2 class="text-3xl font-headline italic text-on-surface leading-tight">Konservative vs. Operative Therapie: Eine Meta-Analyse der Langzeitergebnisse</h2>
+<p class="text-stone-700 leading-relaxed font-body max-w-3xl">
+                            Diese systematische Übersicht untersucht klinische Outcomes von 12 randomisierten kontrollierten Studien bei Patienten mit symptomatischer lumbaler Bandscheibenherniation über einen Zeitraum von 5 Jahren.
+                        </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-6 border-t border-stone-200/20">
+<div>
+<p class="font-mono text-xs uppercase text-stone-400 mb-1">Kohorte</p>
+<p class="font-mono text-xl text-primary">n=1200</p>
+</div>
+<div>
+<p class="font-mono text-xs uppercase text-stone-400 mb-1">Evidenzgrad</p>
+<p class="font-mono text-xl text-primary">I-a</p>
+</div>
+<div>
+<p class="font-mono text-xs uppercase text-stone-400 mb-1">Signifikanz</p>
+<p class="font-mono text-xl text-primary">p&lt;0.01</p>
+</div>
+<div>
+<p class="font-mono text-xs uppercase text-stone-400 mb-1">Follow-up</p>
+<p class="font-mono text-xl text-primary">60m</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Result 3: Video -->
+<article class="group cursor-pointer">
+<div class="flex flex-col md:flex-row gap-10 items-center">
+<div class="relative w-full md:w-80 aspect-video rounded-xl overflow-hidden shadow-xl">
+<img alt="Therapeutic exercise" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Physiotherapy session showing spinal mobilization exercises" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuA2L1KT45Dp-TGRwxkWg8oE3oO83m2mWhLkEnYMNYK7wRjdmnKqriDzon2L_XAKzXkXhjDWjGEE_k4tXjb9piYCLeQtwZM1Rkyzx1qDx3a_xzxqHr40pdkJD3GuKaNBMbeGjslLzpdcew5vYmYT2wc9i5anpQuQquAChUXFebv88NVoqrLi6MGiF_nwVbdLHHM8v_I5NQrmqalo0phLaJg0LvGFPycuvAiXgts-jtQ__3NW1CCQiIskGaLs99tvZ545YG_gQsV4"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform duration-400">
+<span class="material-symbols-outlined text-white text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<span class="inline-block font-mono text-[10px] uppercase tracking-widest bg-stone-200/50 px-3 py-1 rounded">Video-Anleitung</span>
+<h2 class="text-3xl font-headline italic text-on-surface group-hover:text-primary transition-colors">Übungen zur Mobilisation bei LWS-Schmerz</h2>
+<p class="text-stone-700 leading-relaxed font-body">
+                                Gezielte Bewegungsabläufe zur Entlastung der Nervenwurzel und Stärkung der tiefliegenden Rumpfmuskulatur. Angeleitet von Dr. med. Schmidt.
+                            </p>
+<p class="font-mono text-xs text-stone-400">DAUER: 12:45 MIN</p>
+</div>
+</div>
+</article>
+</div>
+<!-- Sidebar -->
+<aside class="w-full lg:w-80 space-y-12">
+<section class="space-y-6">
+<h3 class="text-xl font-headline italic border-b border-primary/10 pb-4">Kurz-Navigation</h3>
+<ul class="space-y-4">
+<li>
+<a class="flex items-center justify-between group p-4 rounded-xl hover:bg-white/40 transition-all" href="#">
+<span class="text-stone-600 font-label text-sm uppercase tracking-wide">Symptom-Check</span>
+<span class="material-symbols-outlined text-stone-400 group-hover:text-primary transition-colors">stethoscope</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between group p-4 rounded-xl hover:bg-white/40 transition-all" href="#">
+<span class="text-stone-600 font-label text-sm uppercase tracking-wide">Anatomie-Viewer</span>
+<span class="material-symbols-outlined text-stone-400 group-hover:text-primary transition-colors">view_in_ar</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between group p-4 rounded-xl hover:bg-white/40 transition-all" href="#">
+<span class="text-stone-600 font-label text-sm uppercase tracking-wide">Kliniksuche</span>
+<span class="material-symbols-outlined text-stone-400 group-hover:text-primary transition-colors">map</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="p-8 glass-card rounded-2xl bg-primary-container text-white relative overflow-hidden">
+<div class="relative z-10 space-y-4">
+<h3 class="text-2xl font-headline italic leading-tight">Fachkreis-Zugang</h3>
+<p class="text-xs opacity-80 leading-relaxed">
+                            Erhalten Sie Zugriff auf detaillierte OP-Videos, aktuelle Studien-Volltexte und unsere klinische Datenbank.
+                        </p>
+<button class="w-full py-3 bg-white text-primary rounded-full text-[10px] font-label uppercase tracking-widest hover:bg-stone-100 transition-colors">Jetzt Einloggen</button>
+</div>
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+</section>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-zinc-950 w-full py-12 px-8 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="font-serif text-lg text-stone-900 dark:text-stone-100 italic">
+                Evidenzbasierte Wirbelsäulenmedizin
+            </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-stone-500 hover:text-red-900 font-sans text-sm tracking-wide transition-colors duration-300" href="#">Impressum</a>
+<a class="text-stone-500 hover:text-red-900 font-sans text-sm tracking-wide transition-colors duration-300" href="#">Datenschutz</a>
+<a class="text-stone-500 hover:text-red-900 font-sans text-sm tracking-wide transition-colors duration-300" href="#">Kontakt</a>
+<a class="text-stone-500 hover:text-red-900 font-sans text-sm tracking-wide transition-colors duration-300" href="#">Fachkreis-Login</a>
+</div>
+<div class="font-sans text-sm tracking-wide text-stone-600 opacity-80">
+                © 2024 Evidenzbasierte Wirbelsäulenmedizin. Alle Rechte vorbehalten.
+            </div>
+</div>
+</footer>
+</body></html>
