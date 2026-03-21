@@ -693,3 +693,51 @@ starlight-toc,
     grid-template-columns: var(--sl-sidebar-width) 1fr !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   STICKY STACKING HEADERS — Section headers stack on scroll
+   Like iOS table view section headers / Function Health style
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Each h2 becomes sticky and stacks with a slight offset */
+.sl-markdown-content h2 {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--sl-color-bg);
+  padding-top: 1rem;
+  padding-bottom: 0.75rem;
+  margin-top: 3rem;
+  border-bottom: 2px solid var(--sl-color-accent);
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--sl-color-bg) 92%, transparent);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Stack effect: each subsequent h2 stacks slightly lower */
+.sl-markdown-content h2:nth-of-type(2) { top: 0; }
+.sl-markdown-content h2:nth-of-type(3) { top: 0; }
+
+/* Subtle shadow when header is "stuck" */
+@supports (animation-timeline: scroll()) {
+  .sl-markdown-content h2 {
+    animation: sticky-shadow linear both;
+    animation-timeline: scroll();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+/* Ensure the header doesn't overlap Starlight's top nav */
+@media (min-width: 50em) {
+  .sl-markdown-content h2 {
+    top: var(--sl-nav-height, 3.5rem);
+  }
+}
+
+/* Mobile: no sticky (too much screen eaten by headers) */
+@media (max-width: 50em) {
+  .sl-markdown-content h2 {
+    position: relative;
+    top: auto;
+  }
+}
