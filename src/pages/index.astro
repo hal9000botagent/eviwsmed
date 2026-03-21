@@ -1158,6 +1158,17 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
         }
       });
     });
+
+    // Progressive enhancement: make above-fold content visible immediately
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".step, .category-card, .trust-content, .author, .comparison, .hero-badge, .hero h1, .hero-subtitle, .hero .cta-button, .footer-section, h2").forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.2) {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        }
+      });
+    });
   </script>
 </body>
 </html>
