@@ -573,110 +573,6 @@ blockquote cite {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   STACKING SCROLL PATTERN — Function Health Style
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Only apply to Starlight content pages, not landing page */
-.sl-container {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Left Column: Sticky Section Navigator */
-.section-navigator {
-  position: sticky;
-  top: 6rem;
-  height: fit-content;
-  padding: 2rem 1rem;
-  border-right: 2px solid var(--sl-color-gray-4);
-}
-
-.section-navigator ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.section-navigator li {
-  margin-bottom: 1.2rem;
-}
-
-.section-navigator a {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--sl-color-gray-2);
-  text-decoration: none;
-  display: block;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  letter-spacing: -0.01em;
-}
-
-.section-navigator a:hover {
-  background: var(--sl-color-accent-low);
-  color: var(--sl-color-accent);
-  transform: translateX(3px);
-}
-
-.section-navigator a.active {
-  background: var(--sl-color-accent);
-  color: var(--sl-color-black);
-  font-weight: 600;
-  box-shadow: var(--shadow-subtle);
-}
-
-/* Right Column: Main Content */
-.content-wrapper {
-  min-width: 0; /* Prevents grid blowout */
-  padding-right: 2rem;
-}
-
-/* Hide the default Starlight right TOC */
-.right-sidebar {
-  display: none !important;
-}
-
-/* Adjust main content grid when section navigator is present */
-.main-frame {
-  grid-template-columns: 1fr;
-}
-
-/* Mobile: Stack vertically */
-@media (max-width: 1024px) {
-  .sl-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .section-navigator {
-    position: relative;
-    top: 0;
-    border-right: none;
-    border-bottom: 2px solid var(--sl-color-gray-4);
-    padding-bottom: 1.5rem;
-  }
-  
-  .section-navigator ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .section-navigator li {
-    margin-bottom: 0;
-  }
-  
-  .section-navigator a {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
 /* ═══════════════════════════════════════════════════════════════
    NAVBAR FIX — No Word Break, Earlier Hamburger
    ═══════════════════════════════════════════════════════════════ */
@@ -768,96 +664,30 @@ summary {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   LAYOUT OVERRIDES FOR SECTION NAVIGATOR
+
+/* ═══════════════════════════════════════════════════════════════
+   LAYOUT: Hide right TOC, widen content area
    ═══════════════════════════════════════════════════════════════ */
 
-/* Override Starlight's default layout when section navigator is present */
-.sl-container:has(.section-navigator) {
-  display: grid !important;
-  grid-template-columns: 280px 1fr !important;
-  gap: 3rem !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
+/* Hide the Starlight right sidebar TOC on doc pages — 
+   content is long-form medical text that needs width */
+starlight-toc {
+  display: none !important;
 }
 
-/* Left Column: Sticky Section Navigator */
-.section-navigator {
-  position: sticky !important;
-  top: 6rem !important;
-  height: fit-content !important;
-  padding: 2rem 1rem !important;
-  border-right: 2px solid var(--sl-color-gray-4) !important;
+.right-sidebar-container,
+[data-pagefind-ignore] .right-sidebar {
+  display: none !important;
 }
 
-.section-navigator ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+/* Give the main content more room */
+:root {
+  --sl-content-width: 55rem;
 }
 
-.section-navigator li {
-  margin-bottom: 1rem !important;
-}
-
-.section-navigator a {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
-  color: var(--sl-color-gray-2) !important;
-  text-decoration: none !important;
-  display: block !important;
-  padding: 0.6rem 1rem !important;
-  border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  letter-spacing: -0.01em !important;
-}
-
-.section-navigator a:hover {
-  background: var(--sl-color-accent-low) !important;
-  color: var(--sl-color-accent) !important;
-  transform: translateX(3px) !important;
-}
-
-.section-navigator a.active {
-  background: var(--sl-color-accent) !important;
-  color: var(--sl-color-black) !important;
-  font-weight: 600 !important;
-  box-shadow: var(--shadow-subtle) !important;
-}
-
-/* Right Column: Main Content */
-.content-wrapper {
-  min-width: 0 !important;
-  padding-right: 2rem !important;
-}
-
-/* Mobile: Stack vertically */
-@media (max-width: 1024px) {
-  .sl-container:has(.section-navigator) {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  
-  .section-navigator {
-    position: relative !important;
-    top: 0 !important;
-    border-right: none !important;
-    border-bottom: 2px solid var(--sl-color-gray-4) !important;
-    padding-bottom: 1.5rem !important;
-  }
-  
-  .section-navigator ul {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-  
-  .section-navigator li {
-    margin-bottom: 0 !important;
-  }
-  
-  .section-navigator a {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.85rem !important;
+/* On wide screens, let the content breathe */
+@media (min-width: 72rem) {
+  .main-pane {
+    grid-template-columns: var(--sl-sidebar-width) 1fr !important;
   }
 }

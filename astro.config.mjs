@@ -70,13 +70,7 @@ export default defineConfig({
 						},
 					}),
 				},
-				{
-					tag: 'script',
-					attrs: {
-						src: '/scripts/section-navigator.js',
-						type: 'module',
-					},
-				},
+	
 			],
 			sidebar: [
 				{
