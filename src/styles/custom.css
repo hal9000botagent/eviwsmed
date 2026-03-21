@@ -1083,3 +1083,61 @@ button,
 summary {
   transition-property: all;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   BORDERLESS OVERRIDES — Remove ALL framework borders
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Kill ALL Starlight borders globally */
+.header,
+[class*="header"],
+.page .header {
+  border-bottom: none !important;
+  box-shadow: 0 2px 24px rgba(107, 29, 42, 0.06) !important;
+}
+
+.sidebar-pane,
+[class*="sidebar-pane"] {
+  border-right: none !important;
+  border-inline-end: none !important;
+  box-shadow: 4px 0 24px rgba(107, 29, 42, 0.05) !important;
+}
+
+.content-panel + .content-panel {
+  border-top: none !important;
+}
+
+/* Remove gold underline from h2 */
+h2, .sl-markdown-content h2 {
+  border-bottom: none !important;
+}
+
+/* Remove hairlines everywhere */
+.sl-markdown-content hr {
+  border: none !important;
+  height: 0 !important;
+  margin: 3rem 0 !important;
+}
+
+/* Mobile TOC border */
+nav[class*="astro-doynk5tl"],
+summary[class*="astro-doynk5tl"] {
+  border: none !important;
+}
+
+/* Pagination borders */
+.pagination-links a,
+a[class*="astro-u2l5gyhi"] {
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(107, 29, 42, 0.06) !important;
+}
+
+/* Sidebar internal hairlines */
+.sidebar-content li {
+  border: none !important;
+}
+
+/* Sidebar content border */
+.sidebar-content {
+  border: none !important;
+}
