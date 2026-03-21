@@ -1,6 +1,5 @@
 ---
-// EviWsMed Landing Page — Function Health Stil adaptiert
-// Custom Astro Page OHNE Starlight Layout
+// EviWsMed Landing Page — Function Health Polish Pass
 const title = 'Evidenzbasierte Wirbelsäulenmedizin';
 const description = 'Verständlich. Quellenbasiert. Für Patienten und Fachpersonal.';
 const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
@@ -59,7 +58,10 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       --gold: #A8884A;
       --border: #D4CBBA;
       --card-bg: #FFFDF7;
-      --nav-bg: rgba(245, 240, 232, 0.95);
+      --nav-bg: rgba(245, 240, 232, 0.8);
+      --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.10);
+      --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.14);
     }
     
     @media (prefers-color-scheme: dark) {
@@ -73,8 +75,15 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
         --gold: #C4A96A;
         --border: #3A3A42;
         --card-bg: #242429;
-        --nav-bg: rgba(26, 26, 31, 0.95);
+        --nav-bg: rgba(26, 26, 31, 0.8);
+        --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.4);
+        --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.5);
+        --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.6);
       }
+    }
+    
+    html {
+      scroll-behavior: smooth;
     }
     
     body {
@@ -83,21 +92,26 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       color: var(--text);
       line-height: 1.7;
       font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     
     h1, h2, h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 700;
       line-height: 1.2;
+      letter-spacing: -0.02em;
     }
     
     h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: -0.03em;
     }
     
     h2 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
     }
     
     h3 {
@@ -106,15 +120,28 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       font-style: italic;
     }
     
+    p {
+      line-height: 1.75;
+    }
+    
     /* ─── NAVIGATION ─── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
+      background: transparent;
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      padding: 1.5rem 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    nav.scrolled {
       background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      border-bottom-color: var(--border);
       padding: 1rem 0;
+      box-shadow: var(--shadow-subtle);
     }
     
     .nav-container {
@@ -132,11 +159,17 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       font-weight: 700;
       color: var(--primary);
       text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .logo:hover {
+      opacity: 0.7;
+      transform: translateY(-1px);
     }
     
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       font-family: 'Cormorant SC', serif;
       letter-spacing: 0.08em;
@@ -146,11 +179,27 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       color: var(--text);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
+      position: relative;
+      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .nav-links a:hover {
       color: var(--primary);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
     }
     
     .mobile-toggle {
@@ -160,21 +209,28 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       color: var(--text);
       font-size: 1.5rem;
       cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .mobile-toggle:hover {
+      transform: scale(1.1);
     }
     
     @media (max-width: 768px) {
       .nav-links {
         position: fixed;
-        top: 60px;
+        top: 70px;
         left: 0;
         right: 0;
         background: var(--nav-bg);
+        backdrop-filter: blur(12px);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
         transform: translateY(-150%);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-medium);
       }
       
       .nav-links.active {
@@ -191,9 +247,11 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       min-height: 90vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, var(--bg) 0%, var(--card-bg) 100%);
+      background: 
+        linear-gradient(135deg, var(--bg) 0%, var(--card-bg) 50%, var(--bg) 100%);
       position: relative;
       overflow: hidden;
+      padding-top: 2rem;
     }
     
     .hero::before {
@@ -213,7 +271,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     .hero-content {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       position: relative;
       z-index: 1;
     }
@@ -221,19 +279,23 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     .hero-badge {
       display: inline-block;
       font-family: 'Cormorant SC', serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 0.15em;
       color: var(--gold);
-      background: rgba(168, 136, 74, 0.1);
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
+      background: rgba(168, 136, 74, 0.08);
+      padding: 0.6rem 1.5rem;
+      border-radius: 24px;
       margin-bottom: 2rem;
       border: 1px solid var(--gold);
+      opacity: 0;
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
     }
     
     .hero h1 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: var(--primary);
+      opacity: 0;
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
     }
     
     .hero h1 em {
@@ -244,40 +306,62 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     .hero-subtitle {
       font-size: 1.3rem;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       max-width: 700px;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
     }
     
     .hero-cta {
       display: inline-block;
       background: var(--primary);
       color: #FFFDF7;
-      padding: 1rem 2.5rem;
-      border-radius: 6px;
+      padding: 1.1rem 2.8rem;
+      border-radius: 8px;
       text-decoration: none;
       font-family: 'Cormorant SC', serif;
       letter-spacing: 0.12em;
-      font-size: 1.1rem;
-      transition: all 0.3s;
+      font-size: 1.05rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       border: 2px solid var(--primary);
+      box-shadow: var(--shadow-subtle);
+      opacity: 0;
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
     }
     
     .hero-cta:hover {
       background: var(--primary-hover);
       border-color: var(--primary-hover);
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: var(--shadow-medium);
+    }
+    
+    .hero-cta:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     /* ─── NUMBERED STEPS ─── */
     .steps {
       max-width: 1200px;
-      margin: 5rem auto;
-      padding: 0 2rem;
+      margin: 0 auto;
+      padding: 120px 2rem;
     }
     
     .steps h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
     
     .steps h2 em {
@@ -288,67 +372,94 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 3rem;
+      gap: 4rem;
     }
     
     .step {
       text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .step.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .step-number {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.5rem;
+      font-weight: 300;
       color: var(--gold);
-      opacity: 0.3;
-      margin-bottom: 0.5rem;
+      opacity: 0.25;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
     }
     
     .step h3 {
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       color: var(--primary);
     }
     
     .step p {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
     
     /* ─── SCROLLING TICKER ─── */
     .ticker-section {
-      background: var(--card-bg);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--card-bg) 50%, var(--bg) 100%);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 3rem 0;
+      padding: 100px 0;
       overflow: hidden;
+      margin: 100px 0;
     }
     
     .ticker-section h2 {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
     
     .ticker-wrapper {
       overflow: hidden;
       position: relative;
       margin: 0 auto;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
     }
     
     .ticker {
       display: flex;
-      animation: scroll 40s linear infinite;
+      animation: scroll 45s linear infinite;
+      will-change: transform;
+    }
+    
+    .ticker:hover {
+      animation-play-state: paused;
     }
     
     .ticker-item {
       flex-shrink: 0;
-      padding: 0.75rem 2rem;
+      padding: 0.9rem 2.5rem;
       margin: 0 1rem;
       background: var(--bg);
-      border-radius: 25px;
+      border-radius: 28px;
       border: 1px solid var(--border);
       white-space: nowrap;
       font-family: 'Cormorant SC', serif;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      font-size: 1.05rem;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .ticker-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--primary);
     }
     
     @keyframes scroll {
@@ -363,65 +474,92 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     /* ─── CATEGORY CARDS ─── */
     .categories {
       max-width: 1400px;
-      margin: 5rem auto;
-      padding: 0 2rem;
+      margin: 0 auto;
+      padding: 120px 2rem;
     }
     
     .categories h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
     
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
     
     .category-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: all 0.3s;
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: none;
       color: var(--text);
+      box-shadow: var(--shadow-subtle);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .category-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .category-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px) scale(1.02);
       border-color: var(--primary);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-medium);
+      background: var(--bg);
     }
     
     .category-card h3 {
       color: var(--primary);
       margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .category-card:hover h3 {
+      color: var(--gold);
+    }
+    
+    .category-card > p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
     }
     
     .category-card ul {
       list-style: none;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     
     .category-card li {
       color: var(--text-muted);
-      padding: 0.4rem 0;
+      padding: 0.5rem 0;
       font-size: 0.95rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .category-card li::before {
       content: '→';
       color: var(--gold);
-      margin-right: 0.5rem;
+      margin-right: 0.7rem;
+      display: inline-block;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .category-card:hover li::before {
+      transform: translateX(4px);
     }
     
     /* ─── TRUST SECTION ─── */
     .trust {
-      background: var(--card-bg);
+      background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg) 100%);
       border-top: 1px solid var(--border);
-      padding: 4rem 2rem;
-      margin-top: 5rem;
+      padding: 100px 2rem;
+      margin-top: 100px;
     }
     
     .trust-content {
@@ -431,42 +569,58 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     .trust h2 {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .trust h2 em {
+      color: var(--primary);
+      font-style: italic;
     }
     
     .trust blockquote {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-style: italic;
       color: var(--text-muted);
       border-left: 3px solid var(--gold);
-      padding-left: 2rem;
-      margin: 2rem 0;
+      padding-left: 2.5rem;
+      margin: 2.5rem 0;
       text-align: left;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .trust blockquote.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .trust cite {
       display: block;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       font-size: 0.95rem;
       font-style: normal;
       color: var(--text);
       font-family: 'Cormorant SC', serif;
+      letter-spacing: 0.05em;
     }
     
     /* ─── AUTHOR SECTION ─── */
     .author {
       max-width: 1000px;
-      margin: 5rem auto;
+      margin: 100px auto;
       padding: 0 2rem;
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 3rem;
+      gap: 4rem;
       align-items: center;
     }
     
     @media (max-width: 768px) {
       .author {
         grid-template-columns: 1fr;
+        gap: 2rem;
       }
     }
     
@@ -474,12 +628,37 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       width: 100%;
       aspect-ratio: 1;
       background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-      border-radius: 8px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 5rem;
       color: #FFFDF7;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    
+    .author-image.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .author-image:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    .author-text {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .author-text.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
     
     .author h2 {
@@ -488,39 +667,62 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     
     .author-title {
       color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
       font-family: 'Cormorant SC', serif;
       letter-spacing: 0.08em;
+    }
+    
+    .author-text p {
+      line-height: 1.8;
     }
     
     /* ─── COMPARISON TABLE ─── */
     .comparison {
       max-width: 1200px;
-      margin: 5rem auto;
+      margin: 120px auto;
       padding: 0 2rem;
     }
     
     .comparison h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+    }
+    
+    .comparison h2 em {
+      color: var(--primary);
+      font-style: italic;
     }
     
     .comparison-table {
       background: var(--card-bg);
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border);
+      box-shadow: var(--shadow-medium);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .comparison-table.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .comparison-row {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
       border-bottom: 1px solid var(--border);
+      transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .comparison-row:last-child {
       border-bottom: none;
+    }
+    
+    .comparison-row:not(:first-child):hover {
+      background: var(--bg);
     }
     
     .comparison-header {
@@ -529,13 +731,14 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       font-family: 'Cormorant SC', serif;
       letter-spacing: 0.1em;
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem;
       font-weight: 600;
     }
     
     .comparison-cell {
-      padding: 1.2rem;
+      padding: 1.5rem;
       border-right: 1px solid var(--border);
+      line-height: 1.6;
     }
     
     .comparison-cell:last-child {
@@ -544,13 +747,18 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     
     .check {
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-align: center;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .comparison-row:hover .check {
+      transform: scale(1.2);
     }
     
     .cross {
       color: var(--primary);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-align: center;
       opacity: 0.3;
     }
@@ -561,17 +769,17 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       }
       
       .comparison-cell {
-        padding: 0.8rem;
+        padding: 1rem;
         font-size: 0.9rem;
       }
     }
     
     /* ─── FOOTER ─── */
     footer {
-      background: var(--card-bg);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--card-bg) 100%);
       border-top: 1px solid var(--border);
-      padding: 3rem 2rem 2rem;
-      margin-top: 5rem;
+      padding: 100px 2rem 2rem;
+      margin-top: 120px;
     }
     
     .footer-content {
@@ -579,14 +787,15 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
+      gap: 4rem;
     }
     
     .footer-section h4 {
       font-family: 'Cormorant SC', serif;
       letter-spacing: 0.1em;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: var(--primary);
+      font-size: 1.1rem;
     }
     
     .footer-section ul {
@@ -597,27 +806,46 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       color: var(--text-muted);
       text-decoration: none;
       display: block;
-      padding: 0.3rem 0;
-      transition: color 0.2s;
+      padding: 0.5rem 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      padding-left: 0;
+    }
+    
+    .footer-section a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--primary);
+      bottom: 0.5rem;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .footer-section a:hover {
       color: var(--primary);
+      transform: translateX(4px);
+    }
+    
+    .footer-section a:hover::before {
+      width: 20px;
     }
     
     .footer-bottom {
       text-align: center;
-      margin-top: 3rem;
-      padding-top: 2rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 0.9rem;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
 <body>
   <!-- NAVIGATION -->
-  <nav>
+  <nav id="main-nav">
     <div class="nav-container">
       <a href="/" class="logo">EviWsMed</a>
       <button class="mobile-toggle" aria-label="Menü" id="mobile-toggle">☰</button>
@@ -767,7 +995,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
 
   <!-- AUTHOR SECTION -->
   <section class="author">
-    <div class="author-image">👨‍⚕️</div>
+    <div class="author-image">👨⚕️</div>
     <div class="author-text">
       <h2>Über den Autor</h2>
       <p class="author-title">Dr. med. Jan-Philip Zeden</p>
@@ -878,31 +1106,58 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       });
     });
     
+    // Sticky Nav Background on Scroll
+    const nav = document.getElementById('main-nav');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    });
+    
     // Intersection Observer für Scroll-Animationen
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          // Staggered reveal
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
     
-    // Elemente animieren
-    document.querySelectorAll('.step, .category-card, .trust blockquote').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Observe animated elements
+    document.querySelectorAll('.step, .category-card, .trust blockquote, .comparison-table, .author-image, .author-text').forEach(el => {
       observer.observe(el);
     });
     
-    // Smooth HTML Scroll
-    document.documentElement.style.scrollBehavior = 'smooth';
+    // Smooth Anchor Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
