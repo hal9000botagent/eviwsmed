@@ -12,7 +12,8 @@ Degenerative Erkrankungen der Wirbelsäule entstehen durch natürlichen Verschle
 
 | Erkrankung | Kurzbeschreibung |
 |-----------|-----------------|
-| [Bandscheibenvorfall](/erkrankungen/degenerativ/bandscheibenvorfall/) | Austritt von Bandscheibengewebe mit Druck auf Nerven |
-| [Spinalkanalstenose](/erkrankungen/degenerativ/spinalkanalstenose/) | Verengung des Wirbelkanals |
-| [Ischialgien](/erkrankungen/degenerativ/ischialgien/) | Schmerzen entlang des Ischiasnervs |
-| [Rückenschmerzen](/erkrankungen/degenerativ/rueckenschmerzen/) | Klassifikation und Therapie |
+| [Bandscheibenvorfall LWS](/erkrankungen/degenerativ/bandscheibenvorfall-lws/) | Austritt von Bandscheibengewebe mit Druck auf Nervenwurzeln |
+| [Rückenschmerzen](/erkrankungen/degenerativ/rueckenschmerzen/) | Spezifisch vs. unspezifisch — Klassifikation und Therapie |
+| [Spinalkanalstenose](/erkrankungen/degenerativ/spinalkanalstenose/) | Verengung des Wirbelkanals mit Einengung der Nerven |
+| [Spondylolisthesis](/erkrankungen/degenerativ/spondylolisthesis/) | Wirbelgleiten — degenerativ oder anlagebedingt |
+| [Ischialgien](/erkrankungen/degenerativ/ischialgien/) | Schmerzen entlang des Ischiasnervs *(in Überarbeitung)* |
