@@ -83,10 +83,11 @@ export default defineConfig({
 						{
 							label: 'Degenerativ',
 							items: [
-								{ label: 'Bandscheibenvorfall', link: '/erkrankungen/degenerativ/bandscheibenvorfall' },
-								{ label: 'Ischialgien', link: '/erkrankungen/degenerativ/ischialgien' },
+								{ label: 'Bandscheibenvorfall LWS', link: '/erkrankungen/degenerativ/bandscheibenvorfall-lws' },
 								{ label: 'Rückenschmerzen', link: '/erkrankungen/degenerativ/rueckenschmerzen' },
 								{ label: 'Spinalkanalstenose', link: '/erkrankungen/degenerativ/spinalkanalstenose' },
+								{ label: 'Spondylolisthesis', link: '/erkrankungen/degenerativ/spondylolisthesis' },
+								{ label: 'Ischialgien', link: '/erkrankungen/degenerativ/ischialgien' },
 							],
 						},
 						{ label: 'Entzündlich', link: '/erkrankungen/entzuendlich/' },
