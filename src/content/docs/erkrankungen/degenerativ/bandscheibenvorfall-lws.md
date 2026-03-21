@@ -12,7 +12,7 @@ Die Bandscheiben liegen zwischen den Wirbelkörpern und dienen als elastische St
 Am häufigsten betroffen sind die Segmente L4/L5 (zwischen dem vierten und fünften Lendenwirbel) und L5/S1 (zwischen dem fünften Lendenwirbel und dem Kreuzbein), da hier die mechanische Belastung am größten ist.
 
 <details>
-<summary>🔬 Fachinfo: Pathophysiologie</summary>
+<summary>🔍 Hinter den Kulissen: Was genau passiert im Rücken?</summary>
 
 Der lumbale Bandscheibenvorfall (Bandscheibenprolaps) entsteht durch eine Ruptur des Anulus fibrosus mit Austritt von Nucleus-pulposus-Material. Man unterscheidet:
 
@@ -63,7 +63,7 @@ Bei folgenden Warnsignalen sollten Sie umgehend einen Arzt oder die Notaufnahme 
 Diese Symptome können auf ein Cauda-equina-Syndrom hinweisen, einen neurologischen Notfall, der sofortiger Behandlung bedarf.
 
 <details>
-<summary>🔬 Fachinfo: Klinische Zeichen</summary>
+<summary>🔍 Wie Ärzte die Diagnose stellen</summary>
 
 **Klinische Untersuchung:**
 
@@ -123,7 +123,7 @@ Falls die Beschwerden länger als sechs Wochen anhalten, sich verschlechtern ode
 **Wichtig zu wissen:** Viele Menschen haben im MRT sichtbare Bandscheibenvorfälle, ohne jemals Beschwerden zu haben. Ein Zufallsbefund im Bild bedeutet also nicht automatisch, dass operiert werden muss!
 
 <details>
-<summary>🔬 Fachinfo: Diagnostik</summary>
+<summary>🔍 Welche Untersuchungen wirklich nötig sind — und warum</summary>
 
 **Bildgebung:**
 
@@ -222,7 +222,7 @@ Zur Schmerzlinderung stehen verschiedene Möglichkeiten zur Verfügung:
 Die Leitlinien empfehlen, zunächst **6 bis 12 Wochen** konservativ zu behandeln, solange keine Notfallsituation vorliegt. In dieser Zeit bessern sich die Beschwerden bei etwa zwei Dritteln der Patienten deutlich oder verschwinden ganz. Studien zeigen, dass Patienten, die zunächst konservativ behandelt wurden, nach zwei Jahren genauso zufrieden sind wie operierte Patienten – nur dass die Operation anfangs schneller hilft.
 
 <details>
-<summary>🔬 Fachinfo: Konservative Therapie</summary>
+<summary>🔍 Die Evidenz: Was Studien über konservative Therapie zeigen</summary>
 
 **Evidenzbasierte konservative Therapieoptionen:**
 
@@ -343,7 +343,7 @@ Wie jede Operation birgt auch die Bandscheibenoperation Risiken, die aber insges
 - Nervenschädigung (<1%)
 
 <details>
-<summary>🔬 Fachinfo: OP-Indikationen und Verfahren</summary>
+<summary>🔍 Wann und warum Ärzte zur OP raten — die Entscheidungsfaktoren</summary>
 
 **Operationsindikationen:**
 
@@ -479,6 +479,18 @@ Auch wenn sich nicht jeder Bandscheibenvorfall verhindern lässt, können Sie vi
 - **Ergonomischer Arbeitsplatz:** Bildschirm auf Augenhöhe, dynamisches Sitzen, regelmäßige Pausen
 - **Normalgewicht:** Übergewicht belastet die Bandscheiben zusätzlich
 - **Nichtrauchen:** Rauchen verschlechtert die Bandscheibenernährung
+
+## Von der Studie zur Therapieentscheidung
+
+Medizinische Empfehlungen basieren nicht auf Einzelmeinungen, sondern auf einem systematischen Prozess:
+
+1. **Studien** — Tausende Patienten werden in kontrollierten Studien behandelt und verglichen
+2. **Systematische Auswertung** — Alle verfügbaren Studien werden zusammengefasst (Cochrane Reviews, Meta-Analysen)
+3. **Leitlinien** — Fachgesellschaften (wie die AWMF) werten die Evidenz aus und formulieren Empfehlungen
+4. **Ihre individuelle Situation** — Ihr Arzt berücksichtigt Leitlinien UND Ihre persönlichen Faktoren (Alter, Begleiterkrankungen, Wünsche)
+
+Beim Bandscheibenvorfall zeigt die SPORT-Studie, dass sowohl Operation als auch konservative Therapie langfristig ähnlich gute Ergebnisse liefern. Die Operation führt zu schnellerer Schmerzlinderung in den ersten Monaten, nach 2-4 Jahren gleichen sich die Ergebnisse aber an. Die Entscheidung hängt also wesentlich von Ihrer individuellen Situation, Ihrem Leidensdruck und Ihren Erwartungen ab.
+
 
 ## Quellen
 

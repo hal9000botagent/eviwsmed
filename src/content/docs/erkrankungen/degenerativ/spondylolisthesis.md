@@ -12,7 +12,7 @@ Die Verschiebung wird in Grade eingeteilt (Meyerding-Klassifikation): Bei Grad 1
 Am häufigsten betroffen ist die Lendenwirbelsäule, besonders die Höhe L4/L5 (zwischen dem vierten und fünften Lendenwirbel) bei der degenerativen Form und L5/S1 (zwischen dem fünften Lendenwirbel und dem Kreuzbein) bei der isthmischen Form.
 
 <details>
-<summary>🔬 Fachinfo: Pathophysiologie und Klassifikation</summary>
+<summary>🔍 Hinter den Kulissen: Wie Wirbel verrutschen — und warum das nicht immer ein Problem ist</summary>
 
 **Pathomechanismus:**
 
@@ -104,7 +104,7 @@ Diese Form entsteht durch einen Defekt im Wirbelbogen (Pars interarticularis), o
 Dysplastische (angeborene), traumatische oder krankhafte Formen sind deutlich seltener und hier nicht im Detail beschrieben.
 
 <details>
-<summary>🔬 Fachinfo: Epidemiologie und Risikofaktoren</summary>
+<summary>🔍 Wer ist betroffen — und warum viele Menschen mit Wirbelgleiten keine Beschwerden haben</summary>
 
 **Prävalenz:**
 
@@ -184,7 +184,7 @@ Bei stärkerer Einengung können auftreten:
 Diese Symptome können auf ein Cauda-equina-Syndrom hinweisen – ein neurologischer Notfall, der sofortiger Behandlung bedarf.
 
 <details>
-<summary>🔬 Fachinfo: Klinische Diagnostik</summary>
+<summary>🔍 Wie Ärzte die Diagnose stellen — und warum Instabilität so schwer zu messen ist</summary>
 
 **Anamnestische Charakteristika:**
 
@@ -276,7 +276,7 @@ Das MRT ist wichtig, um zu sehen, ob der Spinalkanal eingeengt ist und ob Nerven
 Manchmal wird zusätzlich ein CT gemacht, besonders bei der isthmischen Form, um den Defekt im Wirbelbogen (Spondylolyse) besser darzustellen.
 
 <details>
-<summary>🔬 Fachinfo: Bildgebende Diagnostik</summary>
+<summary>🔍 Welche Untersuchungen nötig sind — und wie Ärzte Befund und Beschwerden zusammenführen</summary>
 
 **Röntgen-Diagnostik:**
 
@@ -409,7 +409,7 @@ Die wichtigste Säule der konservativen Therapie! Ziele sind:
 Bei Grad-1- oder -2-Listesis sind regelmäßige klinische und radiologische Kontrollen empfehlenswert, um eine mögliche Progression frühzeitig zu erkennen. Die meisten Fälle bleiben jedoch stabil oder schreiten nur langsam voran (durchschnittlich 3-4 mm über mehrere Jahre).
 
 <details>
-<summary>🔬 Fachinfo: Konservative Therapie</summary>
+<summary>🔍 Die Evidenz: Was konservative Therapie leisten kann</summary>
 
 **Evidenzbasis:**
 
@@ -568,7 +568,7 @@ Auch **minimalinvasive Verfahren (MIS-TLIF)** sind möglich mit kleineren Schnit
 - Anschlusssegmentdegeneration: 15-30% nach 10 Jahren (weitere Operation manchmal nötig)
 
 <details>
-<summary>🔬 Fachinfo: Operative Therapie</summary>
+<summary>🔍 Wann und warum Ärzte zur OP raten — und warum die Fusion-Frage so kontrovers ist</summary>
 
 **OP-Indikationen:**
 
@@ -814,6 +814,18 @@ Nicht alle Fälle von Spondylolisthesis lassen sich verhindern, aber Sie können
 - **Gewichtskontrolle:** Übergewicht erhöht die mechanische Belastung der Wirbelsäule
 - **Nichtrauchen:** Verbessert Knochen- und Bandscheibengesundheit
 - **Bei Jugendlichen (isthmisch):** Anpassung sportlicher Belastung, wenn Spondylolyse diagnostiziert wurde
+
+## Von der Studie zur Therapieentscheidung
+
+Medizinische Empfehlungen basieren nicht auf Einzelmeinungen, sondern auf einem systematischen Prozess:
+
+1. **Studien** — Tausende Patienten werden in kontrollierten Studien behandelt und verglichen
+2. **Systematische Auswertung** — Alle verfügbaren Studien werden zusammengefasst (Cochrane Reviews, Meta-Analysen)
+3. **Leitlinien** — Fachgesellschaften (wie die AWMF, NASS) werten die Evidenz aus und formulieren Empfehlungen
+4. **Ihre individuelle Situation** — Ihr Arzt berücksichtigt Leitlinien UND Ihre persönlichen Faktoren (Alter, Begleiterkrankungen, Wünsche)
+
+Bei der Spondylolisthesis ist die Studienlage besonders spannend: Neuere große Studien (Försth 2016, Austevoll 2021) konnten keinen eindeutigen Vorteil der Fusion gegenüber der Dekompression allein zeigen. Gleichzeitig zeigte die SLIP-Studie (2016) bei ausgewählten Patienten mit nachgewiesener Instabilität bessere Ergebnisse mit Fusion. Die Entscheidung — Fusion ja oder nein — hängt also stark von Ihren individuellen Befunden ab und sollte gemeinsam mit Ihrem Arzt getroffen werden.
+
 
 ## Quellen
 

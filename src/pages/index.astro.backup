@@ -17,7 +17,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -87,7 +87,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'EB Garamond', Georgia, serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -97,7 +97,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     h1, h2, h3 {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-weight: 700;
       line-height: 1.2;
       letter-spacing: -0.02em;
@@ -156,7 +156,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     .logo {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary);
@@ -173,7 +173,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       display: flex;
       gap: 2.5rem;
       list-style: none;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.08em;
     }
     
@@ -282,7 +282,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     
     .hero-badge {
       display: inline-block;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       font-size: 0.85rem;
       letter-spacing: 0.15em;
       color: var(--gold);
@@ -325,7 +325,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       padding: 1.1rem 2.8rem;
       border-radius: 8px;
       text-decoration: none;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.12em;
       font-size: 1.05rem;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -395,7 +395,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     .step-number {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 5rem;
       font-weight: 300;
       color: var(--gold);
@@ -459,7 +459,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       border-radius: 28px;
       border: 1px solid var(--border);
       white-space: nowrap;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.06em;
       font-size: 1.05rem;
       box-shadow: var(--shadow-subtle);
@@ -633,7 +633,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       font-size: 0.95rem;
       font-style: normal;
       color: var(--text);
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.05em;
     }
     
@@ -700,7 +700,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
       color: var(--text-muted);
       font-size: 1.05rem;
       margin-bottom: 1.8rem;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.08em;
     }
     
@@ -759,7 +759,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     .comparison-header {
       background: var(--primary);
       color: #FFFDF7;
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.1em;
       text-align: center;
       padding: 1.2rem;
@@ -822,7 +822,7 @@ const siteUrl = 'https://evidenzbasierte-wirbelsaeulenmedizin.de';
     }
     
     .footer-section h4 {
-      font-family: 'Inter', serif;
+      font-family: 'Cormorant SC', serif;
       letter-spacing: 0.1em;
       margin-bottom: 1.5rem;
       color: var(--primary);

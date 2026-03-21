@@ -1,6 +1,6 @@
 /* EviWsMed — Medical-Elegant Custom Theme for Starlight */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════
    LIGHT MODE — Warm, Medical-Elegant Palette
@@ -73,12 +73,12 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   TYPOGRAPHY — DM Serif Display + Inter + DM Mono
+   TYPOGRAPHY — Playfair Display + EB Garamond
    ═══════════════════════════════════════════════════════════════ */
 :root {
-  --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --sl-font-system: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --sl-line-height: 1.7;
+  --sl-font: 'EB Garamond', Georgia, serif;
+  --sl-font-system: 'EB Garamond', Georgia, serif;
+  --sl-line-height: 1.75;
 }
 
 /* Body Text */
@@ -90,35 +90,35 @@ th,
 blockquote,
 .sl-markdown-content,
 .content-panel {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
 }
 
-/* Headings: DM Serif Display */
+/* Headings: Playfair Display */
 h1,
 h2,
 h3,
 .sl-markdown-content h1,
 .sl-markdown-content h2,
 .sl-markdown-content h3 {
-  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
   letter-spacing: -0.02em;
   color: var(--sl-color-text-accent);
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 2.5rem;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.8rem;
-  line-height: 1.25;
+  line-height: 1.3;
   margin-top: 2.5rem;
   margin-bottom: 1.2rem;
   border-bottom: 2px solid var(--eviwsmed-gold);
@@ -129,23 +129,24 @@ h3 {
   font-weight: 400;
   font-style: italic;
   font-size: 1.4rem;
-  line-height: 1.3;
+  line-height: 1.4;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: var(--eviwsmed-green);
 }
 
 h4 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  font-size: 1.05rem;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-size: 1.1rem;
+  text-transform: uppercase;
   color: var(--sl-color-gray-1);
   margin-top: 1.5rem;
   margin-bottom: 0.8rem;
 }
 
-/* Navigation & Sidebar: Inter */
+/* Navigation & Sidebar: Cormorant SC */
 nav,
 starlight-menu-button,
 .sidebar-content,
@@ -155,17 +156,17 @@ starlight-menu-button,
 .sl-sidebar summary,
 .sl-sidebar span,
 .site-title {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Cormorant SC', serif !important;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.08em;
 }
 
 .site-title {
-  font-family: 'DM Serif Display', Georgia, serif !important;
-  font-weight: 400;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700;
   font-size: 1.5rem;
   color: var(--sl-color-accent);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -200,7 +201,7 @@ starlight-menu-button,
   color: var(--eviwsmed-gold);
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -218,26 +219,25 @@ starlight-menu-button,
 }
 
 .hero h1 {
-  font-family: 'DM Serif Display', Georgia, serif !important;
-  font-weight: 400;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700;
   color: var(--sl-color-accent);
   margin-bottom: 1rem;
 }
 
 .hero .tagline {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 1.15rem !important;
+  font-family: 'EB Garamond', Georgia, serif !important;
+  font-size: 1.2rem !important;
   color: var(--sl-color-gray-1);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Hero Action Buttons */
 .hero .action a[data-type='primary'] {
   background: var(--sl-color-accent) !important;
   border-color: var(--sl-color-accent) !important;
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.12em;
   padding: 0.9rem 2rem;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -250,9 +250,8 @@ starlight-menu-button,
 }
 
 .hero .action a[data-type='minimal'] {
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.12em;
   color: var(--eviwsmed-gold);
   border-color: var(--eviwsmed-gold);
 }
@@ -281,10 +280,10 @@ details[open] {
 }
 
 details summary {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant SC', serif;
   font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
   color: var(--eviwsmed-burgundy);
   cursor: pointer;
   user-select: none;
@@ -342,10 +341,10 @@ thead {
 }
 
 th {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #FFFDF7;
   padding: 1rem 1.2rem;
@@ -422,9 +421,9 @@ tbody tr:last-child td {
 }
 
 .starlight-aside__title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant SC', serif;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.08em;
   font-size: 1rem;
 }
 
@@ -452,8 +451,8 @@ tbody tr:last-child td {
    SEARCH
    ═══════════════════════════════════════════════════════════════ */
 site-search button {
-  font-family: 'Inter', sans-serif !important;
-  letter-spacing: -0.01em;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.06em;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -524,11 +523,11 @@ hr::after {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CODE BLOCKS — DM Mono
+   CODE BLOCKS
    ═══════════════════════════════════════════════════════════════ */
 pre,
 code {
-  font-family: 'DM Mono', 'SF Mono', 'Monaco', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
   border-radius: 6px;
 }
 
@@ -567,153 +566,9 @@ blockquote cite {
   margin-top: 0.8rem;
   font-style: normal;
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: -0.01em;
+  font-family: 'Cormorant SC', serif;
+  letter-spacing: 0.05em;
   color: var(--eviwsmed-gold);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   STACKING SCROLL PATTERN — Function Health Style
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Only apply to Starlight content pages, not landing page */
-.sl-container {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Left Column: Sticky Section Navigator */
-.section-navigator {
-  position: sticky;
-  top: 6rem;
-  height: fit-content;
-  padding: 2rem 1rem;
-  border-right: 2px solid var(--sl-color-gray-4);
-}
-
-.section-navigator ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.section-navigator li {
-  margin-bottom: 1.2rem;
-}
-
-.section-navigator a {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--sl-color-gray-2);
-  text-decoration: none;
-  display: block;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  letter-spacing: -0.01em;
-}
-
-.section-navigator a:hover {
-  background: var(--sl-color-accent-low);
-  color: var(--sl-color-accent);
-  transform: translateX(3px);
-}
-
-.section-navigator a.active {
-  background: var(--sl-color-accent);
-  color: var(--sl-color-black);
-  font-weight: 600;
-  box-shadow: var(--shadow-subtle);
-}
-
-/* Right Column: Main Content */
-.content-wrapper {
-  min-width: 0; /* Prevents grid blowout */
-  padding-right: 2rem;
-}
-
-/* Hide the default Starlight right TOC */
-.right-sidebar {
-  display: none !important;
-}
-
-/* Adjust main content grid when section navigator is present */
-.main-frame {
-  grid-template-columns: 1fr;
-}
-
-/* Mobile: Stack vertically */
-@media (max-width: 1024px) {
-  .sl-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .section-navigator {
-    position: relative;
-    top: 0;
-    border-right: none;
-    border-bottom: 2px solid var(--sl-color-gray-4);
-    padding-bottom: 1.5rem;
-  }
-  
-  .section-navigator ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .section-navigator li {
-    margin-bottom: 0;
-  }
-  
-  .section-navigator a {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   NAVBAR FIX — No Word Break, Earlier Hamburger
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Landing Page Navbar - prevent awkward wrapping */
-.nav-links a {
-  white-space: nowrap;
-  word-break: keep-all;
-}
-
-/* Trigger mobile menu earlier (at 900px instead of default) */
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--sl-color-bg-nav);
-    flex-direction: column;
-    padding: 1rem;
-    border-top: 1px solid var(--sl-color-gray-4);
-  }
-  
-  .nav-links.active {
-    display: flex;
-  }
-  
-  .mobile-toggle {
-    display: block !important;
-  }
-}
-
-/* Starlight header navbar - similar treatment */
-header nav a,
-header nav button {
-  white-space: nowrap;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -765,99 +620,4 @@ a,
 button,
 summary {
   transition-property: all;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   LAYOUT OVERRIDES FOR SECTION NAVIGATOR
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Override Starlight's default layout when section navigator is present */
-.sl-container:has(.section-navigator) {
-  display: grid !important;
-  grid-template-columns: 280px 1fr !important;
-  gap: 3rem !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
-}
-
-/* Left Column: Sticky Section Navigator */
-.section-navigator {
-  position: sticky !important;
-  top: 6rem !important;
-  height: fit-content !important;
-  padding: 2rem 1rem !important;
-  border-right: 2px solid var(--sl-color-gray-4) !important;
-}
-
-.section-navigator ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.section-navigator li {
-  margin-bottom: 1rem !important;
-}
-
-.section-navigator a {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
-  color: var(--sl-color-gray-2) !important;
-  text-decoration: none !important;
-  display: block !important;
-  padding: 0.6rem 1rem !important;
-  border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  letter-spacing: -0.01em !important;
-}
-
-.section-navigator a:hover {
-  background: var(--sl-color-accent-low) !important;
-  color: var(--sl-color-accent) !important;
-  transform: translateX(3px) !important;
-}
-
-.section-navigator a.active {
-  background: var(--sl-color-accent) !important;
-  color: var(--sl-color-black) !important;
-  font-weight: 600 !important;
-  box-shadow: var(--shadow-subtle) !important;
-}
-
-/* Right Column: Main Content */
-.content-wrapper {
-  min-width: 0 !important;
-  padding-right: 2rem !important;
-}
-
-/* Mobile: Stack vertically */
-@media (max-width: 1024px) {
-  .sl-container:has(.section-navigator) {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  
-  .section-navigator {
-    position: relative !important;
-    top: 0 !important;
-    border-right: none !important;
-    border-bottom: 2px solid var(--sl-color-gray-4) !important;
-    padding-bottom: 1.5rem !important;
-  }
-  
-  .section-navigator ul {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-  
-  .section-navigator li {
-    margin-bottom: 0 !important;
-  }
-  
-  .section-navigator a {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.85rem !important;
-  }
 }

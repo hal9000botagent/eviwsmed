@@ -12,7 +12,7 @@ Diese Verengung entsteht meist durch Verschleißerscheinungen: Die Bandscheiben 
 Die Spinalkanalstenose ist eine typische Erkrankung des höheren Lebensalters – die meisten Betroffenen sind über 60 Jahre alt. Sie ist eine der häufigsten Gründe für Wirbelsäulenoperationen bei älteren Menschen.
 
 <details>
-<summary>🔬 Fachinfo: Pathophysiologie</summary>
+<summary>🔍 Hinter den Kulissen: Wie entsteht die Verengung?</summary>
 
 Die lumbale Spinalkanalstenose (LSS) entsteht durch eine mehrdimensionale Einengung des Spinalkanals und der Neuroforamina. Man unterscheidet:
 
@@ -81,7 +81,7 @@ Bei folgenden Warnsignalen sollten Sie umgehend einen Arzt oder die Notaufnahme 
 Diese Symptome sind bei Spinalkanalstenose sehr selten, können aber auf einen neurologischen Notfall hinweisen.
 
 <details>
-<summary>🔬 Fachinfo: Klinische Diagnostik</summary>
+<summary>🔍 Wie Ärzte die Diagnose stellen — und warum Gehen oft die beste Untersuchung ist</summary>
 
 **Leitsymptom: Claudicatio spinalis (neurogene Claudicatio)**
 
@@ -160,7 +160,7 @@ Das **MRT** (Magnetresonanztomographie) ist die wichtigste Untersuchung. Es zeig
 Bei unklarer Zuordnung zwischen Beschwerden und MRT-Befund können weitere Untersuchungen wie Röntgen-Funktionsaufnahmen (bei Verdacht auf Instabilität) oder selten eine Nervenmessung (EMG) sinnvoll sein.
 
 <details>
-<summary>🔬 Fachinfo: Bildgebende Diagnostik</summary>
+<summary>🔍 Welche Untersuchungen wirklich nötig sind — und warum nicht jede MRT-Enge behandelt werden muss</summary>
 
 **MRT-Diagnostik (Goldstandard)**
 
@@ -263,7 +263,7 @@ Epidurale Steroidinjektionen (Spritzen an die Nervenwurzeln) können in ausgewä
 Die Leitlinien empfehlen, **3 bis 6 Monate** konservativ zu behandeln, bevor man eine Operation in Betracht zieht. Wenn sich die Beschwerden in dieser Zeit stabilisieren oder bessern, kann man diese Behandlung fortsetzen. Wichtig ist: Die Spinalkanalstenose ist keine Notfall-Erkrankung – Sie können in Ruhe entscheiden.
 
 <details>
-<summary>🔬 Fachinfo: Konservative Therapie</summary>
+<summary>🔍 Die Evidenz: Was Studien über konservative Behandlung zeigen</summary>
 
 **Evidenzlage:**
 
@@ -378,7 +378,7 @@ Bei 70-85% der Patienten bessern sich die Beinschmerzen und die Gehstrecke deutl
 Die meisten Patienten können bereits am Tag nach der Operation aufstehen. Der Krankenhausaufenthalt dauert meist 3-7 Tage. Die Rückkehr zu leichten Tätigkeiten ist nach 4-6 Wochen möglich, schwere körperliche Arbeit sollte für etwa 3 Monate vermieden werden.
 
 <details>
-<summary>🔬 Fachinfo: Operative Therapie</summary>
+<summary>🔍 Wann und warum Ärzte zur OP raten — und warum Fusion kontrovers ist</summary>
 
 **Operationsindikationen:**
 
@@ -564,6 +564,18 @@ Da die Spinalkanalstenose hauptsächlich durch Verschleißerscheinungen entsteht
 - **Nichtrauchen:** Rauchen verschlechtert die Durchblutung und fördert Degeneration
 
 Wenn Sie bereits eine Spinalkanalstenose haben, können Übungen in leichter Vorbeugung (Flexion) helfen, die Beschwerden zu lindern und die Gehstrecke zu erhalten.
+
+## Von der Studie zur Therapieentscheidung
+
+Medizinische Empfehlungen basieren nicht auf Einzelmeinungen, sondern auf einem systematischen Prozess:
+
+1. **Studien** — Tausende Patienten werden in kontrollierten Studien behandelt und verglichen
+2. **Systematische Auswertung** — Alle verfügbaren Studien werden zusammengefasst (Cochrane Reviews, Meta-Analysen)
+3. **Leitlinien** — Fachgesellschaften (wie die AWMF) werten die Evidenz aus und formulieren Empfehlungen
+4. **Ihre individuelle Situation** — Ihr Arzt berücksichtigt Leitlinien UND Ihre persönlichen Faktoren (Alter, Begleiterkrankungen, Wünsche)
+
+Bei der Spinalkanalstenose zeigte die SPORT-Studie, dass operierte Patienten nach 2-4 Jahren eine deutlich bessere Lebensqualität und Gehfähigkeit haben als nicht-operierte. Gleichzeitig bleibt etwa ein Drittel der konservativ behandelten Patienten stabil oder bessert sich. Die Entscheidung hängt also von Ihrem Leidensdruck, Ihrer Gehfähigkeit und Ihren persönlichen Prioritäten ab — es gibt hier kein "richtig" oder "falsch".
+
 
 ## Quellen
 

@@ -25,7 +25,7 @@ Man unterscheidet zwei Hauptformen:
 Die meisten akuten Rückenschmerzen bessern sich innerhalb von 4-6 Wochen deutlich, unabhängig davon, welche Behandlung man erhält.
 
 <details>
-<summary>🔬 Fachinfo: Pathophysiologie und Klassifikation</summary>
+<summary>🔍 Hinter den Kulissen: Warum schmerzt der Rücken — auch ohne sichtbare Ursache?</summary>
 
 **Klassifikation nach AWMF/NVL:**
 
@@ -121,7 +121,7 @@ Bei folgenden Warnsignalen sollten Sie umgehend einen Arzt oder die Notaufnahme 
 Diese Red Flags können auf ernsthafte Ursachen wie Frakturen, Tumore, Infektionen oder ein Cauda-equina-Syndrom hinweisen. In diesen Fällen ist eine sofortige ärztliche Abklärung wichtig.
 
 <details>
-<summary>🔬 Fachinfo: Red Flags und Differentialdiagnose</summary>
+<summary>🔍 Wie Ärzte ernste Ursachen erkennen — und warum die meisten Rückenschmerzen harmlos sind</summary>
 
 **Red Flags für schwerwiegende Pathologie:**
 
@@ -257,7 +257,7 @@ Bei nicht-spezifischen Rückenschmerzen ohne Warnsignale ist **zunächst keine B
 - **CT:** Bei MRT-Kontraindikation (Herzschrittmacher) oder unklarer Knochenveränderung
 
 <details>
-<summary>🔬 Fachinfo: Diagnostischer Algorithmus</summary>
+<summary>🔍 Warum nicht jeder Rückenschmerz sofort geröntgt werden sollte — der diagnostische Pfad</summary>
 
 **Diagnostische Strategie gemäß NVL Kreuzschmerz und NICE NG59:**
 
@@ -446,7 +446,7 @@ Bei chronischen Rückenschmerzen mit hohem Leidensdruck kann ein intensives, int
 - Moderate bis starke Evidenz für Verbesserung
 
 <details>
-<summary>🔬 Fachinfo: Evidenzbasierte Therapie</summary>
+<summary>🔍 Die Evidenz: Was wirklich hilft — und was nicht</summary>
 
 **Therapie-Empfehlungen nach AWMF NVL Kreuzschmerz, NICE NG59, ACP 2017:**
 
@@ -620,7 +620,7 @@ Das sogenannte "Failed Back Surgery Syndrome" – anhaltende oder verschlimmerte
 - Holen Sie bei Unsicherheit eine Zweitmeinung ein!
 
 <details>
-<summary>🔬 Fachinfo: OP-Indikationen und Evidenz</summary>
+<summary>🔍 Warum OPs bei nicht-spezifischen Rückenschmerzen meist keine Lösung sind</summary>
 
 **Operative Therapie bei nicht-spezifischem Kreuzschmerz:**
 
@@ -784,6 +784,18 @@ Auch wenn sich nicht jede Rückenschmerz-Episode verhindern lässt, können Sie 
 - **Bewegung beibehalten:** Auch nach Abklingen der Schmerzen weiter aktiv bleiben
 - **Nicht zu vorsichtig werden:** Vermeidungsverhalten erhöht Rückfallrisiko
 - **Ursachen analysieren:** Gab es Auslöser (schweres Heben, ungewohnte Belastung), die sich vermeiden lassen?
+
+## Von der Studie zur Therapieentscheidung
+
+Medizinische Empfehlungen basieren nicht auf Einzelmeinungen, sondern auf einem systematischen Prozess:
+
+1. **Studien** — Tausende Patienten werden in kontrollierten Studien behandelt und verglichen
+2. **Systematische Auswertung** — Alle verfügbaren Studien werden zusammengefasst (Cochrane Reviews, Meta-Analysen)
+3. **Leitlinien** — Fachgesellschaften (wie die AWMF, NICE, American College of Physicians) werten die Evidenz aus und formulieren Empfehlungen
+4. **Ihre individuelle Situation** — Ihr Arzt berücksichtigt Leitlinien UND Ihre persönlichen Faktoren (Alter, Begleiterkrankungen, Lebenssituation, Wünsche)
+
+Bei nicht-spezifischen Rückenschmerzen ist die Evidenz klar: Bewegung und Aktivität helfen nachweislich, während passive Therapien (Spritzen, Operationen) meist keinen Langzeitnutzen bringen. Die Leitlinien aller großen Fachgesellschaften sind sich einig: "Stay active" ist die wichtigste Empfehlung. Das bedeutet nicht, dass Ihre Schmerzen eingebildet sind — sondern dass Ihr Körper Bewegung braucht, um zu heilen.
+
 
 ## Quellen
 
