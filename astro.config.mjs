@@ -2,9 +2,12 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
-	site: 'https://evidenzbasierte-wirbelsaeulenmedizin.de',
-	integrations: [
+    site: 'https://evidenzbasierte-wirbelsaeulenmedizin.de',
+
+    integrations: [
 		starlight({
 			title: 'EviWsMed',
 			description: 'Evidenzbasierte Wirbelsäulenmedizin – Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule',
@@ -115,4 +118,6 @@ export default defineConfig({
 			],
 		}),
 	],
+
+    adapter: cloudflare()
 });
