@@ -260,7 +260,7 @@ starlight-menu-button,
 /* ═══════════════════════════════════════════════════════════════
    DETAILS BLOCKS (🔬 Fachinfo) — Medical-Elegant Styling
    ═══════════════════════════════════════════════════════════════ */
-details {
+.sl-markdown-content details {
   background: var(--sl-color-black);
   border-left: 4px solid var(--eviwsmed-burgundy);
   border-radius: 8px;
@@ -270,17 +270,17 @@ details {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-details:hover {
+.sl-markdown-content details:hover {
   box-shadow: var(--shadow-medium);
   transform: translateX(3px);
 }
 
-details[open] {
+.sl-markdown-content details[open] {
   border-left-color: var(--eviwsmed-gold);
   background: linear-gradient(90deg, var(--sl-color-accent-low) 0%, var(--sl-color-black) 2%);
 }
 
-details summary {
+.sl-markdown-content details summary {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1rem;
@@ -294,7 +294,7 @@ details summary {
   padding-left: 1.5rem;
 }
 
-details summary::-webkit-details-marker {
+.sl-markdown-content details summary::-webkit-details-marker {
   display: none;
 }
 
@@ -310,18 +310,18 @@ details[open] summary::before {
   transform: rotate(15deg);
 }
 
-details summary:hover {
+.sl-markdown-content details summary:hover {
   color: var(--eviwsmed-gold);
 }
 
-details[open] summary {
+.sl-markdown-content details[open] summary {
   color: var(--eviwsmed-gold);
   margin-bottom: 1.2rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--sl-color-gray-4);
 }
 
-details > *:not(summary) {
+.sl-markdown-content details > *:not(summary) {
   padding-left: 0.5rem;
 }
 
@@ -823,8 +823,17 @@ starlight-toc,
 /* Inner lists and details within panels — fully transparent */
 .sidebar-content ul ul,
 .sidebar-content details,
-.sidebar-content li li {
+.sidebar-content li li,
+.sidebar-pane details,
+.sidebar-pane details[open] {
   background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
 /* Active page link keeps its accent bg */
@@ -892,7 +901,7 @@ site-search button[data-open-modal] {
 }
 
 /* Details/Fachinfo blocks — glass card effect */
-details {
+.sl-markdown-content details {
   background: rgba(255, 253, 247, 0.6) !important;
   backdrop-filter: blur(16px) saturate(1.1) !important;
   -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
@@ -900,18 +909,18 @@ details {
   border-left: 4px solid var(--eviwsmed-burgundy) !important;
 }
 
-:root[data-theme="dark"] details {
+:root[data-theme="dark"] .sl-markdown-content details {
   background: rgba(36, 36, 41, 0.6) !important;
   border-color: rgba(196, 88, 106, 0.15) !important;
   border-left-color: var(--eviwsmed-rose, #C4586A) !important;
 }
 
-details[open] {
+.sl-markdown-content details[open] {
   border-left-color: var(--eviwsmed-gold) !important;
   background: rgba(255, 253, 247, 0.75) !important;
 }
 
-:root[data-theme="dark"] details[open] {
+:root[data-theme="dark"] .sl-markdown-content details[open] {
   background: rgba(36, 36, 41, 0.75) !important;
 }
 
