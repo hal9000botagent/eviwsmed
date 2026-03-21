@@ -702,16 +702,15 @@ starlight-toc,
 /* Each h2 becomes sticky and stacks with a slight offset */
 /* Starlight wraps h2 in .sl-heading-wrapper — that's what needs to be sticky */
 .sl-markdown-content .sl-heading-wrapper.level-h2 {
-  position: sticky;
-  top: var(--sl-nav-height, 3.5rem);
-  z-index: 10;
-  background: color-mix(in srgb, var(--sl-color-bg) 95%, transparent);
+  position: sticky !important;
+  top: var(--sl-nav-height, 3.5rem) !important;
+  z-index: 10 !important;
+  background: var(--sl-color-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 0.75rem 0;
+  padding: 0.75rem 0 !important;
   margin-top: 2.5rem;
   border-bottom: 2px solid var(--sl-color-accent);
-  transition: box-shadow 0.3s ease;
 }
 
 /* Mobile: no sticky (headers would eat too much screen) */
