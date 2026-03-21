@@ -705,12 +705,21 @@ starlight-toc,
   position: sticky !important;
   top: var(--sl-nav-height, 3.5rem) !important;
   z-index: 10 !important;
-  background: var(--sl-color-bg) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.75rem 0 !important;
+  /* Glass morphism effect */
+  background: rgba(245, 240, 232, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+  padding: 0.75rem 1rem !important;
   margin-top: 2.5rem;
-  border-bottom: 2px solid var(--sl-color-accent);
+  border-bottom: 1px solid rgba(107, 29, 42, 0.15);
+  /* Subtle bottom fade */
+  box-shadow: 0 8px 16px -8px rgba(107, 29, 42, 0.08);
+}
+
+:root[data-theme="dark"] .sl-markdown-content .sl-heading-wrapper.level-h2 {
+  background: rgba(26, 26, 31, 0.85) !important;
+  border-bottom-color: rgba(196, 88, 106, 0.2);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3);
 }
 
 /* Mobile: no sticky (headers would eat too much screen) */
@@ -722,3 +731,91 @@ starlight-toc,
     background: transparent;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS & FADE EFFECTS — Function Health Style
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Details/Fachinfo blocks — glass card effect */
+details {
+  background: rgba(255, 253, 247, 0.6) !important;
+  backdrop-filter: blur(16px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
+  border: 1px solid rgba(107, 29, 42, 0.1) !important;
+  border-left: 4px solid var(--eviwsmed-burgundy) !important;
+}
+
+:root[data-theme="dark"] details {
+  background: rgba(36, 36, 41, 0.6) !important;
+  border-color: rgba(196, 88, 106, 0.15) !important;
+  border-left-color: var(--eviwsmed-rose, #C4586A) !important;
+}
+
+details[open] {
+  border-left-color: var(--eviwsmed-gold) !important;
+  background: rgba(255, 253, 247, 0.75) !important;
+}
+
+:root[data-theme="dark"] details[open] {
+  background: rgba(36, 36, 41, 0.75) !important;
+}
+
+/* Starlight aside cards — glass effect */
+.starlight-aside {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(107, 29, 42, 0.08) !important;
+}
+
+/* Tables — subtle glass header */
+thead {
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Sidebar — frosted glass */
+.sidebar-content {
+  backdrop-filter: blur(20px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+}
+
+/* Content fade-out at bottom of viewport (scroll indicator) */
+.content-panel::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 4rem;
+  background: linear-gradient(to bottom, transparent, var(--sl-color-bg));
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Navbar glass effect for Starlight header */
+.header {
+  backdrop-filter: blur(20px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.3) !important;
+  background: rgba(237, 231, 218, 0.8) !important;
+  border-bottom: 1px solid rgba(107, 29, 42, 0.08) !important;
+}
+
+:root[data-theme="dark"] .header {
+  background: rgba(42, 42, 48, 0.8) !important;
+  border-bottom-color: rgba(196, 88, 106, 0.1) !important;
+}
+
+/* Blockquotes — glass card */
+blockquote {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  background: rgba(245, 240, 232, 0.5) !important;
+  border: 1px solid rgba(168, 136, 74, 0.15) !important;
+  border-left: 4px solid var(--eviwsmed-gold) !important;
+}
+
+:root[data-theme="dark"] blockquote {
+  background: rgba(36, 36, 41, 0.5) !important;
+}
+
