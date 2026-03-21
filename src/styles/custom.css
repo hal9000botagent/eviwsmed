@@ -350,7 +350,7 @@ starlight-menu-button,
   font-family: 'Inter', sans-serif !important;
   font-size: 1.1875rem !important;
   color: var(--sl-color-gray-1);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Hero Action Buttons */
@@ -571,7 +571,7 @@ td {
   padding: 1rem 1.5rem;
   /* Very subtle separator, not a hard border */
   border-bottom: 1px solid rgba(107, 29, 42, 0.04);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 tbody tr:last-child td {
@@ -1044,7 +1044,7 @@ main {
   p,
   li {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.8;
   }
   
   .sl-markdown-content p {
