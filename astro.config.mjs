@@ -8,7 +8,13 @@ export default defineConfig({
 		starlight({
 			title: 'EviWsMed',
 			description: 'Evidenzbasierte Wirbelsäulenmedizin – Fachartikel, Enzyklopädie und Patienteninformation zur Wirbelsäule',
-			defaultLocale: 'de',
+			defaultLocale: 'root',
+			locales: {
+				root: {
+					label: 'Deutsch',
+					lang: 'de',
+				},
+			},
 			logo: {
 				src: './src/assets/logo.png',
 				replacesTitle: true,
@@ -69,7 +75,22 @@ export default defineConfig({
 				},
 				{
 					label: 'Erkrankungen',
-					autogenerate: { directory: 'erkrankungen' },
+					items: [
+						{ label: 'Übersicht', link: '/erkrankungen/' },
+						{
+							label: 'Degenerativ',
+							items: [
+								{ label: 'Bandscheibenvorfall', link: '/erkrankungen/degenerativ/bandscheibenvorfall' },
+								{ label: 'Ischialgien', link: '/erkrankungen/degenerativ/ischialgien' },
+								{ label: 'Rückenschmerzen', link: '/erkrankungen/degenerativ/rueckenschmerzen' },
+								{ label: 'Spinalkanalstenose', link: '/erkrankungen/degenerativ/spinalkanalstenose' },
+							],
+						},
+						{ label: 'Entzündlich', link: '/erkrankungen/entzuendlich/' },
+						{ label: 'Fehlbildungen', link: '/erkrankungen/fehlbildungen/' },
+						{ label: 'Tumoren', link: '/erkrankungen/tumoren/' },
+						{ label: 'Verletzungen', link: '/erkrankungen/verletzungen/' },
+					],
 				},
 				{
 					label: 'Glossar',
