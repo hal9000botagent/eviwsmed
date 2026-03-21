@@ -1,5 +1,6 @@
 ---
 // EviWsMed V2 — suche (Stitch Design)
+import '../../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
 <html class="light" lang="de"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -44,70 +45,7 @@
             font-family: 'DM Mono', monospace;
         }
     </style>
-<script is:inline id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#e7e2da",
-              "on-background": "#1d1c17",
-              "tertiary-fixed": "#c9ead9",
-              "surface-variant": "#e7e2da",
-              "on-tertiary-container": "#8baa9b",
-              "on-primary-fixed": "#40000f",
-              "outline": "#877273",
-              "on-surface-variant": "#554243",
-              "on-secondary-fixed-variant": "#5b4309",
-              "on-primary": "#ffffff",
-              "on-tertiary-fixed": "#022016",
-              "tertiary-fixed-dim": "#adcebe",
-              "primary": "#4d0516",
-              "tertiary-container": "#223f33",
-              "on-primary-fixed-variant": "#7c2a36",
-              "inverse-primary": "#ffb2b8",
-              "primary-fixed-dim": "#ffb2b8",
-              "on-tertiary-fixed-variant": "#304d40",
-              "on-secondary": "#ffffff",
-              "secondary-fixed-dim": "#e6c17e",
-              "on-error-container": "#93000a",
-              "on-secondary-fixed": "#261900",
-              "outline-variant": "#dac0c1",
-              "secondary": "#765a21",
-              "primary-container": "#6b1d2a",
-              "tertiary": "#0b291f",
-              "error": "#ba1a1a",
-              "surface-container-lowest": "#ffffff",
-              "surface-tint": "#9a414d",
-              "secondary-fixed": "#ffdea4",
-              "inverse-surface": "#32302b",
-              "on-primary-container": "#ef848f",
-              "surface-container": "#f2ede5",
-              "on-tertiary": "#ffffff",
-              "on-surface": "#1d1c17",
-              "on-secondary-container": "#785c23",
-              "surface-dim": "#ded9d2",
-              "background": "#fef9f1",
-              "surface-container-low": "#f8f3eb",
-              "secondary-container": "#fed892",
-              "primary-fixed": "#ffdadb",
-              "surface-bright": "#fef9f1",
-              "surface-container-high": "#ece8e0",
-              "surface": "#fef9f1",
-              "inverse-on-surface": "#f5f0e8",
-              "on-error": "#ffffff",
-              "error-container": "#ffdad6"
-            },
-            fontFamily: {
-              "headline": ["DM Serif Display"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
+
 </head>
 <body class="bg-surface selection:bg-primary-container selection:text-white">
 <!-- TopNavBar -->

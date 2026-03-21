@@ -1,5 +1,6 @@
 ---
 // Dark mode variant
+import '../../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -9,72 +10,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono&amp;family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script is:inline id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-secondary-container": "#A8884A",
-              "on-primary-fixed": "#ffdadb",
-              "secondary": "#A8884A",
-              "outline-variant": "#444746",
-              "on-secondary": "#1A1A1F",
-              "tertiary-fixed-dim": "#adcebe",
-              "on-primary": "#ffffff",
-              "on-tertiary-container": "#8baa9b",
-              "surface-container-highest": "#333338",
-              "tertiary-fixed": "#c9ead9",
-              "outline": "#8e918f",
-              "primary-fixed": "#ffdadb",
-              "inverse-surface": "#E2DCD2",
-              "inverse-primary": "#9a414d",
-              "on-primary-container": "#ffdadb",
-              "on-primary-fixed-variant": "#ffdadb",
-              "secondary-fixed": "#ffdea4",
-              "on-error": "#ffffff",
-              "on-secondary-fixed": "#261900",
-              "background": "#1A1A1F",
-              "on-surface-variant": "#c4c7c5",
-              "surface-container-low": "#242429",
-              "primary": "#ef848f",
-              "secondary-fixed-dim": "#e6c17e",
-              "surface-container-high": "#2e2e33",
-              "surface-tint": "#ffb2b8",
-              "error-container": "#93000a",
-              "on-tertiary-fixed-variant": "#304d40",
-              "surface-variant": "#444746",
-              "surface-bright": "#3b3b40",
-              "on-secondary-fixed-variant": "#5b4309",
-              "on-surface": "#E2DCD2",
-              "on-background": "#E2DCD2",
-              "primary-fixed-dim": "#ffb2b8",
-              "on-tertiary-fixed": "#022016",
-              "surface": "#1A1A1F",
-              "inverse-on-surface": "#1A1A1F",
-              "on-error-container": "#ffdad6",
-              "secondary-container": "#3d3010",
-              "tertiary": "#adcebe",
-              "surface-container": "#2a2a2f",
-              "surface-container-lowest": "#0f0f12",
-              "on-tertiary": "#1a362a",
-              "surface-dim": "#121215",
-              "primary-container": "#6b1d2a",
-              "error": "#ffb4ab",
-              "tertiary-container": "#223f33"
-            },
-            fontFamily: {
-              "headline": ["DM Serif Display", "serif"],
-              "body": ["Inter", "sans-serif"],
-              "label": ["Inter", "sans-serif"],
-              "mono": ["DM Mono", "monospace"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
+
+
 <style>
       body { background-color: #1A1A1F; color: #E2DCD2; }
       .glass-card {
