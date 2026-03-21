@@ -81,16 +81,11 @@ export default defineConfig({
 					label: 'Erkrankungen',
 					items: [
 						{ label: 'Übersicht', link: '/erkrankungen/' },
-						{
-							label: 'Degenerativ',
-							items: [
-								{ label: 'Bandscheibenvorfall LWS', link: '/erkrankungen/degenerativ/bandscheibenvorfall-lws' },
-								{ label: 'Rückenschmerzen', link: '/erkrankungen/degenerativ/rueckenschmerzen' },
-								{ label: 'Spinalkanalstenose', link: '/erkrankungen/degenerativ/spinalkanalstenose' },
-								{ label: 'Spondylolisthesis', link: '/erkrankungen/degenerativ/spondylolisthesis' },
-								{ label: 'Ischialgien', link: '/erkrankungen/degenerativ/ischialgien' },
-							],
-						},
+						{ label: 'Bandscheibenvorfall', link: '/erkrankungen/degenerativ/bandscheibenvorfall-lws' },
+						{ label: 'Rückenschmerzen', link: '/erkrankungen/degenerativ/rueckenschmerzen' },
+						{ label: 'Spinalkanalstenose', link: '/erkrankungen/degenerativ/spinalkanalstenose' },
+						{ label: 'Spondylolisthesis', link: '/erkrankungen/degenerativ/spondylolisthesis' },
+						{ label: 'Ischialgien', link: '/erkrankungen/degenerativ/ischialgien' },
 						{ label: 'Entzündlich', link: '/erkrankungen/entzuendlich/' },
 						{ label: 'Fehlbildungen', link: '/erkrankungen/fehlbildungen/' },
 						{ label: 'Tumoren', link: '/erkrankungen/tumoren/' },
@@ -102,7 +97,7 @@ export default defineConfig({
 					autogenerate: { directory: 'glossar' },
 				},
 				{
-					label: 'Häufige Fragen',
+					label: 'FAQ',
 					autogenerate: { directory: 'faq' },
 				},
 				{
@@ -114,7 +109,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Impressum', link: '/impressum' },
 						{ label: 'Datenschutz', link: '/datenschutz' },
-						{ label: 'Hinweis', link: '/hinweis-medizinische-information' },
+						{ label: 'Med. Hinweis', link: '/hinweis-medizinische-information' },
 					],
 				},
 			],
