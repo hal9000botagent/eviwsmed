@@ -820,6 +820,18 @@ starlight-toc,
   border-color: rgba(196, 88, 106, 0.25) !important;
 }
 
+/* Inner lists and details within panels — fully transparent */
+.sidebar-content ul ul,
+.sidebar-content details,
+.sidebar-content li li {
+  background: transparent !important;
+}
+
+/* Active page link keeps its accent bg */
+.sidebar-content a[aria-current="page"] {
+  background: var(--sl-color-accent) !important;
+}
+
 /* Content area — subtle texture/depth */
 .content-panel {
   background: rgba(255, 253, 247, 0.4) !important;
