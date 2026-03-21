@@ -32,9 +32,10 @@
   --eviwsmed-green: #2D4A3E;
   --eviwsmed-burgundy: #6B1D2A;
   
-  /* Shadows */
-  --shadow-subtle: 0 2px 12px rgba(107, 29, 42, 0.08);
-  --shadow-medium: 0 4px 20px rgba(107, 29, 42, 0.12);
+  /* Shadows — Soft, Subtle */
+  --shadow-subtle: 0 1px 3px rgba(107, 29, 42, 0.06), 0 1px 2px rgba(107, 29, 42, 0.04);
+  --shadow-medium: 0 4px 12px rgba(107, 29, 42, 0.08), 0 2px 4px rgba(107, 29, 42, 0.06);
+  --shadow-strong: 0 10px 30px rgba(107, 29, 42, 0.12), 0 4px 8px rgba(107, 29, 42, 0.08);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -68,8 +69,9 @@
   --eviwsmed-rose: #C4586A;
   
   /* Shadows */
-  --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -78,10 +80,10 @@
 :root {
   --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --sl-font-system: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --sl-line-height: 1.7;
+  --sl-line-height: 1.8;
 }
 
-/* Body Text */
+/* Body Text — More Breathing Room */
 body,
 p,
 li,
@@ -91,9 +93,31 @@ blockquote,
 .sl-markdown-content,
 .content-panel {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  letter-spacing: -0.011em;
+}
+
+/* Paragraphs — Generous Spacing */
+.sl-markdown-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Lists — Better Spacing, Custom Bullets */
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.sl-markdown-content li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.sl-markdown-content ul > li::marker {
+  color: var(--eviwsmed-gold);
+  font-size: 1.2em;
 }
 
 /* Headings: DM Serif Display */
@@ -110,28 +134,31 @@ h3,
 
 h1 {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* H2 — No Border, Just Shadow + Generous Spacing */
 h2 {
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.25;
-  margin-top: 2.5rem;
-  margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--eviwsmed-gold);
-  padding-bottom: 0.5rem;
+  margin-top: 5rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0;
+  border-bottom: none;
+  /* Subtle shadow instead of border */
+  text-shadow: 0 1px 2px rgba(107, 29, 42, 0.08);
 }
 
 h3 {
   font-weight: 400;
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.3;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
   color: var(--eviwsmed-green);
 }
 
@@ -139,10 +166,10 @@ h4 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   color: var(--sl-color-gray-1);
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Navigation & Sidebar: Inter */
@@ -169,27 +196,76 @@ starlight-menu-button,
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SIDEBAR — Warm, Elegant
+   HEADER — Borderless, Subtle Shadow Only
+   ═══════════════════════════════════════════════════════════════ */
+.header {
+  backdrop-filter: blur(20px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.3) !important;
+  background: rgba(237, 231, 218, 0.85) !important;
+  /* NO border — shadow only */
+  border-bottom: none !important;
+  box-shadow: 0 1px 3px rgba(107, 29, 42, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+:root[data-theme="dark"] .header {
+  background: rgba(42, 42, 48, 0.85) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SIDEBAR — Borderless, Shadow Instead
    ═══════════════════════════════════════════════════════════════ */
 .sidebar-content {
   background: transparent !important;
+  /* NO border-right — use subtle shadow */
   border-right: none !important;
 }
 
+/* Sidebar container gets a soft shadow to separate from content */
+.sidebar-pane {
+  background: 
+    linear-gradient(
+      180deg,
+      rgba(107, 29, 42, 0.25) 0%,
+      rgba(168, 136, 74, 0.18) 20%,
+      rgba(245, 235, 220, 0.3) 45%,
+      rgba(45, 74, 62, 0.15) 70%,
+      rgba(168, 136, 74, 0.12) 100%
+    ) !important;
+  /* Shadow instead of border */
+  border-right: none !important;
+  box-shadow: 2px 0 12px rgba(107, 29, 42, 0.06);
+}
+
+:root[data-theme="dark"] .sidebar-pane {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(196, 88, 106, 0.15) 0%,
+      rgba(196, 166, 106, 0.10) 25%,
+      rgba(26, 26, 31, 0.5) 50%,
+      rgba(90, 158, 130, 0.10) 75%,
+      rgba(196, 88, 106, 0.08) 100%
+    ) !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar Links — More Padding, Softer */
 .sidebar-content a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
 }
 
 .sidebar-content a:hover {
   background: var(--sl-color-accent-low);
   color: var(--sl-color-accent);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
+/* Active link — softer burgundy, not harsh */
 .sidebar-content a[aria-current='page'] {
-  background: var(--sl-color-accent);
+  background: linear-gradient(135deg, var(--sl-color-accent) 0%, var(--sl-color-accent-high) 100%);
   color: var(--sl-color-black);
   font-weight: 600;
   box-shadow: var(--shadow-subtle);
@@ -201,34 +277,80 @@ starlight-menu-button,
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
+/* Individual sidebar groups — frosted glass cards */
+.sidebar-content .top-level > li {
+  background: rgba(255, 253, 247, 0.5) !important;
+  backdrop-filter: blur(16px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.3) !important;
+  border: 1px solid rgba(168, 136, 74, 0.12) !important;
+  border-radius: 12px !important;
+  padding: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sidebar-content .top-level > li:hover {
+  background: rgba(255, 253, 247, 0.7) !important;
+  border-color: rgba(107, 29, 42, 0.15) !important;
+  box-shadow: var(--shadow-subtle) !important;
+}
+
+:root[data-theme="dark"] .sidebar-content .top-level > li {
+  background: rgba(36, 36, 41, 0.5) !important;
+  border-color: rgba(196, 88, 106, 0.12) !important;
+}
+
+:root[data-theme="dark"] .sidebar-content .top-level > li:hover {
+  background: rgba(36, 36, 41, 0.7) !important;
+  border-color: rgba(196, 88, 106, 0.2) !important;
+}
+
+/* Inner sidebar lists — transparent */
+.sidebar-content ul ul,
+.sidebar-content details,
+.sidebar-content li li,
+.sidebar-pane details,
+.sidebar-pane details[open] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════
-   HERO SECTION (Article Pages)
+   HERO SECTION (Article Pages) — No Borders
    ═══════════════════════════════════════════════════════════════ */
 .hero {
-  border-bottom: 3px solid var(--eviwsmed-gold);
+  /* NO border-bottom */
+  border-bottom: none;
   background: linear-gradient(135deg, var(--sl-color-bg) 0%, var(--sl-color-black) 100%);
-  padding: 3rem 2rem;
-  border-radius: 0 0 12px 12px;
-  margin-bottom: 2rem;
+  padding: 3.5rem 2.5rem;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-subtle);
 }
 
 .hero h1 {
   font-family: 'DM Serif Display', Georgia, serif !important;
   font-weight: 400;
   color: var(--sl-color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero .tagline {
   font-family: 'Inter', sans-serif !important;
-  font-size: 1.15rem !important;
+  font-size: 1.1875rem !important;
   color: var(--sl-color-gray-1);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Hero Action Buttons */
@@ -238,15 +360,15 @@ starlight-menu-button,
   font-family: 'Inter', sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.01em;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
+  padding: 1rem 2.25rem;
+  border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-medium);
 }
 
 .hero .action a[data-type='primary']:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-strong);
 }
 
 .hero .action a[data-type='minimal'] {
@@ -258,32 +380,47 @@ starlight-menu-button,
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   DETAILS BLOCKS (🔬 Fachinfo) — Medical-Elegant Styling
+   DETAILS BLOCKS (🔬 Fachinfo) — Glass Cards, Bigger Summary
    ═══════════════════════════════════════════════════════════════ */
 .sl-markdown-content details {
-  background: var(--sl-color-black);
-  border-left: 4px solid var(--eviwsmed-burgundy);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 2rem 0;
+  background: rgba(255, 253, 247, 0.6) !important;
+  backdrop-filter: blur(16px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
+  /* Softer border, not harsh */
+  border: 1px solid rgba(107, 29, 42, 0.08) !important;
+  border-left: 4px solid var(--eviwsmed-burgundy) !important;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0;
   box-shadow: var(--shadow-subtle);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sl-markdown-content details:hover {
   box-shadow: var(--shadow-medium);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 .sl-markdown-content details[open] {
   border-left-color: var(--eviwsmed-gold);
-  background: linear-gradient(90deg, var(--sl-color-accent-low) 0%, var(--sl-color-black) 2%);
+  background: rgba(255, 253, 247, 0.8) !important;
 }
 
+:root[data-theme="dark"] .sl-markdown-content details {
+  background: rgba(36, 36, 41, 0.6) !important;
+  border-color: rgba(196, 88, 106, 0.1) !important;
+  border-left-color: var(--eviwsmed-rose, #C4586A) !important;
+}
+
+:root[data-theme="dark"] .sl-markdown-content details[open] {
+  background: rgba(36, 36, 41, 0.8) !important;
+}
+
+/* Summary — Bigger Text, More Padding */
 .sl-markdown-content details summary {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.125rem;
   letter-spacing: -0.01em;
   color: var(--eviwsmed-burgundy);
   cursor: pointer;
@@ -291,7 +428,8 @@ starlight-menu-button,
   transition: color 0.3s ease;
   list-style: none;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
+  line-height: 1.6;
 }
 
 .sl-markdown-content details summary::-webkit-details-marker {
@@ -302,7 +440,7 @@ details summary::before {
   content: '🔬';
   position: absolute;
   left: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -316,41 +454,96 @@ details[open] summary::before {
 
 .sl-markdown-content details[open] summary {
   color: var(--eviwsmed-gold);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--sl-color-gray-4);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  /* No border, just shadow */
+  border-bottom: none;
+  box-shadow: 0 1px 0 rgba(168, 136, 74, 0.15);
 }
 
 .sl-markdown-content details > *:not(summary) {
-  padding-left: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   TABLES — Clean, Medical Aesthetic
+   INLINE CODE — Warmer Styling
+   ═══════════════════════════════════════════════════════════════ */
+:not(pre) > code {
+  background: linear-gradient(135deg, var(--sl-color-accent-low) 0%, rgba(168, 136, 74, 0.08) 100%);
+  color: var(--eviwsmed-burgundy);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  /* Softer border */
+  border: 1px solid rgba(107, 29, 42, 0.1);
+  font-family: 'DM Mono', 'SF Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LINKS — Burgundy with Smooth Underline Animation
+   ═══════════════════════════════════════════════════════════════ */
+.sl-markdown-content a {
+  color: var(--eviwsmed-burgundy);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sl-markdown-content a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--eviwsmed-burgundy);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sl-markdown-content a:hover {
+  color: var(--eviwsmed-gold);
+}
+
+.sl-markdown-content a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  background: var(--eviwsmed-gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLES — Clean, Medical Aesthetic, No Hard Borders
    ═══════════════════════════════════════════════════════════════ */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
-  border-radius: 8px;
+  margin: 2.5rem 0;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-medium);
+  /* No outer border */
+  border: none;
 }
 
 thead {
   background: linear-gradient(135deg, var(--eviwsmed-burgundy) 0%, var(--sl-color-accent-high) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 th {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #FFFDF7;
-  padding: 1rem 1.2rem;
+  padding: 1.125rem 1.5rem;
   text-align: left;
-  border-bottom: 2px solid var(--eviwsmed-gold);
+  /* Softer bottom "separator" — not a hard line */
+  border-bottom: none;
+  box-shadow: 0 1px 0 rgba(168, 136, 74, 0.3);
 }
 
 :root[data-theme='dark'] th {
@@ -358,7 +551,7 @@ th {
 }
 
 tbody tr {
-  transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 tbody tr:nth-child(odd) {
@@ -371,13 +564,14 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
   background: var(--sl-color-accent-low);
-  transform: scale(1.01);
+  transform: scale(1.005);
 }
 
 td {
-  padding: 0.9rem 1.2rem;
-  border-bottom: 1px solid var(--sl-color-gray-4);
-  line-height: 1.6;
+  padding: 1rem 1.5rem;
+  /* Very subtle separator, not a hard border */
+  border-bottom: 1px solid rgba(107, 29, 42, 0.04);
+  line-height: 1.7;
 }
 
 tbody tr:last-child td {
@@ -385,39 +579,45 @@ tbody tr:last-child td {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   STARLIGHT ADMONITIONS (Aside Blocks)
+   STARLIGHT ADMONITIONS (Aside Blocks) — No Hard Borders
    ═══════════════════════════════════════════════════════════════ */
 .starlight-aside {
-  border-radius: 8px;
+  border-radius: 12px;
   border-left-width: 4px;
-  padding: 1.2rem 1.5rem;
-  margin: 1.5rem 0;
+  /* No top/bottom/right borders */
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
   box-shadow: var(--shadow-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .starlight-aside:hover {
-  transform: translateX(3px);
+  transform: translateX(4px);
   box-shadow: var(--shadow-medium);
 }
 
 .starlight-aside--note {
-  border-color: var(--eviwsmed-green);
+  border-left-color: var(--eviwsmed-green);
   background: linear-gradient(90deg, rgba(45, 74, 62, 0.08) 0%, transparent 3%);
 }
 
 .starlight-aside--tip {
-  border-color: var(--eviwsmed-gold);
+  border-left-color: var(--eviwsmed-gold);
   background: linear-gradient(90deg, rgba(168, 136, 74, 0.08) 0%, transparent 3%);
 }
 
 .starlight-aside--caution {
-  border-color: #d97706;
+  border-left-color: #d97706;
   background: linear-gradient(90deg, rgba(217, 119, 6, 0.08) 0%, transparent 3%);
 }
 
 .starlight-aside--danger {
-  border-color: var(--eviwsmed-burgundy);
+  border-left-color: var(--eviwsmed-burgundy);
   background: linear-gradient(90deg, rgba(107, 29, 42, 0.08) 0%, transparent 3%);
 }
 
@@ -425,7 +625,7 @@ tbody tr:last-child td {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   letter-spacing: -0.01em;
-  font-size: 1rem;
+  font-size: 1.0625rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -433,51 +633,63 @@ tbody tr:last-child td {
    ═══════════════════════════════════════════════════════════════ */
 .card,
 .sl-link-card {
-  border: 1px solid var(--sl-color-gray-4);
-  border-radius: 12px;
-  padding: 1.8rem;
+  /* Soft border, not harsh */
+  border: 1px solid rgba(107, 29, 42, 0.08);
+  border-radius: 14px;
+  padding: 2rem;
   background: var(--sl-color-black);
   box-shadow: var(--shadow-subtle);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sl-link-card:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-6px);
   border-color: var(--sl-color-accent);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-strong);
   background: var(--sl-color-bg);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SEARCH
+   SEARCH — Borderless Glass
    ═══════════════════════════════════════════════════════════════ */
 site-search button {
   font-family: 'Inter', sans-serif !important;
   letter-spacing: -0.01em;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 site-search button:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   box-shadow: var(--shadow-subtle);
 }
 
+site-search button[data-open-modal] {
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  background: rgba(255, 253, 247, 0.5) !important;
+  border: 1px solid rgba(107, 29, 42, 0.08) !important;
+}
+
+:root[data-theme="dark"] site-search button[data-open-modal] {
+  background: rgba(36, 36, 41, 0.5) !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════
-   ORNAMENTAL DIVIDERS
+   SECTION DIVIDERS — Subtle Ornamental, NO Hard Lines
    ═══════════════════════════════════════════════════════════════ */
 hr {
   border: none;
   text-align: center;
-  margin: 3rem 0;
+  margin: 4rem 0;
   position: relative;
 }
 
 hr::before {
   content: '❧';
   color: var(--eviwsmed-gold);
-  font-size: 1.4rem;
-  opacity: 0.6;
+  font-size: 1.5rem;
+  opacity: 0.5;
   position: relative;
   display: inline-block;
 }
@@ -489,7 +701,7 @@ hr::after {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--eviwsmed-gold), transparent);
+  background: linear-gradient(90deg, transparent, rgba(168, 136, 74, 0.15), transparent);
   z-index: -1;
 }
 
@@ -497,30 +709,35 @@ hr::after {
    LANDING PAGE SECTIONS (if used in Starlight docs)
    ═══════════════════════════════════════════════════════════════ */
 .landing-section {
-  margin: 3rem 0;
-  padding: 2rem 0;
+  margin: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 .landing-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.25rem;
   color: var(--sl-color-text-accent);
   border-bottom: none;
 }
 
 .landing-section.popular-articles {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 2px solid var(--eviwsmed-gold);
+  margin-top: 5rem;
+  padding-top: 3.5rem;
+  /* No border — subtle shadow instead */
+  border-top: none;
+  box-shadow: 0 -1px 0 rgba(168, 136, 74, 0.1);
 }
 
 .trust-banner {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--sl-color-accent-low) 0%, transparent 100%);
+  margin-top: 3.5rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(245, 235, 232, 0.6) 0%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-left: 4px solid var(--eviwsmed-gold);
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -529,50 +746,54 @@ hr::after {
 pre,
 code {
   font-family: 'DM Mono', 'SF Mono', 'Monaco', monospace;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 pre {
-  padding: 1.2rem;
-  margin: 1.5rem 0;
+  padding: 1.5rem;
+  margin: 2rem 0;
   box-shadow: var(--shadow-subtle);
-  border: 1px solid var(--sl-color-gray-4);
-}
-
-:not(pre) > code {
-  background: var(--sl-color-accent-low);
-  color: var(--eviwsmed-burgundy);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9em;
-  border: 1px solid var(--sl-color-gray-4);
+  /* Softer border */
+  border: 1px solid rgba(107, 29, 42, 0.06);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   BLOCKQUOTES
+   BLOCKQUOTES — Glass Card
    ═══════════════════════════════════════════════════════════════ */
 blockquote {
   border-left: 4px solid var(--eviwsmed-gold);
-  padding-left: 1.5rem;
-  margin: 2rem 0;
+  padding-left: 2rem;
+  margin: 2.5rem 0;
   font-style: italic;
   color: var(--sl-color-gray-1);
-  background: linear-gradient(90deg, var(--sl-color-accent-low) 0%, transparent 5%);
-  padding: 1.2rem 1.5rem;
-  border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(245, 240, 232, 0.5);
+  padding: 1.5rem 2rem;
+  border-radius: 0 12px 12px 0;
+  /* No other borders */
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-left-width: 4px;
+  border-left-style: solid;
+  box-shadow: var(--shadow-subtle);
+}
+
+:root[data-theme="dark"] blockquote {
+  background: rgba(36, 36, 41, 0.5);
 }
 
 blockquote cite {
   display: block;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.01em;
   color: var(--eviwsmed-gold);
 }
 
-/* ═══════════════════════════════════════════════════════════════
 /* ═══════════════════════════════════════════════════════════════
    NAVBAR FIX — No Word Break, Earlier Hamburger
    ═══════════════════════════════════════════════════════════════ */
@@ -594,7 +815,7 @@ blockquote cite {
     background: var(--sl-color-bg-nav);
     flex-direction: column;
     padding: 1rem;
-    border-top: 1px solid var(--sl-color-gray-4);
+    border-top: 1px solid rgba(107, 29, 42, 0.08);
   }
   
   .nav-links.active {
@@ -613,69 +834,14 @@ header nav button {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE RESPONSIVENESS
-   ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
-  
-  body,
-  p,
-  li {
-    font-size: 1rem;
-  }
-  
-  details {
-    padding: 1rem;
-  }
-  
-  table {
-    font-size: 0.9rem;
-  }
-  
-  th,
-  td {
-    padding: 0.7rem 0.8rem;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   SMOOTH TRANSITIONS
-   ═══════════════════════════════════════════════════════════════ */
-* {
-  transition-property: background, border-color, color, box-shadow, transform;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-a,
-button,
-summary {
-  transition-property: all;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-
-/* ═══════════════════════════════════════════════════════════════
    LAYOUT: Hide right TOC, widen content area
    ═══════════════════════════════════════════════════════════════ */
 
-/* Hide the entire right sidebar container (TOC) — 
-   medical articles need the full width for readability */
+/* Hide the entire right sidebar container (TOC) */
 .right-sidebar-container {
   display: none !important;
 }
 
-/* Also hide TOC on smaller screens */
 starlight-toc,
 .right-sidebar-panel {
   display: none !important;
@@ -683,8 +849,8 @@ starlight-toc,
 
 /* Give the main content significantly more room */
 :root {
-  --sl-content-width: 65rem;
-  --sl-content-pad-x: 2rem;
+  --sl-content-width: 68rem;
+  --sl-content-pad-x: 3rem;
 }
 
 /* On wide screens: 2-column layout (sidebar + content only, no TOC) */
@@ -695,31 +861,38 @@ starlight-toc,
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   STICKY STACKING HEADERS — Section headers stack on scroll
-   Like iOS table view section headers / Function Health style
+   STICKY STACKING HEADERS — H2 Section Headers
    ═══════════════════════════════════════════════════════════════ */
 
-/* Each h2 becomes sticky and stacks with a slight offset */
-/* Starlight wraps h2 in .sl-heading-wrapper — that's what needs to be sticky */
+/* Each h2 becomes sticky and stacks with glass effect */
 .sl-markdown-content .sl-heading-wrapper.level-h2 {
   position: sticky !important;
   top: var(--sl-nav-height, 3.5rem) !important;
   z-index: 10 !important;
-  /* Glass morphism effect */
-  background: rgba(245, 240, 232, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(1.2) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
-  padding: 0.75rem 1rem !important;
-  margin-top: 2.5rem;
-  border-bottom: 1px solid rgba(107, 29, 42, 0.15);
-  /* Subtle bottom fade */
-  box-shadow: 0 8px 16px -8px rgba(107, 29, 42, 0.08);
+  /* Glass morphism effect — more presence */
+  background: rgba(245, 240, 232, 0.9) !important;
+  backdrop-filter: blur(24px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.3) !important;
+  padding: 1rem 1.5rem !important;
+  margin-top: 0;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  /* NO border — shadow only */
+  border-bottom: none;
+  /* Stronger shadow for more presence */
+  box-shadow: 0 2px 12px rgba(107, 29, 42, 0.08), 0 1px 3px rgba(107, 29, 42, 0.04);
 }
 
 :root[data-theme="dark"] .sl-markdown-content .sl-heading-wrapper.level-h2 {
-  background: rgba(26, 26, 31, 0.85) !important;
-  border-bottom-color: rgba(196, 88, 106, 0.2);
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  background: rgba(26, 26, 31, 0.9) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* The actual h2 inside wrapper needs adjusted margins since wrapper has padding */
+.sl-markdown-content .sl-heading-wrapper.level-h2 h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2.125rem;
 }
 
 /* Mobile: no sticky (headers would eat too much screen) */
@@ -729,138 +902,62 @@ starlight-toc,
     top: auto;
     backdrop-filter: none;
     background: transparent;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: none;
+  }
+  
+  .sl-markdown-content .sl-heading-wrapper.level-h2 h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   GLASS & FADE EFFECTS — Function Health Style
+   GLASS & DEPTH — Background Gradients + Layering
    ═══════════════════════════════════════════════════════════════ */
 
-/* Background gradient — gives glass something to blur through */
+/* Page background — subtle radial gradients for depth */
 .page {
   background: 
-    radial-gradient(ellipse at 10% 0%, rgba(107, 29, 42, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 10%, rgba(168, 136, 74, 0.08) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 50%, rgba(45, 74, 62, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 90%, rgba(168, 136, 74, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 10% 0%, rgba(107, 29, 42, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 10%, rgba(168, 136, 74, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(45, 74, 62, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 90%, rgba(168, 136, 74, 0.03) 0%, transparent 40%),
     var(--sl-color-bg) !important;
 }
 
 :root[data-theme="dark"] .page {
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(196, 88, 106, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(196, 166, 106, 0.04) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 80%, rgba(90, 158, 130, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 0%, rgba(196, 88, 106, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 166, 106, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(90, 158, 130, 0.03) 0%, transparent 50%),
     var(--sl-color-bg) !important;
-}
-
-/* Left sidebar — gradient background + frosted glass overlay via sidebar-content */
-.sidebar-pane {
-  background: 
-    linear-gradient(
-      180deg,
-      rgba(107, 29, 42, 0.25) 0%,
-      rgba(168, 136, 74, 0.18) 20%,
-      rgba(245, 235, 220, 0.3) 45%,
-      rgba(45, 74, 62, 0.15) 70%,
-      rgba(168, 136, 74, 0.12) 100%
-    ) !important;
-  border-right: 1px solid rgba(168, 136, 74, 0.3) !important;
-}
-
-:root[data-theme="dark"] .sidebar-pane {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(196, 88, 106, 0.15) 0%,
-      rgba(196, 166, 106, 0.10) 25%,
-      rgba(26, 26, 31, 0.5) 50%,
-      rgba(90, 158, 130, 0.10) 75%,
-      rgba(196, 88, 106, 0.08) 100%
-    ) !important;
-  border-right-color: rgba(196, 88, 106, 0.2) !important;
-}
-
-/* Sidebar content layer — the actual frosted glass */
-.sidebar-content {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-:root[data-theme="dark"] .sidebar-content {
-  background: transparent !important;
-}
-
-/* Individual sidebar groups/panels — frosted glass cards */
-.sidebar-content .top-level > li {
-  background: rgba(255, 253, 247, 0.5) !important;
-  backdrop-filter: blur(16px) saturate(1.3) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(1.3) !important;
-  border: 1px solid rgba(168, 136, 74, 0.15) !important;
-  border-radius: 10px !important;
-  padding: 0.5rem !important;
-  margin-bottom: 0.75rem !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.sidebar-content .top-level > li:hover {
-  background: rgba(255, 253, 247, 0.65) !important;
-  border-color: rgba(107, 29, 42, 0.2) !important;
-  box-shadow: 0 4px 16px rgba(107, 29, 42, 0.08) !important;
-}
-
-:root[data-theme="dark"] .sidebar-content .top-level > li {
-  background: rgba(36, 36, 41, 0.5) !important;
-  border-color: rgba(196, 88, 106, 0.12) !important;
-}
-
-:root[data-theme="dark"] .sidebar-content .top-level > li:hover {
-  background: rgba(36, 36, 41, 0.65) !important;
-  border-color: rgba(196, 88, 106, 0.25) !important;
-}
-
-/* Inner lists and details within panels — fully transparent */
-.sidebar-content ul ul,
-.sidebar-content details,
-.sidebar-content li li,
-.sidebar-pane details,
-.sidebar-pane details[open] {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-}
-
-/* Active page link keeps its accent bg */
-.sidebar-content a[aria-current="page"] {
-  background: var(--sl-color-accent) !important;
 }
 
 /* Content area — subtle texture/depth */
 .content-panel {
-  background: rgba(255, 253, 247, 0.4) !important;
+  background: rgba(255, 253, 247, 0.3) !important;
   backdrop-filter: blur(2px) !important;
   -webkit-backdrop-filter: blur(2px) !important;
 }
 
 :root[data-theme="dark"] .content-panel {
-  background: rgba(26, 26, 31, 0.4) !important;
+  background: rgba(26, 26, 31, 0.3) !important;
 }
 
-/* Main content container — warm subtle border + refined spacing */
+/* Main content container — warm subtle accent, NO hard border */
 .sl-container {
-  border-left: 1px solid rgba(168, 136, 74, 0.1);
-  padding-left: 2rem !important;
+  /* Very subtle shadow instead of border-left */
+  border-left: none;
+  box-shadow: -1px 0 0 rgba(168, 136, 74, 0.06);
+  padding-left: 3rem !important;
 }
 
 /* Decorative accent line at top of content */
 main {
-  border-top: 3px solid transparent;
+  border-top: 2px solid transparent;
   border-image: linear-gradient(90deg, var(--eviwsmed-burgundy, #6B1D2A), var(--eviwsmed-gold, #A8884A), var(--eviwsmed-green, #2D4A3E)) 1;
 }
 
@@ -868,82 +965,28 @@ main {
 .pagination-links a {
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  background: rgba(255, 253, 247, 0.5) !important;
-  border-color: rgba(107, 29, 42, 0.1) !important;
+  background: rgba(255, 253, 247, 0.6) !important;
+  border: 1px solid rgba(107, 29, 42, 0.08) !important;
+  border-radius: 10px !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .pagination-links a:hover {
-  background: rgba(255, 253, 247, 0.8) !important;
+  background: rgba(255, 253, 247, 0.9) !important;
   border-color: var(--sl-color-accent) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(107, 29, 42, 0.1) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: var(--shadow-medium) !important;
 }
 
 :root[data-theme="dark"] .pagination-links a {
-  background: rgba(36, 36, 41, 0.5) !important;
+  background: rgba(36, 36, 41, 0.6) !important;
 }
 
 :root[data-theme="dark"] .pagination-links a:hover {
-  background: rgba(36, 36, 41, 0.8) !important;
+  background: rgba(36, 36, 41, 0.9) !important;
 }
 
-/* Search button — glass pill */
-site-search button[data-open-modal] {
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  background: rgba(255, 253, 247, 0.5) !important;
-  border: 1px solid rgba(107, 29, 42, 0.1) !important;
-}
-
-:root[data-theme="dark"] site-search button[data-open-modal] {
-  background: rgba(36, 36, 41, 0.5) !important;
-}
-
-/* Details/Fachinfo blocks — glass card effect */
-.sl-markdown-content details {
-  background: rgba(255, 253, 247, 0.6) !important;
-  backdrop-filter: blur(16px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
-  border: 1px solid rgba(107, 29, 42, 0.1) !important;
-  border-left: 4px solid var(--eviwsmed-burgundy) !important;
-}
-
-:root[data-theme="dark"] .sl-markdown-content details {
-  background: rgba(36, 36, 41, 0.6) !important;
-  border-color: rgba(196, 88, 106, 0.15) !important;
-  border-left-color: var(--eviwsmed-rose, #C4586A) !important;
-}
-
-.sl-markdown-content details[open] {
-  border-left-color: var(--eviwsmed-gold) !important;
-  background: rgba(255, 253, 247, 0.75) !important;
-}
-
-:root[data-theme="dark"] .sl-markdown-content details[open] {
-  background: rgba(36, 36, 41, 0.75) !important;
-}
-
-/* Starlight aside cards — glass effect */
-.starlight-aside {
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(107, 29, 42, 0.08) !important;
-}
-
-/* Tables — subtle glass header */
-thead {
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-}
-
-/* Sidebar — frosted glass */
-.sidebar-content {
-  backdrop-filter: blur(20px) saturate(1.2) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
-}
-
-/* Content fade-out at bottom of viewport (scroll indicator) */
+/* Content fade-out at bottom (scroll indicator) */
 .content-panel::after {
   content: "";
   position: sticky;
@@ -951,35 +994,92 @@ thead {
   left: 0;
   right: 0;
   display: block;
-  height: 4rem;
+  height: 5rem;
   background: linear-gradient(to bottom, transparent, var(--sl-color-bg));
   pointer-events: none;
   z-index: 5;
 }
 
-/* Navbar glass effect for Starlight header */
-.header {
-  backdrop-filter: blur(20px) saturate(1.3) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(1.3) !important;
-  background: rgba(237, 231, 218, 0.8) !important;
-  border-bottom: 1px solid rgba(107, 29, 42, 0.08) !important;
+/* ═══════════════════════════════════════════════════════════════
+   QUELLEN-SECTION — Special Visual Treatment
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Target the last section (typically Quellen) with special styling */
+.sl-markdown-content > section:last-of-type,
+.sl-markdown-content > div:last-of-type {
+  margin-top: 5rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(245, 235, 232, 0.4) 0%, rgba(237, 231, 218, 0.3) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(168, 136, 74, 0.12);
+  box-shadow: var(--shadow-subtle);
 }
 
-:root[data-theme="dark"] .header {
-  background: rgba(42, 42, 48, 0.8) !important;
-  border-bottom-color: rgba(196, 88, 106, 0.1) !important;
+:root[data-theme="dark"] .sl-markdown-content > section:last-of-type,
+:root[data-theme="dark"] .sl-markdown-content > div:last-of-type {
+  background: linear-gradient(135deg, rgba(36, 36, 41, 0.4) 0%, rgba(42, 42, 48, 0.3) 100%);
+  border-color: rgba(196, 88, 106, 0.12);
 }
 
-/* Blockquotes — glass card */
-blockquote {
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  background: rgba(245, 240, 232, 0.5) !important;
-  border: 1px solid rgba(168, 136, 74, 0.15) !important;
-  border-left: 4px solid var(--eviwsmed-gold) !important;
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+  
+  body,
+  p,
+  li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .sl-markdown-content p {
+    margin-bottom: 1.25rem;
+  }
+  
+  .sl-markdown-content details {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  table {
+    font-size: 0.9375rem;
+  }
+  
+  th,
+  td {
+    padding: 0.875rem 1rem;
+  }
+  
+  :root {
+    --sl-content-pad-x: 1.5rem;
+  }
 }
 
-:root[data-theme="dark"] blockquote {
-  background: rgba(36, 36, 41, 0.5) !important;
+/* ═══════════════════════════════════════════════════════════════
+   SMOOTH TRANSITIONS — Restrained
+   ═══════════════════════════════════════════════════════════════ */
+* {
+  transition-property: background, border-color, color, box-shadow, transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+a,
+button,
+summary {
+  transition-property: all;
+}
