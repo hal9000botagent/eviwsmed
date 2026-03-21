@@ -736,6 +736,95 @@ starlight-toc,
    GLASS & FADE EFFECTS — Function Health Style
    ═══════════════════════════════════════════════════════════════ */
 
+/* Subtle background gradient on the page — gives glass something to blur */
+.page {
+  background: 
+    radial-gradient(ellipse at 20% 0%, rgba(107, 29, 42, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(168, 136, 74, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%),
+    var(--sl-color-bg) !important;
+}
+
+:root[data-theme="dark"] .page {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(196, 88, 106, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 166, 106, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(90, 158, 130, 0.04) 0%, transparent 50%),
+    var(--sl-color-bg) !important;
+}
+
+/* Left sidebar — frosted glass panel */
+.sidebar-pane {
+  background: rgba(237, 231, 218, 0.65) !important;
+  backdrop-filter: blur(24px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.3) !important;
+  border-right: 1px solid rgba(168, 136, 74, 0.15) !important;
+}
+
+:root[data-theme="dark"] .sidebar-pane {
+  background: rgba(42, 42, 48, 0.65) !important;
+  border-right-color: rgba(196, 88, 106, 0.1) !important;
+}
+
+/* Content area — subtle texture/depth */
+.content-panel {
+  background: rgba(255, 253, 247, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+:root[data-theme="dark"] .content-panel {
+  background: rgba(26, 26, 31, 0.4) !important;
+}
+
+/* Main content container — warm subtle border + refined spacing */
+.sl-container {
+  border-left: 1px solid rgba(168, 136, 74, 0.1);
+  padding-left: 2rem !important;
+}
+
+/* Decorative accent line at top of content */
+main {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--eviwsmed-burgundy, #6B1D2A), var(--eviwsmed-gold, #A8884A), var(--eviwsmed-green, #2D4A3E)) 1;
+}
+
+/* Pagination links at bottom — glass cards */
+.pagination-links a {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(255, 253, 247, 0.5) !important;
+  border-color: rgba(107, 29, 42, 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.pagination-links a:hover {
+  background: rgba(255, 253, 247, 0.8) !important;
+  border-color: var(--sl-color-accent) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(107, 29, 42, 0.1) !important;
+}
+
+:root[data-theme="dark"] .pagination-links a {
+  background: rgba(36, 36, 41, 0.5) !important;
+}
+
+:root[data-theme="dark"] .pagination-links a:hover {
+  background: rgba(36, 36, 41, 0.8) !important;
+}
+
+/* Search button — glass pill */
+site-search button[data-open-modal] {
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  background: rgba(255, 253, 247, 0.5) !important;
+  border: 1px solid rgba(107, 29, 42, 0.1) !important;
+}
+
+:root[data-theme="dark"] site-search button[data-open-modal] {
+  background: rgba(36, 36, 41, 0.5) !important;
+}
+
 /* Details/Fachinfo blocks — glass card effect */
 details {
   background: rgba(255, 253, 247, 0.6) !important;
