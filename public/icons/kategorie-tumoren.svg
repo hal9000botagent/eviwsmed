@@ -1,0 +1,35 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wirbelsäule mit Tumor/Markierung -->
+  <g stroke="#6B1D2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Wirbel 1 (oben) -->
+    <rect x="15" y="6" width="10" height="4" rx="1" fill="none"/>
+    
+    <!-- Bandscheibe 1 -->
+    <line x1="16" y1="11" x2="24" y2="11" opacity="0.5"/>
+    
+    <!-- Wirbel 2 mit Tumor -->
+    <rect x="15" y="12" width="10" height="4" rx="1" fill="none"/>
+    
+    <!-- Tumor (unregelmäßige Masse) -->
+    <circle cx="28" cy="14" r="4" fill="none" stroke-width="2"/>
+    <circle cx="28" cy="14" r="2.5" fill="none" opacity="0.4"/>
+    <circle cx="26" cy="15" r="1.5" fill="none" opacity="0.3"/>
+    <circle cx="30" cy="15" r="1.5" fill="none" opacity="0.3"/>
+    
+    <!-- Verbindung Tumor zu Wirbel -->
+    <line x1="25" y1="14" x2="24" y2="14" stroke-dasharray="1,1" opacity="0.6"/>
+    
+    <!-- Bandscheibe 2 -->
+    <line x1="16" y1="17" x2="24" y2="17" opacity="0.5"/>
+    
+    <!-- Wirbel 3 (unten) -->
+    <rect x="15" y="18" width="10" height="4" rx="1" fill="none"/>
+    
+    <!-- Markierungs-Kreuz (diagnostischer Marker) -->
+    <path d="M 10 13 L 12 15" opacity="0.5"/>
+    <path d="M 12 13 L 10 15" opacity="0.5"/>
+    
+    <!-- Zusätzliche Zellen-Struktur im Tumor -->
+    <circle cx="28" cy="14" r="1" fill="#6B1D2A" opacity="0.6"/>
+  </g>
+</svg>

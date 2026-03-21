@@ -1,0 +1,36 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wirbelsäule mit Entzündung (Flamme/Wellen) -->
+  <g stroke="#6B1D2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Wirbel 1 (oben) -->
+    <rect x="15" y="8" width="10" height="4" rx="1" fill="none"/>
+    
+    <!-- Bandscheibe 1 -->
+    <line x1="16" y1="13" x2="24" y2="13" opacity="0.5"/>
+    
+    <!-- Wirbel 2 (entzündeter Bereich) -->
+    <rect x="15" y="14" width="10" height="4" rx="1" fill="none" stroke-width="2"/>
+    
+    <!-- Entzündungs-Flamme (links) -->
+    <path d="M 11 16 Q 9 15 9 13 Q 9 11 11 10" fill="none" opacity="0.6"/>
+    <path d="M 10 15 Q 8 14 8.5 12.5" fill="none" opacity="0.4"/>
+    
+    <!-- Entzündungs-Wellen (rechts) -->
+    <path d="M 26 14 Q 27 15 28 15 Q 29 15 30 14" fill="none" opacity="0.6"/>
+    <path d="M 26 16 Q 27 17 28 17 Q 29 17 30 16" fill="none" opacity="0.6"/>
+    <path d="M 26 18 Q 27 19 28 19 Q 29 19 30 18" fill="none" opacity="0.5"/>
+    
+    <!-- Bandscheibe 2 (auch entzündet) -->
+    <line x1="16" y1="19" x2="24" y2="19" opacity="0.5" stroke-width="2"/>
+    
+    <!-- Wirbel 3 (unten) -->
+    <rect x="15" y="20" width="10" height="4" rx="1" fill="none"/>
+    
+    <!-- Hitze-Indikatoren (kleine Wellen oben) -->
+    <path d="M 17 7 Q 18 6 19 7" opacity="0.4" stroke-width="1.5"/>
+    <path d="M 20 7 Q 21 6 22 7" opacity="0.4" stroke-width="1.5"/>
+    
+    <!-- Entzündungs-Punkte -->
+    <circle cx="18" cy="16" r="0.8" fill="#6B1D2A" opacity="0.5"/>
+    <circle cx="22" cy="16" r="0.8" fill="#6B1D2A" opacity="0.5"/>
+  </g>
+</svg>
