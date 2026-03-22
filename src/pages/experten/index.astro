@@ -257,7 +257,7 @@ import '../../styles/global.css';
 <span class="text-[10px] font-medium tracking-widest uppercase Inter">Profile</span>
 </a>
 <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
-<script>
+<script is:inline>
 const toggle=document.getElementById("dark-mode-toggle");
 const html=document.documentElement;
 const icon=toggle?.querySelector(".material-symbols-outlined");
