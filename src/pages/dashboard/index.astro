@@ -1,0 +1,281 @@
+---
+// EviWsMed V2 — Patienten Dashboard
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600&amp;family=DM+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fef9f1",
+              "surface-container-high": "#ece8e0",
+              "inverse-on-surface": "#f5f0e8",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#785c23",
+              "surface-container": "#f2ede5",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1d1c17",
+              "surface-dim": "#ded9d2",
+              "surface-container-low": "#f8f3eb",
+              "secondary-container": "#fed892",
+              "primary-fixed": "#ffdadb",
+              "background": "#fef9f1",
+              "surface-bright": "#fef9f1",
+              "surface-tint": "#9a414d",
+              "secondary-fixed": "#ffdea4",
+              "inverse-surface": "#32302b",
+              "on-primary-container": "#ef848f",
+              "error": "#ba1a1a",
+              "tertiary": "#0b291f",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed-variant": "#304d40",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#ffb2b8",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#e6c17e",
+              "outline-variant": "#dac0c1",
+              "on-secondary-fixed": "#261900",
+              "primary-container": "#6b1d2a",
+              "secondary": "#765a21",
+              "on-tertiary-fixed": "#022016",
+              "tertiary-container": "#223f33",
+              "on-primary-fixed-variant": "#7c2a36",
+              "tertiary-fixed-dim": "#adcebe",
+              "primary": "#4d0516",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e7e2da",
+              "tertiary-fixed": "#c9ead9",
+              "surface-variant": "#e7e2da",
+              "on-tertiary-container": "#8baa9b",
+              "on-primary-fixed": "#40000f",
+              "on-background": "#1d1c17",
+              "on-secondary-fixed-variant": "#5b4309",
+              "outline": "#877273",
+              "on-surface-variant": "#554243"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; background-color: #F5F0E8; }
+        .font-serif { font-family: 'DM Serif Display', serif; }
+        .font-mono { font-family: 'DM Mono', monospace; }
+        .glass-panel {
+            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .radial-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(107, 29, 42, 0.05) 0%, rgba(245, 240, 232, 0) 70%);
+            z-index: -1;
+        }
+        .radial-glow-gold {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(168, 136, 74, 0.05) 0%, rgba(245, 240, 232, 0) 70%);
+            z-index: -1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#F5F0E8]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(44,44,44,0.04)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Patient Profile Avatar" class="w-full h-full object-cover" data-alt="Professional portrait of a male patient smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArhjLCf2WWDjpG7k37Q2zC2LB0n5izZGjaVZ8nzJS3ZWYvStiIPpA9RE83IXksfFrinuyZbcoAGXbyRXl4d6wleLqgi34mqmsD2zTCH_xjxTB7QmYWSouS_uZwrkHpzgbzREKmLr-qc3UVWjFOdKqWQIsNCg4VDoGQMOjFIE5FjE2VboVIi81e678Y0rM11nTuW9x7mykBsDcJGmaHyGwySGqplU2FkXU4mLk5tYQKXBHnKuVCct59kx6RLzLYrWFdUkQU29v3ta4"/>
+</div>
+<span class="font-serif italic text-2xl tracking-tight text-[#6B1D2A]">The Curator</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#F8F3EB] transition-all active:scale-95 duration-400">
+<span class="material-symbols-outlined text-[#6B1D2A]" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 space-y-10 relative overflow-hidden">
+<!-- Background Glows -->
+<div class="radial-glow top-20 -left-20"></div>
+<div class="radial-glow-gold top-60 -right-20"></div>
+<!-- Welcome Section -->
+<section class="space-y-1">
+<h1 class="text-5xl font-serif text-[#6B1D2A] leading-tight">Guten Tag, Maximilian</h1>
+<p class="text-on-surface/60 font-medium tracking-wide text-sm uppercase">Ihr Therapieplan für heute</p>
+</section>
+<!-- Main Feature Card: Wirbelsäulen-Index -->
+<section class="relative">
+<div class="glass-panel p-8 rounded-[2rem] relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="font-serif text-2xl text-[#6B1D2A]">Wirbelsäulen-Index</h2>
+<p class="text-on-surface/70 text-sm">Aktueller Gesundheitsstatus</p>
+</div>
+<div class="font-mono text-4xl text-[#6B1D2A] font-bold">78<span class="text-lg opacity-40">/100</span></div>
+</div>
+<!-- Progress Indicator -->
+<div class="h-2 w-full bg-[#6B1D2A]/10 rounded-full overflow-hidden mb-6">
+<div class="h-full bg-gradient-to-r from-[#6B1D2A] to-[#A8884A] w-[78%] rounded-full"></div>
+</div>
+<p class="text-on-surface/80 leading-relaxed text-sm">
+                    Ihre Beweglichkeit hat sich seit der letzten Woche um <span class="text-secondary font-bold">4% verbessert</span>. Die Belastung Ihrer Lendenwirbelsäule liegt im Zielbereich.
+                </p>
+</div>
+</section>
+<!-- Section: Nächste Termine -->
+<section class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h3 class="font-serif text-2xl text-primary">Nächste Termine</h3>
+<span class="text-secondary font-semibold text-xs uppercase tracking-widest">Alle anzeigen</span>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 -mx-6 px-6 no-scrollbar">
+<!-- Appointment Card 1 -->
+<div class="flex-shrink-0 w-72 glass-panel p-5 rounded-3xl space-y-3">
+<div class="flex justify-between items-center">
+<span class="bg-[#6B1D2A] text-white text-[10px] px-2 py-1 rounded-full uppercase tracking-tighter font-bold">Physiotherapie</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="event">event</span>
+</div>
+<div>
+<p class="font-semibold text-lg text-on-surface">Manuelle Therapie</p>
+<p class="text-on-surface/60 text-sm">Heute, 14:30 Uhr</p>
+</div>
+<div class="flex items-center gap-2 pt-2 border-t border-on-surface/5">
+<div class="w-6 h-6 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Dr. Wagner" class="w-full h-full object-cover" data-alt="Close up portrait of a professional doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEWPJO2puwEMjEKpy5bmh5doU4lDdQYQunBrX_AjMTrypWF_YQuwwbMo2VjMrLCONjf6Ao22o2equ_bpmALZNV_XcwzLSiEaWdK8JHZ9re_x39iNDn6kIi-IRffTO4LmzszV6oF-v4qjn1pDcxaJYDFrs16phTJ9kHlslK832bDZNc--kkXLiTy7VTwlSdp7g60S3aUz7nkvZ2GL4KXjLGOPk-qh7r_Yw0Thi4fMN_trWOhl-7zJj-h79zvLyEKuteBt2FCBeHBOE"/>
+</div>
+<p class="text-xs font-medium">Dr. med. Christian Wagner</p>
+</div>
+</div>
+<!-- Appointment Card 2 -->
+<div class="flex-shrink-0 w-72 glass-panel p-5 rounded-3xl space-y-3 opacity-80">
+<div class="flex justify-between items-center">
+<span class="bg-[#2D4A3E] text-white text-[10px] px-2 py-1 rounded-full uppercase tracking-tighter font-bold">Check-up</span>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="event">event</span>
+</div>
+<div>
+<p class="font-semibold text-lg text-on-surface">MRT Besprechung</p>
+<p class="text-on-surface/60 text-sm">Morgen, 09:15 Uhr</p>
+</div>
+<div class="flex items-center gap-2 pt-2 border-t border-on-surface/5">
+<div class="w-6 h-6 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Dr. Müller" class="w-full h-full object-cover" data-alt="Professional female doctor profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGY4vx-7lhv-xzLtYK5yhKdtMNWms2JdwV17G1kV5HCZTPB5Q7XHKJ8uRwQX2jvEvwUzUv_-DHHFyLbItZmzUeNF58714NNB9LydTlhhFZvRQvcrLlsKWCaYhGkrNdJzBg8a79dxD9zaZSVlLVQGDi7BmhOQYzYPSeBNxdReYmD59ZS2pmnGmqPk3bg2k0mwJtCxtvOE-x_95oR0e5t8z1ajJ_thBDSYbaPt6TnypTx-JHtnU4AO-xBW2xNYnHJWjK496pJpdoGQA"/>
+</div>
+<p class="text-xs font-medium">Dr. Elena Müller</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Analysen & Checks -->
+<section class="space-y-4">
+<h3 class="font-serif text-2xl text-primary px-1">Analysen &amp; Checks</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-6 rounded-3xl aspect-square flex flex-col justify-between hover:scale-[1.02] transition-transform">
+<div class="w-12 h-12 rounded-2xl bg-[#6B1D2A]/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#6B1D2A] text-3xl" data-icon="healing">healing</span>
+</div>
+<p class="font-semibold text-on-surface leading-tight">Symptom-Check</p>
+</div>
+<div class="glass-panel p-6 rounded-3xl aspect-square flex flex-col justify-between hover:scale-[1.02] transition-transform">
+<div class="w-12 h-12 rounded-2xl bg-[#A8884A]/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#A8884A] text-3xl" data-icon="settings_accessibility">settings_accessibility</span>
+</div>
+<p class="font-semibold text-on-surface leading-tight">Anatomische Visualisierung</p>
+</div>
+</div>
+</section>
+<!-- Featured Article Card: Empfehlung für Sie -->
+<section class="space-y-4">
+<h3 class="font-serif text-2xl text-primary px-1">Empfehlung für Sie</h3>
+<div class="glass-panel rounded-[2rem] overflow-hidden group">
+<div class="h-56 relative overflow-hidden">
+<img alt="Human Spine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Detailed medical illustration of a human spinal column" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdefH0qZXYfaaAjDE43DrvnSMPfSQdLrnBeX6m1QWUmkWWHt6zIDFgHeVMW2rpFaDb2Q1EANHYWa_W5YdZ-7UCK8TWIrtyoRzjb0JGUM4UF837ox34CG9YZN9IMuErC7HtvAfFbpWn_smRVW9Yv4qgsM0drTyBBqPVn7wHDb9D-SQDlkfoQEhi4Trv2Px4kpZkdKH_NemjzX6WIK3AAkpOr_ce4QOCQLYTXdBt425gFazshJIZU9s4ZhvF4VKf1QS_RMa2rj_0ZBw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="p-8 space-y-4">
+<h4 class="font-serif text-3xl text-[#6B1D2A] leading-tight">Umgang mit dem Bandscheibenvorfall</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">
+                        Erfahren Sie, wie Sie mit gezielten Übungen und einer ergonomischen Gestaltung Ihres Alltags Schmerzen lindern können.
+                    </p>
+<button class="w-full py-4 rounded-full bg-primary-container text-white font-medium uppercase tracking-[0.1em] text-xs hover:opacity-90 transition-all active:scale-95 duration-400">
+                        Artikel lesen
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#F5F0E8]/80 backdrop-blur-2xl rounded-t-xl shadow-[0_-10px_40px_rgba(44,44,44,0.06)] after:content-[''] after:absolute after:top-0 after:left-0 after:right-0 after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-[#2C2C2C]/5 after:to-transparent">
+<!-- Active Tab: Journal (Home) -->
+<div class="flex flex-col items-center justify-center text-[#6B1D2A] relative after:content-[''] after:absolute after:-bottom-2 after:w-1 after:h-1 after:bg-[#A8884A] after:rounded-full hover:opacity-80 transition-opacity active:translate-y-[-2px] duration-400">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Journal</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C]/40 hover:opacity-80 transition-opacity active:translate-y-[-2px] duration-400">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Vitality</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C]/40 hover:opacity-80 transition-opacity active:translate-y-[-2px] duration-400">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Visits</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C]/40 hover:opacity-80 transition-opacity active:translate-y-[-2px] duration-400">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2C2C2C]/40 hover:opacity-80 transition-opacity active:translate-y-[-2px] duration-400">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Profile</span>
+</div>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

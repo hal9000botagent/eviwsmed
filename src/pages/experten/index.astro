@@ -1,5 +1,5 @@
 ---
-// EviWsMed V2 — experten (Stitch Design)
+// EviWsMed V2 — Experten-Profil
 import '../../styles/global.css';
 ---
 
@@ -11,8 +11,72 @@ import '../../styles/global.css';
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f2ede5",
+              "tertiary": "#0b291f",
+              "surface": "#fef9f1",
+              "surface-container-highest": "#e7e2da",
+              "on-secondary": "#ffffff",
+              "on-background": "#1d1c17",
+              "inverse-surface": "#32302b",
+              "tertiary-container": "#223f33",
+              "surface-variant": "#e7e2da",
+              "primary-fixed": "#ffdadb",
+              "on-tertiary-container": "#8baa9b",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f5f0e8",
+              "secondary-fixed": "#ffdea4",
+              "primary-fixed-dim": "#ffb2b8",
+              "surface-bright": "#fef9f1",
+              "background": "#fef9f1",
+              "primary-container": "#6b1d2a",
+              "on-surface-variant": "#554243",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline": "#877273",
+              "on-secondary-container": "#785c23",
+              "surface-container-low": "#f8f3eb",
+              "on-tertiary-fixed-variant": "#304d40",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#7c2a36",
+              "on-primary-fixed": "#40000f",
+              "tertiary-fixed": "#c9ead9",
+              "inverse-primary": "#ffb2b8",
+              "secondary-fixed-dim": "#e6c17e",
+              "on-surface": "#1d1c17",
+              "surface-container-high": "#ece8e0",
+              "on-tertiary-fixed": "#022016",
+              "secondary": "#765a21",
+              "on-secondary-fixed": "#261900",
+              "primary": "#4d0516",
+              "on-primary-container": "#ef848f",
+              "outline-variant": "#dac0c1",
+              "on-error-container": "#93000a",
+              "surface-tint": "#9a414d",
+              "tertiary-fixed-dim": "#adcebe",
+              "surface-dim": "#ded9d2",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#5b4309",
+              "secondary-container": "#fed892"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 <style>
         .glass-panel {
             background: rgba(255, 255, 255, 0.4);
@@ -32,7 +96,7 @@ import '../../styles/global.css';
 <nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-stone-900/40 backdrop-blur-xl flex justify-between items-center px-6 py-4 max-w-full shadow-xl shadow-stone-900/5 backdrop-blur-2xl">
 <div class="text-2xl font-serif tracking-tighter text-red-900 dark:text-red-100 uppercase">CURATOR</div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-stone-500 hover:opacity-80 transition-opacity duration-400" href="#">Journal</a>
+<a class="text-stone-500 hover:opacity-80 transition-opacity duration-400" href="/erkrankungen/">Journal</a>
 <a class="text-red-900 dark:text-red-100 font-bold hover:opacity-80 transition-opacity duration-400" href="#">Experts</a>
 <a class="text-stone-500 hover:opacity-80 transition-opacity duration-400" href="#">Vault</a>
 </div>
@@ -40,7 +104,7 @@ import '../../styles/global.css';
 <button class="bg-primary-container text-white px-6 py-2 rounded-full text-xs font-medium tracking-widest uppercase hover:opacity-90 transition-all duration-400 transform active:scale-95">Book Appointment</button>
 <span class="material-symbols-outlined text-red-900 cursor-pointer" data-icon="bookmark">bookmark</span>
 </div>
-</nav>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 <main class="pt-20 pb-32">
 <!-- Editorial Hero Section -->
 <section class="relative min-h-[819px] flex flex-col md:flex-row items-center px-6 md:px-24 gap-12 mb-24 overflow-hidden">
@@ -192,5 +256,22 @@ import '../../styles/global.css';
 <span class="material-symbols-outlined mb-1" data-icon="person">person</span>
 <span class="text-[10px] font-medium tracking-widest uppercase Inter">Profile</span>
 </a>
-</nav>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
 </body></html>

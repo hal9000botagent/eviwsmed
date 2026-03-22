@@ -1,0 +1,250 @@
+---
+// EviWsMed V2 — Terminbuchung Zeitpunkt wählen
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Clinical Curator - Zeitpunkt wählen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Newsreader:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#223f33",
+              "error": "#ba1a1a",
+              "surface-dim": "#ded9d2",
+              "primary-container": "#6b1d2a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f2ede5",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#fed892",
+              "tertiary": "#0b291f",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed": "#022016",
+              "surface": "#fef9f1",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f5f0e8",
+              "on-surface": "#1d1c17",
+              "on-background": "#1d1c17",
+              "on-secondary-fixed-variant": "#5b4309",
+              "surface-variant": "#e7e2da",
+              "surface-bright": "#fef9f1",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#304d40",
+              "surface-tint": "#9a414d",
+              "secondary-fixed-dim": "#e6c17e",
+              "surface-container-high": "#ece8e0",
+              "surface-container-low": "#f8f3eb",
+              "primary": "#4d0516",
+              "on-surface-variant": "#554243",
+              "on-secondary-fixed": "#261900",
+              "background": "#fef9f1",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#7c2a36",
+              "secondary-fixed": "#ffdea4",
+              "on-primary-container": "#ef848f",
+              "primary-fixed": "#ffdadb",
+              "inverse-surface": "#32302b",
+              "inverse-primary": "#ffb2b8",
+              "outline": "#877273",
+              "tertiary-fixed": "#c9ead9",
+              "surface-container-highest": "#e7e2da",
+              "on-tertiary-container": "#8baa9b",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#adcebe",
+              "on-primary": "#ffffff",
+              "secondary": "#765a21",
+              "outline-variant": "#dac0c1",
+              "on-primary-fixed": "#40000f",
+              "on-secondary-container": "#785c23"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(245, 240, 232, 0.5);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-state {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F5F0E8]/60 dark:bg-[#1A1A1F]/60 backdrop-blur-[20px] shadow-[0_20px_50px_rgba(44,44,44,0.05)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-full mx-auto">
+<div class="text-2xl font-serif italic text-[#6B1D2A] dark:text-[#A8884A]">
+                The Clinical Curator
+            </div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="text-[#2C2C2C]/70 dark:text-[#E2DCD2]/70 hover:text-[#6B1D2A] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="#">Consultations</a>
+<a class="text-[#6B1D2A] dark:text-[#A8884A] font-bold border-b border-[#6B1D2A]/20 transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="#">Specialists</a>
+<a class="text-[#2C2C2C]/70 dark:text-[#E2DCD2]/70 hover:text-[#6B1D2A] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="#">Wellness</a>
+<a class="text-[#2C2C2C]/70 dark:text-[#E2DCD2]/70 hover:text-[#6B1D2A] transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="#">Archives</a>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#6B1D2A] dark:text-[#E2DCD2] p-2 hover:bg-surface-variant/20 rounded-full transition-colors">account_circle</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-xs font-bold tracking-[0.05em] uppercase hover:scale-[1.02] active:scale-[0.98] transition-all">Book Appointment</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-16">
+<p class="font-mono text-secondary uppercase tracking-[0.2em] text-[10px] mb-4">Step 02 — Schedule</p>
+<h1 class="text-7xl font-headline text-primary tracking-tight leading-none mb-4">Zeitpunkt wählen</h1>
+<p class="text-on-surface-variant max-w-lg text-lg leading-relaxed">Find a moment that honors your health journey. Our curation ensures each consultation is given the focus it deserves.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Minimalist Calendar Panel -->
+<div class="lg:col-span-7">
+<div class="glass-panel p-12 rounded-xl shadow-[0_40px_80px_rgba(107,29,42,0.04)] relative overflow-hidden">
+<!-- Subtle Radial Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full blur-[80px]"></div>
+<div class="flex justify-between items-center mb-12">
+<h3 class="text-2xl font-headline text-primary">Oktober 2024</h3>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-primary/60 hover:text-primary transition-colors">chevron_left</button>
+<button class="material-symbols-outlined text-primary/60 hover:text-primary transition-colors">chevron_right</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-8 text-center">
+<!-- Days of Week -->
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Mo</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Di</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Mi</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Do</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Fr</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">Sa</div>
+<div class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant/50">So</div>
+<!-- Calendar Grid -->
+<div class="text-on-surface-variant/20 font-mono text-sm">30</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">1</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">2</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">3</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">4</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">5</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">6</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">7</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">8</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">9</div>
+<!-- Selected Day -->
+<div class="relative py-4 flex justify-center items-center">
+<div class="absolute inset-2 bg-primary rounded-full shadow-lg shadow-primary/20"></div>
+<span class="relative font-mono text-sm text-surface-container-lowest font-bold">10</span>
+</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">11</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">12</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">13</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">14</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">15</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">16</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">17</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">18</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">19</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">20</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">21</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">22</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">23</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">24</div>
+<div class="font-mono text-sm py-4 hover:bg-surface-variant/30 rounded-full cursor-pointer transition-colors">25</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">26</div>
+<div class="font-mono text-sm py-4 text-on-surface-variant/30">27</div>
+</div>
+</div>
+</div>
+<!-- Right: Time Selection & Specialist Summary -->
+<div class="lg:col-span-5 space-y-12">
+<!-- Specialist Sticky Summary -->
+<div class="sticky top-32 glass-panel p-8 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.03)] border-l-4 border-secondary/20">
+<div class="flex items-center gap-6">
+<img alt="" class="w-20 h-20 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close up of a professional female doctor smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQIRoltZjOD8m5Y7qf5uV0kLMY4BHY0wh4T5nm1a0IVEwcE8dv8Eq434T4oSYlAYooyTHoGOEnFKkvCdFBCyBVj-1giUTJhOPHaY-kIIHrBfQhXuyIBj32l6X97qY4LsieceZpq6CWkHdGi0fZg5nJwoI3UEidy7t5XavCvgE_j7MBAWXWn5ovV-Jk0nfXXTNL7jOxIQ7kQqPSqW1rR1oPnHb6CK4xxht0QpPHiRJka1faacENC_NFk9wQZjsnOW0cgQ3dMER-UaU"/>
+<div>
+<p class="font-mono text-[10px] uppercase tracking-widest text-secondary mb-1">Selected Specialist</p>
+<h4 class="text-xl font-headline text-primary">Dr. Elena Von Berg</h4>
+<p class="text-sm text-on-surface-variant italic">Cardiology &amp; Holistic Longevity</p>
+</div>
+</div>
+</div>
+<!-- Time Slots Section -->
+<div>
+<h3 class="text-2xl font-headline text-primary mb-8">Available Slots</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Time Chips -->
+<button class="glass-panel py-4 rounded-full font-mono text-sm text-primary hover:bg-primary hover:text-surface transition-all duration-400 border border-primary/5">09:00</button>
+<button class="glass-panel py-4 rounded-full font-mono text-sm text-primary hover:bg-primary hover:text-surface transition-all duration-400 border border-primary/5">09:45</button>
+<button class="glass-panel py-4 rounded-full font-mono text-sm text-primary hover:bg-primary hover:text-surface transition-all duration-400 border border-primary/5">11:15</button>
+<button class="bg-primary py-4 rounded-full font-mono text-sm text-surface shadow-lg shadow-primary/20 scale-[0.98]">14:00</button>
+<button class="glass-panel py-4 rounded-full font-mono text-sm text-primary hover:bg-primary hover:text-surface transition-all duration-400 border border-primary/5">15:30</button>
+<button class="glass-panel py-4 rounded-full font-mono text-sm text-primary hover:bg-primary hover:text-surface transition-all duration-400 border border-primary/5">16:45</button>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-8">
+<button class="w-full bg-primary text-on-primary py-6 rounded-full font-bold tracking-[0.1em] uppercase hover:scale-[1.01] active:scale-[0.98] transition-all flex justify-center items-center gap-3">
+                        Continue to Personal Details
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-center mt-6 text-xs text-on-surface-variant font-mono uppercase tracking-widest opacity-60">
+                        14:00 — October 10th, 2024
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#F8F3EB] dark:bg-[#1A1A1F] mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="font-serif text-lg text-[#6B1D2A]">The Clinical Curator</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-sans Inter text-sm tracking-wide text-[#2C2C2C]/60 dark:text-[#E2DCD2]/60 hover:text-[#6B1D2A] transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans Inter text-sm tracking-wide text-[#2C2C2C]/60 dark:text-[#E2DCD2]/60 hover:text-[#6B1D2A] transition-colors" href="#">Terms of Service</a>
+<a class="font-sans Inter text-sm tracking-wide text-[#2C2C2C]/60 dark:text-[#E2DCD2]/60 hover:text-[#6B1D2A] transition-colors" href="#">Clinical Standards</a>
+<a class="font-sans Inter text-sm tracking-wide text-[#2C2C2C]/60 dark:text-[#E2DCD2]/60 hover:text-[#6B1D2A] transition-colors" href="#">Contact</a>
+</div>
+<div class="font-sans Inter text-sm tracking-wide text-[#2C2C2C]/60 dark:text-[#E2DCD2]/60">
+                © 2024 The Clinical Curator. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

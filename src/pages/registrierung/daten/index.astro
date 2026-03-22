@@ -1,0 +1,207 @@
+---
+// EviWsMed V2 — Registrierung Daten eingeben
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@400;500;600&amp;family=DM+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#fed892",
+              "primary": "#4d0516",
+              "tertiary-fixed-dim": "#adcebe",
+              "secondary-fixed-dim": "#e6c17e",
+              "on-secondary-fixed": "#261900",
+              "surface-dim": "#ded9d2",
+              "surface-variant": "#e7e2da",
+              "inverse-surface": "#32302b",
+              "tertiary": "#0b291f",
+              "surface-bright": "#fef9f1",
+              "outline": "#877273",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#ffdea4",
+              "surface-tint": "#9a414d",
+              "on-tertiary-fixed": "#022016",
+              "primary-container": "#6b1d2a",
+              "on-surface": "#1d1c17",
+              "on-tertiary-fixed-variant": "#304d40",
+              "on-primary-fixed": "#40000f",
+              "inverse-on-surface": "#f5f0e8",
+              "on-primary-container": "#ef848f",
+              "primary-fixed": "#ffdadb",
+              "on-secondary-container": "#785c23",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline-variant": "#dac0c1",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#c9ead9",
+              "background": "#fef9f1",
+              "surface-container-high": "#ece8e0",
+              "on-secondary-fixed-variant": "#5b4309",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1d1c17",
+              "secondary": "#765a21",
+              "tertiary-container": "#223f33",
+              "surface-container-highest": "#e7e2da",
+              "surface": "#fef9f1",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#7c2a36",
+              "inverse-primary": "#ffb2b8",
+              "surface-container": "#f2ede5",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#554243",
+              "on-tertiary-container": "#8baa9b",
+              "surface-container-low": "#f8f3eb",
+              "primary-fixed-dim": "#ffb2b8"
+            },
+            fontFamily: {
+              "headline": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F5F0E8; }
+        .serif-headline { font-family: 'DM Serif Display', serif; }
+        .mono-data { font-family: 'DM Mono', monospace; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        .input-glow:focus-within {
+            box-shadow: 0 4px 20px -10px rgba(107, 29, 42, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopAppBar (Transactional Shell - Suppressed standard nav) -->
+<header class="fixed top-0 w-full z-50 bg-[#F5F0E8]/60 backdrop-blur-[20px] flex justify-between items-center px-6 py-4 shadow-[0_40px_60px_-15px_rgba(44,44,44,0.05)]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/5 transition-all duration-400 active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="text-xs font-mono uppercase tracking-widest text-primary/60">Schritt 02 / 03</span>
+</div>
+<div class="text-sm font-serif tracking-widest text-primary">
+            E.W.
+        </div>
+</header>
+<main class="flex-grow pt-24 pb-12 px-6 flex flex-col">
+<!-- Editorial Header Section -->
+<div class="mb-10 mt-4">
+<h1 class="serif-headline text-4xl leading-tight text-on-surface tracking-tight mb-2">
+                Ihre Expertise beginnt hier
+            </h1>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-[85%] text-sm">
+                Vervollständigen Sie Ihr klinisches Profil, um Zugang zur kuratierten Datenbank zu erhalten.
+            </p>
+</div>
+<!-- Glass Card Registration Form -->
+<div class="glass-panel rounded-[2rem] p-8 shadow-[0_40px_80px_-20px_rgba(44,44,44,0.08)] flex-grow flex flex-col gap-8 relative overflow-hidden">
+<!-- Decorative Soul Gradient -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<form class="space-y-8 relative z-10">
+<!-- Name Field -->
+<div class="group">
+<label class="block text-[10px] uppercase tracking-[0.15em] font-semibold text-primary mb-3 font-label">Vollständiger Name</label>
+<div class="input-glow bg-surface-container-low rounded-2xl px-5 py-4 transition-all duration-400">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-on-surface placeholder:text-on-surface-variant/30 mono-data text-sm tracking-tight" placeholder="Dr. Maximilian Mustermann" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="group">
+<label class="block text-[10px] uppercase tracking-[0.15em] font-semibold text-primary mb-3 font-label">Klinische E-Mail</label>
+<div class="input-glow bg-surface-container-low rounded-2xl px-5 py-4 transition-all duration-400">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-on-surface placeholder:text-on-surface-variant/30 mono-data text-sm tracking-tight" placeholder="m.mustermann@klinik.de" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="group">
+<label class="block text-[10px] uppercase tracking-[0.15em] font-semibold text-primary mb-3 font-label">Sicherheitsschlüssel</label>
+<div class="input-glow bg-surface-container-low rounded-2xl px-5 py-4 transition-all duration-400 flex items-center justify-between">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-on-surface placeholder:text-on-surface-variant/30 mono-data text-sm tracking-widest" placeholder="••••••••••••" type="password"/>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-lg cursor-pointer" data-icon="visibility">visibility</span>
+</div>
+<p class="mt-3 text-[11px] text-on-surface-variant/60 font-body leading-normal italic">
+                        Verwenden Sie mindestens 12 Zeichen mit klinischer Komplexität.
+                    </p>
+</div>
+<!-- Action Button -->
+<div class="pt-6">
+<button class="w-full bg-primary-container text-on-primary py-5 rounded-full shadow-lg shadow-primary/20 flex items-center justify-center gap-3 active:scale-[0.97] transition-all duration-400 group" type="submit">
+<span class="text-xs font-semibold uppercase tracking-[0.2em] font-label">Konto erstellen</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-300" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Legal/Trust Footer -->
+<div class="mt-auto pt-6 text-center">
+<p class="text-[10px] text-on-surface-variant/40 font-body uppercase tracking-wider leading-relaxed">
+                    Durch die Registrierung akzeptieren Sie unsere <br/>
+<span class="underline underline-offset-4 decoration-primary/20 text-on-surface-variant/60">Datenschutzbestimmungen</span>
+</p>
+</div>
+</div>
+<!-- Secondary Information Section -->
+<div class="mt-12 mb-8 flex items-center gap-6 overflow-x-auto no-scrollbar">
+<div class="flex-shrink-0 bg-surface-container-highest/40 p-4 rounded-2xl w-40">
+<span class="material-symbols-outlined text-secondary mb-3" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="text-[10px] font-semibold text-primary uppercase tracking-tighter mb-1">DSGVO Konform</p>
+<p class="text-[11px] text-on-surface-variant/70 leading-snug">Verschlüsselte Datenhaltung in der EU.</p>
+</div>
+<div class="flex-shrink-0 bg-surface-container-highest/40 p-4 rounded-2xl w-40">
+<span class="material-symbols-outlined text-secondary mb-3" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<p class="text-[10px] font-semibold text-primary uppercase tracking-tighter mb-1">Peer Review</p>
+<p class="text-[11px] text-on-surface-variant/70 leading-snug">Exklusiver Zugang für medizinisches Personal.</p>
+</div>
+</div>
+</main>
+<!-- Background Decoration -->
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-40">
+<div class="absolute top-[20%] -left-20 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[10%] -right-20 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px]"></div>
+</div>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

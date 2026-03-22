@@ -95,7 +95,7 @@ import '../../styles/global.css';
         <a href="/ueber-uns" class="font-label text-xs tracking-widest uppercase text-on-surface-variant hover:text-primary-container transition-all duration-300">Über uns</a>
       </div>
     </div>
-  </nav>
+  <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 
   <!-- Content -->
   <main class="flex-1 pt-24 pb-16">
@@ -121,5 +121,22 @@ import '../../styles/global.css';
     </div>
   </footer>
 </div>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
 </body>
 </html>

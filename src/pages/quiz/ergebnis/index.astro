@@ -1,0 +1,289 @@
+---
+// EviWsMed V2 — Quiz-Ergebnisse
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;family=DM+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1F;
+            color: #E2DCD2;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif { font-family: 'DM Serif Display', serif; }
+        .font-mono { font-family: 'DM Mono', monospace; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .radial-glow-burgundy {
+            background: radial-gradient(circle at center, rgba(107, 29, 42, 0.15) 0%, rgba(107, 29, 42, 0) 70%);
+        }
+
+        .flat-glass-elevation {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface": "#1A1A1F",
+                "on-surface": "#E2DCD2",
+                "primary": "#6B1D2A",
+                "secondary": "#A8884A",
+                "tertiary": "#2D4A3E",
+                "surface-container-low": "#242429",
+                "surface-container-highest": "rgba(255, 255, 255, 0.08)",
+                "outline-variant": "rgba(218, 192, 193, 0.15)"
+              },
+              fontFamily: {
+                "headline": ["DM Serif Display", "serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"],
+                "data": ["DM Mono", "monospace"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar (Shared Component) -->
+<nav class="sticky top-0 w-full z-50 bg-stone-950/40 backdrop-blur-xl no-border shadow-2xl shadow-stone-950/10">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="font-serif italic text-lg tracking-tighter text-rose-900 dark:text-rose-500">
+                Evidenzbasierte Wirbelsäulenmedizin
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-normal hover:text-rose-800 dark:hover:text-rose-300 transition-all duration-400 ease-in-out" href="/">Patienten</a>
+<a class="text-stone-600 dark:text-stone-400 font-normal hover:text-rose-800 dark:hover:text-rose-300 transition-all duration-400 ease-in-out" href="/bibliothek/">Fachkreise</a>
+<a class="text-stone-600 dark:text-stone-400 font-normal hover:text-rose-800 dark:hover:text-rose-300 transition-all duration-400 ease-in-out" href="/erkrankungen/">Bibliothek</a>
+<a class="text-stone-600 dark:text-stone-400 font-normal hover:text-rose-800 dark:hover:text-rose-300 transition-all duration-400 ease-in-out" href="/ueber-uns/">Über Uns</a>
+<button class="bg-primary-container text-white px-8 py-2 rounded-full font-label text-xs uppercase tracking-widest hover:scale-105 transition-all duration-400">
+                    Termin Buchen
+                </button>
+</div>
+</div>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<main class="max-w-screen-2xl mx-auto px-12 pt-20 pb-32">
+<!-- Hero Section -->
+<header class="mb-24 flex flex-col md:flex-row items-end gap-12">
+<div class="max-w-3xl">
+<span class="font-mono text-secondary text-sm tracking-widest uppercase mb-4 block">Analyse-Ergebnis</span>
+<h1 class="font-serif text-7xl leading-tight text-white mb-8">
+                    Ihre Analyse: <br/>Lendenwirbelsäule
+                </h1>
+</div>
+<div class="pb-4">
+<div class="w-24 h-px bg-secondary/30 mb-4"></div>
+<p class="font-label text-stone-500 text-sm max-w-xs">Basierend auf den von Ihnen angegebenen Symptomen und Bewegungsmustern.</p>
+</div>
+</header>
+<!-- Primary Assessment & Metrics Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-32">
+<!-- Main Assessment Card -->
+<div class="lg:col-span-8 relative">
+<div class="absolute -inset-10 radial-glow-burgundy -z-10"></div>
+<div class="glass-panel p-16 rounded-xl h-full flex flex-col justify-center">
+<h2 class="font-serif text-3xl text-white mb-6">Primärer Befund</h2>
+<p class="text-2xl font-light text-on-surface leading-relaxed max-w-2xl">
+                        Die Symptomatik deutet auf eine mechanische Reizung im <span class="text-secondary font-normal">L4/L5 Bereich</span> hin. Es liegen keine akuten neurologischen Ausfälle vor, was eine konservative Therapie begünstigt.
+                    </p>
+</div>
+</div>
+<!-- Metrics Column -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<div class="glass-card p-10 rounded-xl">
+<span class="font-mono text-xs uppercase tracking-widest text-stone-500 mb-6 block">Klinische Kennzahlen</span>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+<span class="text-stone-400 text-sm">Schmerzintensität</span>
+<span class="font-mono text-xl text-secondary">6/10</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+<span class="text-stone-400 text-sm">Dringlichkeit</span>
+<span class="font-mono text-xl text-white">Moderat</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+<span class="text-stone-400 text-sm">Funktionseinschränkung</span>
+<span class="font-mono text-xl text-secondary">25%</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-10 rounded-xl bg-primary/10">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="font-label text-xs uppercase tracking-widest font-semibold">Empfehlung</span>
+</div>
+<p class="text-sm font-light text-stone-300">Innerhalb der nächsten 14 Tage sollte ein klinisches Screening durch einen spezialisierten Physiotherapeuten erfolgen.</p>
+</div>
+</div>
+</div>
+<!-- Evidence-Based Pathway -->
+<section class="mb-32">
+<h2 class="font-serif text-4xl text-white mb-16">Therapeutischer Pfad</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="glass-card p-10 rounded-xl flex flex-col gap-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="font-mono text-9xl">01</span>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-6">self_improvement</span>
+<h3 class="font-serif text-2xl mb-4">Eigenübungen</h3>
+<p class="text-stone-400 text-sm">Fokus auf segmentale Stabilisation und Entlastungshaltungen für den unteren Rücken.</p>
+</div>
+<div class="mt-auto">
+<span class="font-mono text-xs text-secondary tracking-tighter">Sofortiger Beginn</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-10 rounded-xl flex flex-col gap-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="font-mono text-9xl">02</span>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-6">clinical_notes</span>
+<h3 class="font-serif text-2xl mb-4">Physiotherapie</h3>
+<p class="text-stone-400 text-sm">Manuelle Therapie zur Reduktion der Gewebespannung und Schulung ergonomischer Muster.</p>
+</div>
+<div class="mt-auto">
+<span class="font-mono text-xs text-stone-500 tracking-tighter">Innerhalb 2 Wochen</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-10 rounded-xl flex flex-col gap-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="font-mono text-9xl">03</span>
+</div>
+<div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-6">chip_extraction</span>
+<h3 class="font-serif text-2xl mb-4">Ggf. MRT</h3>
+<p class="text-stone-400 text-sm">Indikation nur bei Zunahme neurologischer Defizite oder persistierendem Schmerzverlauf.</p>
+</div>
+<div class="mt-auto">
+<span class="font-mono text-xs text-stone-500 tracking-tighter">Nach 6-8 Wochen</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Behind the Scenes Section -->
+<section class="mb-32">
+<div class="glass-panel p-16 rounded-xl flex flex-col md:flex-row gap-16 items-start">
+<div class="md:w-1/2">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary">search</span>
+<h2 class="font-serif text-3xl text-white">Hinter den Kulissen</h2>
+</div>
+<p class="text-stone-400 font-light mb-12 max-w-md">
+                        Für medizinische Fachkreise: Unsere Algorithmen basieren auf klinischen Leitlinien und aktuellen Meta-Analysen. Wir berechnen die Wahrscheinlichkeit spezifischer Diagnosen basierend auf Clustertests.
+                    </p>
+<div class="space-y-4">
+<div class="bg-white/5 p-4 rounded flex justify-between items-center">
+<span class="font-mono text-xs text-stone-500 uppercase">Wahrscheinlichkeit Radikulopathie</span>
+<span class="font-mono text-secondary">15%</span>
+</div>
+<div class="bg-white/5 p-4 rounded flex justify-between items-center">
+<span class="font-mono text-xs text-stone-500 uppercase">Sensitivität Screening</span>
+<span class="font-mono text-secondary">0.89</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full h-80 bg-stone-900 rounded-lg overflow-hidden relative">
+<img alt="Clinical data analysis visualization" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="Microscopic view or medical abstract data visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvQ38Ualg9OKa4uK6XcSWI-VUh5oSb3V0pr_vZ9Dh_oW6xmaBKRHmSyy4niIX2Ip27samVPYK2BMmL1vO-mIK-qiXzYZHz1c25RRnjvUXI9QhUewqXUPpTOyQS6Uur9k6vqyJpUG0pCwcfLyg8n6ETW3Y_dXlBGTz8alYc860lwYBvLEbVfycn9HZRW_UsGldtKxbfdRPlRwD85cWf59ov89Eef6hNCWV0NznyLgHvxYMdixypWqr9O0IQ-6oZQX23lvrOudhMmo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-stone-950 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="font-mono text-[10px] uppercase tracking-widest text-secondary block mb-2">Algorithmus Status</span>
+<span class="text-white text-xs font-label">V.4.2 — Validiert nach klinischen Standards</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended Reading -->
+<section>
+<h2 class="font-serif text-4xl text-white mb-16">Weiterführende Ressourcen</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<a class="glass-card p-12 rounded-xl group transition-all duration-500 hover:bg-white/10" href="#">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-serif text-3xl text-white group-hover:text-secondary transition-colors">Bandscheibenvorfall</h3>
+<span class="material-symbols-outlined text-stone-500 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<p class="text-stone-400 font-light max-w-sm">Mythen vs. Fakten: Warum ein struktureller Befund im MRT nicht immer die Ursache des Schmerzes ist.</p>
+</a>
+<a class="glass-card p-12 rounded-xl group transition-all duration-500 hover:bg-white/10" href="#">
+<div class="flex justify-between items-start mb-8">
+<h3 class="font-serif text-3xl text-white group-hover:text-secondary transition-colors">Ergonomie</h3>
+<span class="material-symbols-outlined text-stone-500 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<p class="text-stone-400 font-light max-w-sm">Die Gestaltung Ihres Arbeitsplatzes als präventive Maßnahme gegen chronische Fehlbelastungen.</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-20 mt-20 bg-stone-950 border-t border-stone-800/30">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 max-w-screen-2xl mx-auto">
+<div>
+<div class="font-serif text-stone-200 text-xl mb-6">Evidenzbasierte Wirbelsäulenmedizin</div>
+<p class="font-sans text-xs uppercase tracking-widest text-stone-500 max-w-xs leading-loose">
+                    Wissenschaftlich fundierte Analyse und Begleitung für Ihre Rückengesundheit.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-8 mb-8">
+<a class="font-sans text-xs uppercase tracking-widest text-stone-500 hover:text-amber-400 transition-colors duration-300" href="/impressum/">Impressum</a>
+<a class="font-sans text-xs uppercase tracking-widest text-stone-500 hover:text-amber-400 transition-colors duration-300" href="/datenschutz/">Datenschutz</a>
+<a class="font-sans text-xs uppercase tracking-widest text-stone-500 hover:text-amber-400 transition-colors duration-300" href="/ueber-uns/">Kontakt</a>
+</div>
+<div class="font-sans text-xs uppercase tracking-widest text-stone-600">
+                    © 2024 Evidenzbasierte Wirbelsäulenmedizin. Alle Rechte vorbehalten.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

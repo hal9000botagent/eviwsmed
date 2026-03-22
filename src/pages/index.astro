@@ -55,15 +55,18 @@ import '../styles/global.css';
 <span class="text-xl font-serif italic text-primary">Evidenzbasierte Wirbelsäulenmedizin</span>
 </div>
 <div class="hidden md:flex items-center gap-8">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="#">Patienten</a>
-<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="#">Fachkreise</a>
-<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="#">Bibliothek</a>
-<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="#">Über Uns</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="/">Patienten</a>
+<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="/bibliothek/">Fachkreise</a>
+<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="/erkrankungen/">Bibliothek</a>
+<a class="text-on-surface/70 font-medium text-xs uppercase tracking-widest transition-all duration-400 ease-in-out hover:text-primary" href="/ueber-uns/">Über Uns</a>
 </div>
 <div class="flex items-center gap-4">
 <button class="material-symbols-outlined text-primary hover:scale-95 transition-transform">search</button>
 <button class="material-symbols-outlined text-primary hover:scale-95 transition-transform">account_circle</button>
 </div>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode">
+  <span class="material-symbols-outlined">dark_mode</span>
+</button>
 </nav>
 <!-- Main Content Canvas -->
 <main class="relative pt-24 overflow-x-hidden">
@@ -101,7 +104,7 @@ import '../styles/global.css';
 <h2 class="font-headline text-4xl text-primary mb-4">Therapeutische Schwerpunkte</h2>
 <p class="font-body text-on-surface/60">Navigieren Sie durch validierte Behandlungsfelder.</p>
 </div>
-<a class="font-label text-xs uppercase tracking-widest text-secondary font-bold flex items-center gap-2 border-b border-secondary/20 pb-1" href="#">Alle Fachbereiche <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+<a class="font-label text-xs uppercase tracking-widest text-secondary font-bold flex items-center gap-2 border-b border-secondary/20 pb-1" href="/erkrankungen/" class="font-label text-xs uppercase tracking-widest text-secondary font-bold flex items-center gap-2 border-b border-secondary/20 pb-1">Alle Fachbereiche
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Glass Card 1 -->
@@ -233,9 +236,9 @@ import '../styles/global.css';
             </p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
-<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Impressum</a>
-<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Datenschutz</a>
-<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Kontakt</a>
+<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/impressum/">Impressum</a>
+<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/datenschutz/">Datenschutz</a>
+<a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/ueber-uns/">Kontakt</a>
 <a class="text-on-surface/50 font-label text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Quellenverzeichnis</a>
 </div>
 </footer>
@@ -249,4 +252,21 @@ import '../styles/global.css';
 <span class="material-symbols-outlined text-on-surface/40">healing</span>
 <span class="material-symbols-outlined text-on-surface/40">account_circle</span>
 </div>
+<script>
+  const toggle = document.getElementById("dark-mode-toggle");
+  const html = document.documentElement;
+  const icon = toggle?.querySelector(".material-symbols-outlined");
+  const savedMode = localStorage.getItem("theme") || "light";
+  html.classList.remove("light", "dark");
+  html.classList.add(savedMode);
+  if (icon) icon.textContent = savedMode === "dark" ? "light_mode" : "dark_mode";
+  toggle?.addEventListener("click", () => {
+    const current = html.classList.contains("dark") ? "dark" : "light";
+    const next = current === "dark" ? "light" : "dark";
+    html.classList.remove(current);
+    html.classList.add(next);
+    localStorage.setItem("theme", next);
+    if (icon) icon.textContent = next === "dark" ? "light_mode" : "dark_mode";
+  });
+</script>
 </body></html>

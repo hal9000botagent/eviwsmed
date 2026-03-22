@@ -1,0 +1,220 @@
+---
+// EviWsMed V2 — Terminbuchung Bestätigung
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#223f33",
+              "error": "#ba1a1a",
+              "surface-dim": "#ded9d2",
+              "primary-container": "#6b1d2a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f2ede5",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#fed892",
+              "tertiary": "#0b291f",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-tertiary-fixed": "#022016",
+              "surface": "#fef9f1",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f5f0e8",
+              "on-surface": "#1d1c17",
+              "on-background": "#1d1c17",
+              "on-secondary-fixed-variant": "#5b4309",
+              "surface-variant": "#e7e2da",
+              "surface-bright": "#fef9f1",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#304d40",
+              "surface-tint": "#9a414d",
+              "secondary-fixed-dim": "#e6c17e",
+              "surface-container-high": "#ece8e0",
+              "surface-container-low": "#f8f3eb",
+              "primary": "#4d0516",
+              "on-surface-variant": "#554243",
+              "on-secondary-fixed": "#261900",
+              "background": "#fef9f1",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#7c2a36",
+              "secondary-fixed": "#ffdea4",
+              "on-primary-container": "#ef848f",
+              "primary-fixed": "#ffdadb",
+              "inverse-surface": "#32302b",
+              "inverse-primary": "#ffb2b8",
+              "outline": "#877273",
+              "tertiary-fixed": "#c9ead9",
+              "surface-container-highest": "#e7e2da",
+              "on-tertiary-container": "#8baa9b",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#adcebe",
+              "on-primary": "#ffffff",
+              "secondary": "#765a21",
+              "outline-variant": "#dac0c1",
+              "on-primary-fixed": "#40000f",
+              "on-secondary-container": "#785c23"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "serif": ["DM Serif Display", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .frosted-glass {
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .radial-glow {
+        background: radial-gradient(circle at center, rgba(107, 29, 42, 0.05) 0%, transparent 70%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-primary">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#F5F0E8]/60 backdrop-blur-[20px] shadow-[0_20px_50px_rgba(44,44,44,0.05)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-full mx-auto">
+<div class="text-2xl font-serif italic text-[#6B1D2A]">The Clinical Curator</div>
+<nav class="hidden md:flex space-x-12">
+<a class="text-[#2C2C2C]/70 hover:text-[#6B1D2A] transition-all duration-400" href="#">Consultations</a>
+<a class="text-[#2C2C2C]/70 hover:text-[#6B1D2A] transition-all duration-400" href="#">Specialists</a>
+<a class="text-[#2C2C2C]/70 hover:text-[#6B1D2A] transition-all duration-400" href="#">Wellness</a>
+<a class="text-[#2C2C2C]/70 hover:text-[#6B1D2A] transition-all duration-400" href="#">Archives</a>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#6B1D2A] cursor-pointer" data-icon="account_circle">account_circle</span>
+<button class="bg-primary-container text-white px-6 py-2 rounded-full text-xs font-label uppercase tracking-widest hover:scale-[0.98] transition-transform">Book Appointment</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen pt-32 pb-20 px-6 radial-glow overflow-hidden">
+<div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+<!-- Icon Indicator -->
+<div class="mb-8 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Main Headline -->
+<h1 class="font-serif text-5xl md:text-7xl text-primary mb-6 tracking-tight">
+                Ihr Termin ist bestätigt
+            </h1>
+<p class="font-body text-on-surface-variant text-lg max-w-xl mb-16 leading-relaxed">
+                Wir freuen uns darauf, Sie in unserer Klinik begrüßen zu dürfen. Eine Bestätigung wurde soeben an Ihre E-Mail-Adresse versandt.
+            </p>
+<!-- Confirmation Card (Receipt Style) -->
+<div class="w-full max-w-md frosted-glass rounded-xl shadow-[0_40px_80px_rgba(0,0,0,0.06)] overflow-hidden relative border border-white/20">
+<!-- Top Decorative Notch -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 bg-surface rounded-full"></div>
+<div class="p-10 flex flex-col items-center">
+<div class="uppercase tracking-[0.2em] text-[10px] font-semibold text-secondary mb-8">Zusammenfassung der Konsultation</div>
+<div class="w-full space-y-10">
+<!-- Specialist -->
+<div class="flex flex-col items-center">
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-3">Spezialist</span>
+<div class="font-serif text-2xl text-on-surface">Dr. med. Adrian Von Berg</div>
+<div class="text-sm text-on-surface-variant italic mt-1">Leitender Kardiologe</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/30"></div>
+<!-- Date & Time Row -->
+<div class="grid grid-cols-2 gap-8 w-full">
+<div class="flex flex-col items-start border-r border-outline-variant/30 pr-4">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2">Datum</span>
+<span class="font-mono text-lg text-primary">24.05.2024</span>
+</div>
+<div class="flex flex-col items-start pl-4">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2">Uhrzeit</span>
+<span class="font-mono text-lg text-primary">14:30 MEZ</span>
+</div>
+</div>
+<!-- Location -->
+<div class="flex flex-col items-center">
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-3">Ort</span>
+<div class="text-center">
+<p class="text-on-surface font-medium">Privatklinik Am See</p>
+<p class="text-sm text-on-surface-variant">Seestrasse 142, 8008 Zürich</p>
+</div>
+</div>
+</div>
+<!-- Receipt Bottom Jagged Edge Simulation -->
+<div class="mt-12 w-full flex justify-center gap-1">
+<div class="w-2 h-2 rounded-full bg-outline-variant/20"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/20"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/20"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-16 flex flex-col md:flex-row gap-6 items-center">
+<button class="bg-primary text-white px-10 py-4 rounded-full font-label text-xs uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg hover:translate-y-[-2px]">
+                    Zum Kalender hinzufügen
+                </button>
+<button class="text-on-surface-variant px-10 py-4 rounded-full font-label text-xs uppercase tracking-widest hover:text-primary transition-all border border-outline-variant/50 hover:border-primary/50">
+                    Zurück zum Dashboard
+                </button>
+</div>
+<!-- Subtext / Next Steps -->
+<div class="mt-20 max-w-lg">
+<h3 class="font-serif text-xl text-primary mb-4 italic">Nächste Schritte</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                    Bitte bringen Sie alle relevanten medizinischen Unterlagen und Ihre Versicherungskarte zum Termin mit. Falls Sie den Termin verschieben müssen, bitten wir Sie, uns mindestens 24 Stunden im Voraus zu informieren.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#F8F3EB]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-serif text-lg text-[#6B1D2A]">The Clinical Curator</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#2C2C2C]/60 text-sm font-label tracking-wide hover:text-[#6B1D2A] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#2C2C2C]/60 text-sm font-label tracking-wide hover:text-[#6B1D2A] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#2C2C2C]/60 text-sm font-label tracking-wide hover:text-[#6B1D2A] transition-colors" href="#">Clinical Standards</a>
+<a class="text-[#2C2C2C]/60 text-sm font-label tracking-wide hover:text-[#6B1D2A] transition-colors" href="#">Contact</a>
+</div>
+<p class="text-[#2C2C2C]/60 text-sm font-label tracking-wide">© 2024 The Clinical Curator. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- Decorative Background Elements -->
+<div class="fixed top-[20%] -left-[10%] w-[40rem] h-[40rem] bg-secondary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-[10%] -right-[10%] w-[35rem] h-[35rem] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

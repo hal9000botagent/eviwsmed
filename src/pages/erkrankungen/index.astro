@@ -43,11 +43,11 @@ import '../../styles/global.css';
 <header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-none border-b border-black/5">
 <div class="text-xl font-serif italic text-primary">Evidenzbasierte Wirbelsäulenmedizin</div>
 <nav class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Patienten</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 text-xs uppercase tracking-widest transition-all duration-400 ease-in-out" href="#">Fachkreise</a>
-<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Bibliothek</a>
-<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="#">Über Uns</a>
-</nav>
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="/">Patienten</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-xs uppercase tracking-widest transition-all duration-400 ease-in-out" href="/bibliothek/">Fachkreise</a>
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="/erkrankungen/">Bibliothek</a>
+<a class="text-on-surface/70 text-xs uppercase tracking-widest font-medium hover:text-primary transition-all duration-400 ease-in-out" href="/ueber-uns/">Über Uns</a>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 <div class="flex items-center gap-6">
 <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">search</span>
 <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">account_circle</span>
@@ -81,7 +81,7 @@ import '../../styles/global.css';
 <span class="material-symbols-outlined">science</span>
 <span class="text-sm">Studien</span>
 </a>
-</nav>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 <button class="mt-auto w-full py-3 bg-primary text-on-primary rounded-full text-xs uppercase tracking-widest font-medium hover:opacity-90 transition-opacity">
                 Fachbereich Wechseln
             </button>
@@ -215,10 +215,27 @@ import '../../styles/global.css';
 <div class="text-on-surface/50 text-xs uppercase tracking-wider font-medium">© 2024 Evidenzbasierte Wirbelsäulenmedizin. Alle Rechte vorbehalten.</div>
 </div>
 <nav class="flex flex-wrap justify-center gap-8">
-<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Impressum</a>
-<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Datenschutz</a>
-<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Kontakt</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/impressum/">Impressum</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/datenschutz/">Datenschutz</a>
+<a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="/ueber-uns/">Kontakt</a>
 <a class="text-on-surface/50 text-xs uppercase tracking-wider hover:text-primary transition-colors duration-400" href="#">Quellenverzeichnis</a>
-</nav>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 </footer>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
 </body></html>

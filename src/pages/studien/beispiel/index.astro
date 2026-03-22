@@ -1,0 +1,347 @@
+---
+// EviWsMed V2 — Studien-Detailseite
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;family=DM+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e7e2da",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f2ede5",
+                        "on-secondary-fixed": "#261900",
+                        "tertiary-fixed-dim": "#adcebe",
+                        "surface-container-low": "#f8f3eb",
+                        "on-secondary-fixed-variant": "#5b4309",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdea4",
+                        "outline-variant": "#dac0c1",
+                        "on-background": "#1d1c17",
+                        "on-tertiary-fixed-variant": "#304d40",
+                        "surface-dim": "#ded9d2",
+                        "outline": "#877273",
+                        "background": "#1a1a1f",
+                        "surface-variant": "#e7e2da",
+                        "surface-container-high": "#ece8e0",
+                        "surface-bright": "#fef9f1",
+                        "primary-fixed-dim": "#ffb2b8",
+                        "on-secondary-container": "#785c23",
+                        "on-surface-variant": "#554243",
+                        "secondary": "#a8884a",
+                        "on-primary-fixed": "#40000f",
+                        "surface": "#1a1a1f",
+                        "secondary-fixed-dim": "#e6c17e",
+                        "on-primary-fixed-variant": "#7c2a36",
+                        "on-primary-container": "#ef848f",
+                        "inverse-surface": "#f5f0e8",
+                        "inverse-primary": "#ffb2b8",
+                        "tertiary": "#2d4a3e",
+                        "tertiary-container": "#223f33",
+                        "surface-tint": "#9a414d",
+                        "tertiary-fixed": "#c9ead9",
+                        "primary": "#6b1d2a",
+                        "inverse-on-surface": "#1a1a1f",
+                        "primary-fixed": "#ffdadb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#022016",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#6b1d2a",
+                        "secondary-container": "#fed892",
+                        "on-tertiary-container": "#8baa9b",
+                        "on-surface": "#e2dcd2"
+                    },
+                    fontFamily: {
+                        "headline": ["DM Serif Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["DM Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #1a1a1f;
+            color: #e2dcd2;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(107, 29, 42, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(168, 136, 74, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="selection:bg-secondary/30">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-stone-950/40 backdrop-blur-[30px] shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1600px] mx-auto">
+<div class="text-2xl italic font-serif text-[#6B1D2A] dark:text-[#A8884A] font-['DM_Serif_Display'] tracking-tight">
+                The Clinical Curator
+            </div>
+<nav class="hidden md:flex gap-12">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#6B1D2A] transition-colors hover:opacity-80 transition-all duration-400 cubic-bezier(0.4, 0, 0.2, 1)" href="/bibliothek/">Fachkreise</a>
+<a class="text-[#6B1D2A] dark:text-[#A8884A] font-medium border-b-2 border-[#A8884A] pb-1 hover:opacity-80 transition-all duration-400 cubic-bezier(0.4, 0, 0.2, 1)" href="/erkrankungen/">Bibliothek</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#6B1D2A] transition-colors hover:opacity-80 transition-all duration-400 cubic-bezier(0.4, 0, 0.2, 1)" href="#">Forschung</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#6B1D2A] transition-colors hover:opacity-80 transition-all duration-400 cubic-bezier(0.4, 0, 0.2, 1)" href="#">Archiv</a>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<button class="bg-[#6B1D2A] text-white px-6 py-2 rounded-full font-['Inter'] text-sm tracking-wider hover:opacity-80 transition-all duration-400 cubic-bezier(0.4, 0, 0.2, 1) scale-102 hover:transition-transform">
+                MITGLIEDSCHAFT
+            </button>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto px-12 py-20">
+<!-- Hero Section -->
+<div class="mb-24">
+<div class="font-mono text-secondary mb-6 tracking-widest text-sm">STUDIE ID: CH-882-2024</div>
+<h1 class="font-headline text-6xl md:text-8xl leading-tight text-on-surface max-w-5xl tracking-tight italic">
+                Langzeitfolgen der lumbalen Fusion vs. konservativer Therapie.
+            </h1>
+</div>
+<!-- Sticky Sub-Navigation -->
+<nav class="sticky top-[88px] z-40 glass-card rounded-full px-8 py-4 mb-16 flex justify-center gap-12 text-sm font-medium tracking-wide">
+<a class="text-secondary hover:opacity-70 transition-opacity" href="#abstract">Abstract</a>
+<a class="text-on-surface/60 hover:text-on-surface transition-colors" href="#methodik">Methodik</a>
+<a class="text-on-surface/60 hover:text-on-surface transition-colors" href="#ergebnisse">Ergebnisse</a>
+<a class="text-on-surface/60 hover:text-on-surface transition-colors" href="#relevanz">Klinische Relevanz</a>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<div class="grid grid-cols-12 gap-12">
+<!-- Main Content Area -->
+<div class="col-span-12 lg:col-span-8 space-y-24">
+<!-- Abstract Section -->
+<section class="scroll-mt-32" id="abstract">
+<h2 class="font-headline text-4xl mb-8">Abstract</h2>
+<div class="space-y-6 text-xl text-on-surface/80 leading-relaxed font-light">
+<p>
+                            In dieser prospektiven, randomisierten Langzeitstudie untersuchten wir die klinischen Outomes von Patienten mit degenerativer Spondylolisthese. Der Fokus lag auf der Gegenüberstellung der lumbalen Fusion mit rein konservativen Management-Ansätzen über einen Zeitraum von einem Jahrzehnt.
+                        </p>
+<p>
+                            Die Ergebnisse deuten darauf hin, dass die chirurgische Intervention zwar kurzfristige Vorteile in der Schmerzreduktion bietet, die langfristige Lebensqualität jedoch signifikant von der postoperativen Rehabilitation und dem Management benachbarter Segmente abhängt.
+                        </p>
+</div>
+</section>
+<!-- Primärer Outcome Vergleich (Forest Plot Concept) -->
+<section class="scroll-mt-32" id="ergebnisse">
+<h2 class="font-headline text-4xl mb-8 italic">Primärer Outcome Vergleich</h2>
+<div class="glass-card p-12 rounded-xl">
+<div class="mb-8 font-mono text-xs uppercase tracking-widest text-on-surface/40">Relative Risk [95% CI]</div>
+<div class="space-y-12">
+<!-- Visual Forest Plot Mockup -->
+<div class="relative">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm">Schmerzreduktion (VAS)</span>
+<span class="font-mono text-secondary">0.72 [0.61–0.84]</span>
+</div>
+<div class="h-px bg-on-surface/10 w-full relative flex items-center">
+<div class="absolute left-1/2 h-4 w-px bg-on-surface/30 -translate-y-1/2"></div>
+<div class="absolute left-[30%] right-[40%] h-1.5 bg-secondary/20 rounded-full"></div>
+<div class="absolute left-[35%] w-3 h-3 bg-secondary rounded-sm rotate-45 -ml-1.5"></div>
+</div>
+</div>
+<div class="relative">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm">Oswestry Disability Index (ODI)</span>
+<span class="font-mono text-secondary">0.65 [0.54–0.78]</span>
+</div>
+<div class="h-px bg-on-surface/10 w-full relative flex items-center">
+<div class="absolute left-1/2 h-4 w-px bg-on-surface/30 -translate-y-1/2"></div>
+<div class="absolute left-[20%] right-[45%] h-1.5 bg-secondary/20 rounded-full"></div>
+<div class="absolute left-[28%] w-3 h-3 bg-secondary rounded-sm rotate-45 -ml-1.5"></div>
+</div>
+</div>
+<div class="relative">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm">Re-Operationsrate</span>
+<span class="font-mono text-on-surface/60">1.12 [0.90–1.35]</span>
+</div>
+<div class="h-px bg-on-surface/10 w-full relative flex items-center">
+<div class="absolute left-1/2 h-4 w-px bg-on-surface/30 -translate-y-1/2"></div>
+<div class="absolute left-[55%] right-[20%] h-1.5 bg-on-surface/10 rounded-full"></div>
+<div class="absolute left-[62%] w-3 h-3 bg-on-surface/40 rounded-sm rotate-45 -ml-1.5"></div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between font-mono text-[10px] uppercase tracking-tighter opacity-40">
+<span>Favorisiert Chirurgie</span>
+<span>Neutral</span>
+<span>Favorisiert Konservativ</span>
+</div>
+</div>
+</section>
+<!-- Methodik Table -->
+<section class="scroll-mt-32" id="methodik">
+<h2 class="font-headline text-4xl mb-8">Methodik</h2>
+<div class="overflow-hidden rounded-xl bg-on-surface/[0.02]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="glass-card">
+<th class="py-6 px-8 font-label text-xs uppercase tracking-widest text-secondary">Parameter</th>
+<th class="py-6 px-8 font-label text-xs uppercase tracking-widest text-secondary">Spezifikation</th>
+</tr>
+</thead>
+<tbody class="text-on-surface/70">
+<tr class="border-b border-on-surface/5">
+<td class="py-6 px-8 font-medium">Studiendesign</td>
+<td class="py-6 px-8 italic">Multizentrische, randomisierte kontrollierte Studie (RCT)</td>
+</tr>
+<tr class="border-b border-on-surface/5">
+<td class="py-6 px-8 font-medium">Follow-up Periode</td>
+<td class="py-6 px-8">10 Jahre (Intervalle: 1, 2, 5, 10 Jahre)</td>
+</tr>
+<tr class="border-b border-on-surface/5">
+<td class="py-6 px-8 font-medium">Primärer Endpunkt</td>
+<td class="py-6 px-8">Veränderung im ODI-Score vs. Baseline</td>
+</tr>
+<tr>
+<td class="py-6 px-8 font-medium">Ausschlusskriterien</td>
+<td class="py-6 px-8">Vorherige Wirbelsäulen-OPs, systemische Knochenerkrankungen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Klinische Relevanz -->
+<section class="scroll-mt-32" id="relevanz">
+<h2 class="font-headline text-4xl mb-8 italic">Klinische Relevanz</h2>
+<div class="glass-card p-12 rounded-xl relative">
+<span class="absolute top-8 left-8 text-6xl font-headline text-secondary/30 opacity-50">“</span>
+<blockquote class="text-2xl font-headline leading-snug text-on-surface italic px-8">
+                            Die chirurgische Fusion sollte nicht als Pauschallösung, sondern als gezielte Intervention für Patienten mit hochgradiger Instabilität betrachtet werden. Der Langzeiterfolg wird maßgeblich durch die Vermeidung der 'Adjacent Segment Disease' bestimmt.
+                        </blockquote>
+<div class="mt-8 px-8 flex items-center gap-4">
+<div class="w-12 h-px bg-secondary"></div>
+<span class="font-mono text-xs uppercase tracking-widest">Leitlinien-Kommentar 2024</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<aside class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Studien-Eckpunkte Card -->
+<div class="glass-card p-8 rounded-xl space-y-10">
+<h3 class="font-headline text-2xl border-b border-on-surface/10 pb-4">Studien-Eckpunkte</h3>
+<div class="space-y-8">
+<div>
+<div class="text-[10px] font-mono uppercase tracking-widest text-on-surface/50 mb-1">Evidenzgrad</div>
+<div class="text-3xl font-mono text-secondary">Level 1a</div>
+</div>
+<div>
+<div class="text-[10px] font-mono uppercase tracking-widest text-on-surface/50 mb-1">Stichprobe</div>
+<div class="text-3xl font-mono text-secondary">n=540</div>
+</div>
+<div>
+<div class="text-[10px] font-mono uppercase tracking-widest text-on-surface/50 mb-1">Signifikanz</div>
+<div class="text-3xl font-mono text-secondary">p &lt; 0.05</div>
+</div>
+<div>
+<div class="text-[10px] font-mono uppercase tracking-widest text-on-surface/50 mb-1">Beobachtung</div>
+<div class="text-3xl font-mono text-secondary">10 Y Follow-up</div>
+</div>
+</div>
+</div>
+<!-- Behind the Scenes Sidebar -->
+<div class="glass-card p-8 rounded-xl bg-secondary/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline text-2xl italic">Hinter den Kulissen</h3>
+</div>
+<div class="space-y-4 text-sm text-on-surface/70 leading-relaxed">
+<p>
+                            Für Medizinstudierende: Beachten Sie die statistische Verzerrung durch den "Cross-over". Fast 25% der konservativen Gruppe wechselten innerhalb der ersten 2 Jahre in den chirurgischen Arm.
+                        </p>
+<p>
+                            Dies erfordert eine "Intention-to-Treat" Analyse, um die reale klinische Effektivität nicht zu überschätzen.
+                        </p>
+<a class="inline-block text-secondary font-medium hover:underline pt-2" href="#">Analyse-Methoden vertiefen →</a>
+</div>
+</div>
+<!-- Abstract Visual -->
+<div class="rounded-xl overflow-hidden aspect-video relative group">
+<img alt="Clinical imagery" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Microscopic view of bone tissue structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdplWuYhv491JoGtNG_xreuma3IFJlyTiMo3w_I185hUeSzsbptGCExr7-kzwMXpqShxtPPyW1ChFoUOFEekGAR4N__AeFGQnjPcH4f2yUbt0fLqul4wc_J13xmsPSYss2q-safJKv1h8ERlxPXeiNF-KCJYhK4yVC8l3cFjoqFcedOD-dAx_B8hx_aOwC6Rsjr8PPOvZMkKGMlHmmVXhWct36TwqF0winP1dfUmYya7gyNGWKI8w1bqz4iT1JU0L-SibTK7hgtpA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-tighter opacity-60">Abb 1.2: Histologische Segmentanalyse</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-12 right-12 flex flex-col gap-4 z-50">
+<button class="glass-card w-16 h-16 rounded-full flex items-center justify-center text-on-surface hover:scale-110 transition-transform shadow-2xl group">
+<span class="material-symbols-outlined">download</span>
+<span class="absolute right-20 bg-stone-900 px-4 py-2 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">PDF Download</span>
+</button>
+<button class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="absolute right-20 bg-stone-900 px-4 py-2 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Fachdiskussion</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-12 border-t border-stone-800/10 bg-stone-950 dark:bg-stone-950 mt-32">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-[1600px] mx-auto">
+<div class="font-['DM_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#A8884A]">
+                PEER-REVIEWED PLATFORM © 2024
+            </div>
+<div class="flex gap-12 font-['DM_Mono'] text-[10px] tracking-[0.2em] uppercase">
+<a class="text-stone-500 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 hover:text-white transition-colors" href="#">Editorial Guidelines</a>
+<a class="text-stone-500 hover:text-white transition-colors" href="#">Ethics</a>
+</div>
+</div>
+</footer>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>

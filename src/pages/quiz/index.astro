@@ -38,15 +38,15 @@ import '../../styles/global.css';
             The Clinical Curator
         </div>
 <div class="hidden md:flex items-center space-x-10">
-<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Clinics</a>
-<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Research</a>
-<a class="text-[#6B1D2A] font-bold border-b border-[#6B1D2A]/20 pb-1" href="#">Diagnostic</a>
-<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="#">Journal</a>
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="/">Clinics</a>
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="/bibliothek/">Research</a>
+<a class="text-[#6B1D2A] font-bold border-b border-[#6B1D2A]/20 pb-1" href="/quiz/">Diagnostic</a>
+<a class="text-[#2C2C2C]/60 font-medium hover:text-[#6B1D2A] transition-opacity duration-400" href="/erkrankungen/">Journal</a>
 </div>
 <button class="bg-primary-container text-on-primary px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-102 transition-transform duration-400">
             Patient Portal
         </button>
-</nav>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
 <main class="relative flex flex-col items-center justify-center pt-16 pb-32 px-6 overflow-hidden">
 <!-- Radial soul background effect -->
 <div class="absolute inset-0 radial-soul pointer-events-none -z-10 scale-150"></div>
@@ -165,4 +165,21 @@ import '../../styles/global.css';
 <img data-alt="Minimalist abstract anatomical illustration of a spine in golden lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3NOwp_bspnDORpC17V0tZ4iRcBNnKurYaTGWSeb4ufEAqQpEPOIE6l_mGRuRLh6RycQT0riVRVRWt0gZvN2uhygz13i4isjRyDhBn23CHTTgfK74ZECUWjcT5c-7fumo3Qv2ak2anUe8AXXn1l3jd_vtqkGpJ7IMEIBG21cB3YhDZg6QCaXYBFL2HK4yzbKVspCVWZBcdEzEdYQNugvCrbxdzIAi4ymK7y0IxMhft19JbXCofj1gglIcD-GLb2-N78EJ2Jt9HoWk"/>
 <img data-alt="High-end private medical clinic interior with soft ivory lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhOqskzgBqlJyITuwrc4t5MwYR1wIGq6mz5alrupxRTbdtNLyVIb6wTAoIwywiYN7UUzMV-lKxWilATgQhNS5v0H-Oa5ndzwad-yYMsTFw47_ZVU9JGfPHA176khtGJniTJH9r-OAKjZr9LZWP9v3ojv28UjWNNRr9IZv4emwIs18LeYWKgHJuter7falQZCsg6e2PuehUyOij6K0nn5bY6-1xctilrskRdsUKvwp537Am1ZfdiwFdchsuwfG9eRXcI5gepssFVys"/>
 </div>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
 </body></html>

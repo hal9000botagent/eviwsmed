@@ -1,0 +1,404 @@
+---
+// EviWsMed V2 — Professionelle Bibliothek
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffdea4",
+              "outline-variant": "#dac0c1",
+              "secondary": "#765a21",
+              "inverse-on-surface": "#f5f0e8",
+              "outline": "#877273",
+              "surface-variant": "#e7e2da",
+              "on-surface": "#1d1c17",
+              "on-primary-fixed": "#40000f",
+              "on-error": "#ffffff",
+              "tertiary-container": "#223f33",
+              "surface-tint": "#9a414d",
+              "secondary-fixed-dim": "#e6c17e",
+              "on-tertiary-fixed": "#022016",
+              "inverse-surface": "#32302b",
+              "surface-container": "#f2ede5",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#304d40",
+              "on-secondary-fixed-variant": "#5b4309",
+              "on-tertiary-container": "#8baa9b",
+              "surface-bright": "#fef9f1",
+              "on-secondary-fixed": "#261900",
+              "tertiary-fixed": "#c9ead9",
+              "on-background": "#1d1c17",
+              "secondary-container": "#fed892",
+              "inverse-primary": "#ffb2b8",
+              "surface-container-high": "#ece8e0",
+              "primary-container": "#6b1d2a",
+              "error-container": "#ffdad6",
+              "primary-fixed": "#ffdadb",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#adcebe",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#ef848f",
+              "on-primary-fixed-variant": "#7c2a36",
+              "surface-container-highest": "#e7e2da",
+              "error": "#ba1a1a",
+              "primary": "#4d0516",
+              "tertiary": "#0b291f",
+              "background": "#fef9f1",
+              "on-surface-variant": "#554243",
+              "on-secondary-container": "#785c23",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#ffb2b8",
+              "surface-container-low": "#f8f3eb",
+              "surface-dim": "#ded9d2",
+              "surface": "#fef9f1",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "serif": ["DM Serif Display", "serif"],
+              "sans": ["Inter", "sans-serif"],
+              "mono": ["DM Mono", "monospace"],
+              "headline": ["DM Serif Display"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-editorial-gradient {
+            background: linear-gradient(135deg, #6B1D2A 0%, #A8884A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body {
+            background-color: #F5F0E8;
+            background-image: radial-gradient(circle at 10% 20%, rgba(107, 29, 42, 0.03) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(168, 136, 74, 0.05) 0%, transparent 40%);
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-secondary-fixed overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#F5F0E8]/60 backdrop-blur-[20px] shadow-[0_40px_60px_-15px_rgba(44,44,44,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-xl font-serif font-bold text-[#6B1D2A] tracking-tight">
+                Evidenzbasierte Wirbelsäulenmedizin
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#2C2C2C] opacity-70 hover:opacity-100 hover:scale-105 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="/">Patienten</a>
+<a class="text-[#2C2C2C] opacity-70 hover:opacity-100 hover:scale-105 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="/bibliothek/">Fachkreise</a>
+<a class="text-[#6B1D2A] font-bold border-b-2 border-[#6B1D2A] pb-1 hover:scale-105 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="/erkrankungen/">Bibliothek</a>
+<a class="text-[#2C2C2C] opacity-70 hover:opacity-100 hover:scale-105 transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]" href="/ueber-uns/">Über Uns</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#6B1D2A] scale-98 active:opacity-80 transition-all duration-400">account_circle</button>
+</div>
+</div>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<div class="flex min-h-screen pt-20">
+<!-- SideNavBar Shell -->
+<aside class="h-full w-64 fixed left-0 top-0 pt-20 bg-[#F8F3EB] flex flex-col border-r-0 hidden lg:flex">
+<div class="px-8 py-8">
+<span class="text-[10px] uppercase tracking-[0.2em] text-[#6B1D2A] font-bold opacity-60">Fachwissen</span>
+<h2 class="font-serif text-2xl text-[#6B1D2A] mt-1">Kategorien</h2>
+</div>
+<nav class="flex-grow">
+<div class="flex flex-col space-y-1">
+<a class="flex items-center space-x-4 px-8 py-4 text-[#6B1D2A] font-semibold bg-[#E7E2DA] rounded-r-full transition-colors duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span class="text-sm tracking-wide">Klinische Studien</span>
+</a>
+<a class="flex items-center space-x-4 px-8 py-4 text-[#2C2C2C] opacity-60 hover:bg-[#E7E2DA] transition-colors duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="text-sm tracking-wide">OP-Techniken</span>
+</a>
+<a class="flex items-center space-x-4 px-8 py-4 text-[#2C2C2C] opacity-60 hover:bg-[#E7E2DA] transition-colors duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm tracking-wide">Leitlinien</span>
+</a>
+<a class="flex items-center space-x-4 px-8 py-4 text-[#2C2C2C] opacity-60 hover:bg-[#E7E2DA] transition-colors duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="radiology">radiology</span>
+<span class="text-sm tracking-wide">Radiologie</span>
+</a>
+</div>
+<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors ml-4" aria-label="Dark Mode"><span class="material-symbols-outlined">dark_mode</span></button></nav>
+<div class="px-8 py-10">
+<button class="w-full bg-[#6B1D2A] text-white py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all duration-400">
+                    Premium Zugang
+                </button>
+</div>
+<div class="mt-auto px-8 py-8 space-y-4">
+<a class="flex items-center space-x-3 text-xs text-[#2C2C2C] opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span>Einstellungen</span>
+</a>
+<a class="flex items-center space-x-3 text-xs text-[#2C2C2C] opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span>Hilfe</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow lg:ml-64 px-8 md:px-16 py-12">
+<!-- Hero Header -->
+<header class="mb-16">
+<h1 class="font-serif text-5xl md:text-7xl leading-tight text-[#2C2C2C] mb-8 max-w-4xl">
+                    Professionelle Bibliothek: <br/>
+<span class="text-editorial-gradient">Klinische Evidenz &amp; Forschung</span>
+</h1>
+<!-- Premium Search & Filter Bar -->
+<div class="glass-panel bg-white/40 p-2 rounded-full shadow-sm flex items-center space-x-4 max-w-3xl border border-white/20">
+<div class="flex-grow flex items-center pl-6">
+<span class="material-symbols-outlined text-on-surface-variant/50 mr-3">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body placeholder:text-on-surface-variant/40" placeholder="Suche nach Indikation, Autor oder Methode..." type="text"/>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<button class="flex items-center space-x-2 px-6 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">
+<span>Journal</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:opacity-90 transition-opacity">
+                        Suchen
+                    </button>
+</div>
+</header>
+<!-- Sticky Category Header (Stacks on scroll) -->
+<div class="sticky top-20 z-40 mb-12">
+<div class="glass-panel bg-[#F5F0E8]/40 py-4 flex items-center justify-between">
+<h2 class="font-serif text-3xl text-[#6B1D2A]">Aktuelle Publikationen</h2>
+<div class="flex space-x-4 text-xs font-mono uppercase tracking-widest text-[#A8884A]">
+<span class="bg-[#E7E2DA] px-3 py-1 rounded">Sortieren nach: Relevanz</span>
+<span class="bg-[#E7E2DA] px-3 py-1 rounded">2023 - 2024</span>
+</div>
+</div>
+</div>
+<!-- Research Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container-low p-8 rounded-xl transition-all duration-400 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(107,29,42,0.08)]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-mono font-bold px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full uppercase tracking-tighter">Level 1a</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors cursor-pointer">bookmark</span>
+</div>
+<h3 class="font-serif text-2xl leading-snug text-[#2C2C2C] mb-6 group-hover:text-primary transition-colors">
+                        Langzeitfolgen der lumbalen Fusion vs. konservativer Therapie bei degenerativer Spondylolisthese.
+                    </h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Metriken</span>
+<span class="font-mono text-xs text-secondary">n=540 | p&lt;0.05</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Impact Factor</span>
+<span class="font-mono text-xs text-secondary">4.8</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Close up of a medical professional portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrxCD04ICeO4MoHLopxYlJh70t_qzJJ6HSTnvscVdSuNSM_s1OqYz0Pb6JHi_OinMJgxlqUK05TQniRpnEGZdEmZVSdGp_0oqVRU41R9n_8vBGEaIUiEhqRU32iHNIhz7HjEl8W-lEkt_kDmv7UZ_4qpGz0ZwqX7NqpCSwzPo5SXIU5ylTZ9gsrBY6KsuED_A29JDrBGJOPzpB4v3HsrS3yUUFWa6JE9rSbjUJHg85fuUuBBpSMGlx7dRjFpSP5dx35nSZ1h5WT8k"/>
+</div>
+<div>
+<p class="text-[11px] font-bold text-[#2C2C2C]">Dr. M. Weber et al.</p>
+<p class="text-[10px] text-on-surface-variant/60">Lancet Rheumatology, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container-low p-8 rounded-xl transition-all duration-400 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(107,29,42,0.08)]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-mono font-bold px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full uppercase tracking-tighter">Level 2b</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors cursor-pointer">bookmark</span>
+</div>
+<h3 class="font-serif text-2xl leading-snug text-[#2C2C2C] mb-6 group-hover:text-primary transition-colors">
+                        Automatisierte Radiologische KI-Analyse zur Früherkennung von Bandscheibenvorfällen.
+                    </h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Genauigkeit</span>
+<span class="font-mono text-xs text-secondary">94.2% Sensitivität</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Impact Factor</span>
+<span class="font-mono text-xs text-secondary">3.9</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Doctor in hospital setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfkAZsVWmy0re6k0YjWWEhOEDLJqL6RfqV-G5xrOj3jdkCgSdF0vbrsINxE-lHSuq1gUL14KfREljTfe1zsonbWtrQ3E_CSZIzNuqB2Xucgv4vTyafy8yq5Bnn9b9YB_QxdOtcbTnRePDQHLKnEIkH3_csLNM9UUSnumIhacwFiYj8M-Zlq23K-sr0T4-qMEm74c7XFkf0V-0Bc7_5uxrl5PvSGFJFk3fHG3IX0JybHN_LJ_dM675k2ISG4YKRJoeVmtKTK_XZk"/>
+</div>
+<div>
+<p class="text-[11px] font-bold text-[#2C2C2C]">Prof. Dr. J. Chen</p>
+<p class="text-[10px] text-on-surface-variant/60">Journal of Neuroimaging, 2024</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container-low p-8 rounded-xl transition-all duration-400 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(107,29,42,0.08)]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-mono font-bold px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full uppercase tracking-tighter">Level 1b</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors cursor-pointer">bookmark</span>
+</div>
+<h3 class="font-serif text-2xl leading-snug text-[#2C2C2C] mb-6 group-hover:text-primary transition-colors">
+                        Minimale Invasivität: Ergebnisse nach dorsaler Foraminotomie bei zervikaler Radikulopathie.
+                    </h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Patienten</span>
+<span class="font-mono text-xs text-secondary">n=1,200 | p&lt;0.01</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Impact Factor</span>
+<span class="font-mono text-xs text-secondary">5.2</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Medical professional with short hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8674FX-hXdtAC67eq3aWTaf2_ZGGVZTCXywC9WmfjNQerXUodqc0k7_stTQTuU8fF4lr_CafmwpnUOV6VJzWe5-K-i8s3usV0au60adn3CzGsMXFb4KfCOuoa8_PiaIUqfQulgWPmw-3Dy0Yg8lNDHLhxs1Lf5Gb5FQSI87HKb8dnkkxKhiZNLuU2WvKzl9uKcz-j_1rMsBSZDPj9IyUNIldDzRgmMV0yxRCsN1ZsY7wpfzb4ja1uj4fZ_BGMP4UgXjQmbDKy-8"/>
+</div>
+<div>
+<p class="text-[11px] font-bold text-[#2C2C2C]">Dr. Elena Rossi</p>
+<p class="text-[10px] text-on-surface-variant/60">Spine Journal Europe, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 (Large Editorial Card) -->
+<div class="md:col-span-2 group relative overflow-hidden bg-[#1A1A1F] rounded-xl flex flex-col md:flex-row shadow-2xl">
+<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[2000ms]" data-alt="Modern medical laboratory equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTgo_GjW4T650TaXhK5_q6ykBJO1LpWoKJkconaMx-BuxyS02-uO2l66fA7Xt4BwiWcHOMK9xYyZ-K4X28Y7IhBrhWbY-uI9ZFWyiWJwGLgGf9vDftZXNRHmY6O71oYVLOhmigXRXADBSOkQ3_FwI1ufjmroa1Z7y7WYmf6heZ6JNNmFbpNz_VIBzZt1-gkOuJYJh8g36NXlLqhyAvRvcKS5Fr-K9oHxi5sUkZW5LF5I1pZ4EYLF-N7Z6D4bWyx_cVGRVQ2ctYnZs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#1A1A1F] to-transparent"></div>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="text-[#A8884A] font-mono text-xs uppercase tracking-[0.3em] mb-4">Highlight Dossier</span>
+<h3 class="font-serif text-3xl text-white mb-6 leading-tight">Zukunft der Wirbelsäulenchirurgie: Robotik &amp; Navigation im Jahr 2025</h3>
+<p class="text-inverse-on-surface/70 text-sm mb-8 leading-relaxed">
+                            Ein umfassender Review über die Integration von augmentierter Realität und robotergestützter Präzision in der klinischen Praxis.
+                        </p>
+<button class="self-start px-8 py-4 bg-secondary text-on-secondary text-xs font-bold tracking-widest uppercase rounded-full hover:bg-secondary-fixed hover:text-secondary transition-all">
+                            Vollständiges Dossier lesen
+                        </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative bg-surface-container-low p-8 rounded-xl transition-all duration-400 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(107,29,42,0.08)]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-mono font-bold px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full uppercase tracking-tighter">Meta-Analyse</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors cursor-pointer">bookmark</span>
+</div>
+<h3 class="font-serif text-2xl leading-snug text-[#2C2C2C] mb-6 group-hover:text-primary transition-colors">
+                        Wirksamkeit von epiduralen Steroidinjektionen bei lumbalem Wurzelreizsyndrom.
+                    </h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Studienpool</span>
+<span class="font-mono text-xs text-secondary">k=24 | n=3,840</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-xs text-on-surface-variant/60 font-medium">Impact Factor</span>
+<span class="font-mono text-xs text-secondary">4.2</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="Doctor smiling portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhcLIxNwGpct0p9NngUiWKXDn8kSZFF0GuSpSGtGgs6BVo1-GM9lBub4mUmeEyfGGn_zuxVpglUuiGkiMkIhUSEwkh1OX9VcA6UJBheDffjuuMOEQFloMd_5XEmbMzboKpcfTpRmQrYMckLdCUHGUWAetE1nulGAMnk3oUFDAYryH3xTMb60rpjEx4UBmjhS38pcLpcHJF4QD-YCKVY3JY6i1ehK8vNcboG6tpmFRNhRZwyt7bzrWtVLYGJ_mPEs7ZO8U1H9p8icA"/>
+</div>
+<div>
+<p class="text-[11px] font-bold text-[#2C2C2C]">Dr. Lukas Hartmann</p>
+<p class="text-[10px] text-on-surface-variant/60">Archives of Physical Medicine, 2024</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Asymmetric Pagination/Footer -->
+<div class="mt-24 border-t border-outline-variant/20 pt-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div>
+<p class="font-mono text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/40 mb-4">Bibliotheks-Status</p>
+<p class="text-sm font-light text-on-surface-variant max-w-sm">
+                        Zeigt 1 - 5 von 1,482 verfügbaren wissenschaftlichen Publikationen. Neue Daten-Synchronisation erfolgte vor 2 Stunden.
+                    </p>
+</div>
+<div class="flex space-x-2">
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-mono text-xs">01</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center font-mono text-xs hover:bg-surface-container-highest transition-colors">02</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center font-mono text-xs hover:bg-surface-container-highest transition-colors">03</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation Shell -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-[#F5F0E8]/60 backdrop-blur-[20px] z-50 flex justify-around items-center py-4 px-2">
+<a class="flex flex-col items-center space-y-1 text-on-surface-variant opacity-60" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-on-surface-variant opacity-60" href="#">
+<span class="material-symbols-outlined">science</span>
+<span class="text-[10px]">Studien</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-[#6B1D2A]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="text-[10px] font-bold">Bibliothek</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-on-surface-variant opacity-60" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profil</span>
+</a>
+</div>
+<script>
+const toggle=document.getElementById("dark-mode-toggle");
+const html=document.documentElement;
+const icon=toggle?.querySelector(".material-symbols-outlined");
+const savedMode=localStorage.getItem("theme")||"light";
+html.classList.remove("light","dark");
+html.classList.add(savedMode);
+if(icon)icon.textContent=savedMode==="dark"?"light_mode":"dark_mode";
+toggle?.addEventListener("click",()=>{
+const current=html.classList.contains("dark")?"dark":"light";
+const next=current==="dark"?"light":"dark";
+html.classList.remove(current);
+html.classList.add(next);
+localStorage.setItem("theme",next);
+if(icon)icon.textContent=next==="dark"?"light_mode":"dark_mode";
+});
+</script>
+</body></html>
