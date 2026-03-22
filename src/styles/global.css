@@ -2,6 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Material Design 3 Color Tokens === */
+/* Extracted from Stitch design exports (Light + Dark) */
+/* Toggle via class="light" / class="dark" on <html> */
+
+:root,
+.light {
+  --md-accent-burgundy: #6b1d2a;
+  --md-accent-gold: #a8884a;
+  --md-background: #fef9f1;
+  --md-error: #ba1a1a;
+  --md-error-container: #ffdad6;
+  --md-inverse-on-surface: #f5f0e8;
+  --md-inverse-primary: #ffb2b8;
+  --md-inverse-surface: #32302b;
+  --md-on-background: #1d1c17;
+  --md-on-error: #ffffff;
+  --md-on-error-container: #93000a;
+  --md-on-primary: #ffffff;
+  --md-on-primary-container: #ef848f;
+  --md-on-primary-fixed: #40000f;
+  --md-on-primary-fixed-variant: #7c2a36;
+  --md-on-secondary: #ffffff;
+  --md-on-secondary-container: #785c23;
+  --md-on-secondary-fixed: #261900;
+  --md-on-secondary-fixed-variant: #5b4309;
+  --md-on-surface: #1d1c17;
+  --md-on-surface-variant: #554243;
+  --md-on-tertiary: #ffffff;
+  --md-on-tertiary-container: #8baa9b;
+  --md-on-tertiary-fixed: #022016;
+  --md-on-tertiary-fixed-variant: #304d40;
+  --md-outline: #877273;
+  --md-outline-variant: #dac0c1;
+  --md-primary: #4d0516;
+  --md-primary-container: #6b1d2a;
+  --md-primary-fixed: #ffdadb;
+  --md-primary-fixed-dim: #ffb2b8;
+  --md-secondary: #765a21;
+  --md-secondary-container: #fed892;
+  --md-secondary-fixed: #ffdea4;
+  --md-secondary-fixed-dim: #e6c17e;
+  --md-surface: #fef9f1;
+  --md-surface-bright: #fef9f1;
+  --md-surface-container: #f2ede5;
+  --md-surface-container-high: #ece8e0;
+  --md-surface-container-highest: #e7e2da;
+  --md-surface-container-low: #f8f3eb;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-dim: #ded9d2;
+  --md-surface-tint: #9a414d;
+  --md-surface-variant: #e7e2da;
+  --md-tertiary: #0b291f;
+  --md-tertiary-container: #223f33;
+  --md-tertiary-fixed: #c9ead9;
+  --md-tertiary-fixed-dim: #adcebe;
+}
+
+.dark {
+  --md-accent-burgundy: #6B1D2A;
+  --md-accent-gold: #A8884A;
+  --md-background: #1A1A1F;
+  --md-error: #ffb4ab;
+  --md-error-container: #93000a;
+  --md-inverse-on-surface: #1d1c17;
+  --md-inverse-primary: #9a414d;
+  --md-inverse-surface: #fef9f1;
+  --md-on-background: #E2DCD2;
+  --md-on-error: #ffffff;
+  --md-on-error-container: #ffdad6;
+  --md-on-primary: #ffffff;
+  --md-on-primary-container: #ffdadb;
+  --md-on-primary-fixed: #ffdadb;
+  --md-on-primary-fixed-variant: #ef848f;
+  --md-on-secondary: #ffffff;
+  --md-on-secondary-container: #e6c17e;
+  --md-on-secondary-fixed: #ffdea4;
+  --md-on-secondary-fixed-variant: #fed892;
+  --md-on-surface: #E2DCD2;
+  --md-on-surface-variant: #dac0c1;
+  --md-on-tertiary: #ffffff;
+  --md-on-tertiary-container: #8baa9b;
+  --md-on-tertiary-fixed: #022016;
+  --md-on-tertiary-fixed-variant: #304d40;
+  --md-outline: #877273;
+  --md-outline-variant: #554243;
+  --md-primary: #ef848f;
+  --md-primary-container: #6B1D2A;
+  --md-primary-fixed: #6b1d2a;
+  --md-primary-fixed-dim: #ffb2b8;
+  --md-secondary: #A8884A;
+  --md-secondary-container: #5b4309;
+  --md-secondary-fixed: #5b4309;
+  --md-secondary-fixed-dim: #e6c17e;
+  --md-surface: #1A1A1F;
+  --md-surface-bright: #2d2d33;
+  --md-surface-container: #1d1c17;
+  --md-surface-container-high: #2d2d33;
+  --md-surface-container-highest: #32302b;
+  --md-surface-container-low: #242429;
+  --md-surface-container-lowest: #0f0f12;
+  --md-surface-dim: #151518;
+  --md-surface-tint: #ffb2b8;
+  --md-surface-variant: #4d0516;
+  --md-tertiary: #8baa9b;
+  --md-tertiary-container: #223f33;
+  --md-tertiary-fixed: #c9ead9;
+  --md-tertiary-fixed-dim: #adcebe;
+}
+
+/* === Custom Components === */
+
 .glass-panel {
   background: rgba(254, 249, 241, 0.45);
   backdrop-filter: blur(30px);
@@ -10,7 +121,7 @@
 }
 
 .dark .glass-panel {
-  background: rgba(29, 28, 23, 0.55);
+  background: rgba(26, 26, 31, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -23,7 +134,7 @@
 }
 
 .dark .glass-card {
-  background: rgba(29, 28, 23, 0.5);
+  background: rgba(26, 26, 31, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
 }
